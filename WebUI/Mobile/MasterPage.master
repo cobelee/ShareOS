@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=2.0,user-scalable=no;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .myAccount {
+            width: auto;
+            background-color: #CCCCFF;
+            height: 20px;
+            font-size: 0.8em;
+            font-family: 微软雅黑;
+        }
+
+        .mainMenu {
+            width: auto;
+            background-color: #336666;
+            height: 50px;
+        }
+
+        .mainMenuItem td {
+            font-size: 1.3em;
+            font-family: 微软雅黑;
+            color: White;
+            text-align: center;
+        }
+
+            .mainMenuItem td a {
+                width: 100%;
+                height: 50px;
+                color: White;
+            }
+
+        .mainMenuItemSelected {
+            width: 100%;
+            height: 50px;
+            background-color: #336666;
+            border-bottom: 5px solid #CCCCFF;
+            font-family: 微软雅黑;
+            color: White;
+        }
+    </style>
+</head>
+<body style="margin: 0px; padding: 0px;">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div style="width: auto; height: 60px; background-color: #CCFF99; padding: 0px;">
+            <table style="width: 100%;">
+                <tr>
+                    <td rowspan="2" style="width: 60px;">
+                        <%--                    <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Themes/Default/Images/Ring_64.ico"
+                        Width="40px" />--%>
+                    </td>
+                    <td style="font-family: 微软雅黑; font-size: 1.3em; font-weight: bold; color: #FF3300">职工内部股权
+                    </td>
+                    <td rowspan="2" style="text-align: right;">
+                        <asp:LoginName ID="LoginName1" runat="server" />
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family: 微软雅黑, 宋体, Arial, Helvetica, sans-serif; font-size: 0.7em; color: #99CC66;">镇海石化工业贸易有限责任公司
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <asp:Panel ID="pnlMenu" runat="server" CssClass="mainMenu">
+            <asp:Menu ID="Menu1" runat="server" Width="100%" Orientation="Horizontal" RenderingMode="Table"
+                CssClass="mainMenu" OnMenuItemClick="Menu1_MenuItemClick">
+                <Items>
+                    <asp:MenuItem Text="股权变动" Value="股权变动" NavigateUrl="~/Mobile/PersonalSharesChanges.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="股东信息" Value="股东信息" NavigateUrl="~/Mobile/PersonInfo.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="公司股权" Value="公司股权" NavigateUrl="~/Mobile/SharePrice.aspx"></asp:MenuItem>
+                </Items>
+                <StaticMenuItemStyle CssClass="mainMenuItem" />
+                <StaticMenuStyle Width="100%" />
+                <StaticSelectedStyle CssClass="mainMenuItemSelected" />
+            </asp:Menu>
+        </asp:Panel>
+        <div style="width: auto; padding: 10px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

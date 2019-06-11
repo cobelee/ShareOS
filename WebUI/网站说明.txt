@@ -1,0 +1,8 @@
+﻿网站说明：
+
+此网站建议安装于windows Server 2012以上操作系统。
+
+先决条件：
+1、目标操作系统上需安装：
+		SQLSysClrTypes.msi  （Microsoft System CLR Types for SQL Server 2014）
+		ReportViewer2015	（内部版本号：12）

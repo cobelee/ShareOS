@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ShareOSDataSet" targetNamespace="http://tempuri.org/ShareOSDataSet.xsd" xmlns:mstns="http://tempuri.org/ShareOSDataSet.xsd" xmlns="http://tempuri.org/ShareOSDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=SQLServer;Initial Catalog=ShareOS;Persist Security Info=True;User ID=sa;Password=x4v8m2e@p2dk)s7b" IsAppSettingsProperty="false" Modifier="Assembly" Name="sqlserver.ShareOS.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ShareOSDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ShareOSDataSet" msprop:Generator_DataSetName="ShareOSDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ShareOwnershipInfo" msprop:Generator_UserTableName="ShareOwnershipInfo" msprop:Generator_RowEvArgName="ShareOwnershipInfoRowChangeEvent" msprop:Generator_TableVarName="tableShareOwnershipInfo" msprop:Generator_TablePropName="ShareOwnershipInfo" msprop:Generator_RowDeletingName="ShareOwnershipInfoRowDeleting" msprop:Generator_RowChangingName="ShareOwnershipInfoRowChanging" msprop:Generator_RowDeletedName="ShareOwnershipInfoRowDeleted" msprop:Generator_RowEvHandlerName="ShareOwnershipInfoRowChangeEventHandler" msprop:Generator_TableClassName="ShareOwnershipInfoDataTable" msprop:Generator_RowChangedName="ShareOwnershipInfoRowChanged" msprop:Generator_RowClassName="ShareOwnershipInfoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShareholderId" msprop:Generator_ColumnVarNameInTable="columnShareholderId" msprop:Generator_ColumnPropNameInRow="ShareholderId" msprop:Generator_ColumnPropNameInTable="ShareholderIdColumn" msprop:Generator_UserColumnName="ShareholderId" type="xs:string" minOccurs="0" />
+              <xs:element name="ShareholderNumber" msprop:Generator_ColumnVarNameInTable="columnShareholderNumber" msprop:Generator_ColumnPropNameInRow="ShareholderNumber" msprop:Generator_ColumnPropNameInTable="ShareholderNumberColumn" msprop:Generator_UserColumnName="ShareholderNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="JobNumber" msprop:Generator_ColumnVarNameInTable="columnJobNumber" msprop:Generator_ColumnPropNameInRow="JobNumber" msprop:Generator_ColumnPropNameInTable="JobNumberColumn" msprop:Generator_UserColumnName="JobNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="ShareholderName" msprop:Generator_ColumnVarNameInTable="columnShareholderName" msprop:Generator_ColumnPropNameInRow="ShareholderName" msprop:Generator_ColumnPropNameInTable="ShareholderNameColumn" msprop:Generator_UserColumnName="ShareholderName" type="xs:string" minOccurs="0" />
+              <xs:element name="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnPropNameInTable="SexColumn" msprop:Generator_UserColumnName="Sex" type="xs:string" minOccurs="0" />
+              <xs:element name="IdentityCard" type="xs:string" minOccurs="0" />
+              <xs:element name="PersonType" msprop:Generator_ColumnVarNameInTable="columnPersonType" msprop:Generator_ColumnPropNameInRow="PersonType" msprop:Generator_ColumnPropNameInTable="PersonTypeColumn" msprop:Generator_UserColumnName="PersonType" type="xs:string" minOccurs="0" />
+              <xs:element name="EntrustedAgent" msprop:Generator_ColumnVarNameInTable="columnEntrustedAgent" msprop:Generator_ColumnPropNameInRow="EntrustedAgent" msprop:Generator_ColumnPropNameInTable="EntrustedAgentColumn" msprop:Generator_UserColumnName="EntrustedAgent" type="xs:string" minOccurs="0" />
+              <xs:element name="EntrustedAgentName" msprop:Generator_ColumnVarNameInTable="columnEntrustedAgentName" msprop:Generator_ColumnPropNameInRow="EntrustedAgentName" msprop:Generator_ColumnPropNameInTable="EntrustedAgentNameColumn" msprop:Generator_UserColumnName="EntrustedAgentName" type="xs:string" minOccurs="0" />
+              <xs:element name="ShareTotals" msprop:Generator_ColumnVarNameInTable="columnShareTotals" msprop:Generator_ColumnPropNameInRow="ShareTotals" msprop:Generator_ColumnPropNameInTable="ShareTotalsColumn" msprop:Generator_UserColumnName="ShareTotals" type="xs:string" minOccurs="0" />
+              <xs:element name="BarCode" msprop:Generator_ColumnVarNameInTable="columnBarCode" msprop:Generator_ColumnPropNameInRow="BarCode" msprop:Generator_ColumnPropNameInTable="BarCodeColumn" msprop:Generator_UserColumnName="BarCode" type="xs:string" minOccurs="0" />
+              <xs:element name="QichuShares" msprop:Generator_ColumnVarNameInTable="columnQichuShares" msprop:Generator_ColumnPropNameInRow="QichuShares" msprop:Generator_ColumnPropNameInTable="QichuSharesColumn" msprop:Generator_UserColumnName="QichuShares" type="xs:string" minOccurs="0" />
+              <xs:element name="Department" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Person_Shares_Change_Record" msprop:Generator_UserTableName="Person_Shares_Change_Record" msprop:Generator_RowEvArgName="Person_Shares_Change_RecordRowChangeEvent" msprop:Generator_TableVarName="tablePerson_Shares_Change_Record" msprop:Generator_TablePropName="Person_Shares_Change_Record" msprop:Generator_RowDeletingName="Person_Shares_Change_RecordRowDeleting" msprop:Generator_RowChangingName="Person_Shares_Change_RecordRowChanging" msprop:Generator_RowDeletedName="Person_Shares_Change_RecordRowDeleted" msprop:Generator_RowEvHandlerName="Person_Shares_Change_RecordRowChangeEventHandler" msprop:Generator_TableClassName="Person_Shares_Change_RecordDataTable" msprop:Generator_RowChangedName="Person_Shares_Change_RecordRowChanged" msprop:Generator_RowClassName="Person_Shares_Change_RecordRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RegId" msprop:Generator_ColumnVarNameInTable="columnRegId" msprop:Generator_ColumnPropNameInRow="RegId" msprop:Generator_ColumnPropNameInTable="RegIdColumn" msprop:Generator_UserColumnName="RegId" type="xs:string" minOccurs="0" />
+              <xs:element name="ShareholderNumber" msprop:Generator_ColumnVarNameInTable="columnShareholderNumber" msprop:Generator_ColumnPropNameInRow="ShareholderNumber" msprop:Generator_ColumnPropNameInTable="ShareholderNumberColumn" msprop:Generator_UserColumnName="ShareholderNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="SharesChanges" msprop:Generator_ColumnVarNameInTable="columnSharesChanges" msprop:Generator_ColumnPropNameInRow="SharesChanges" msprop:Generator_ColumnPropNameInTable="SharesChangesColumn" msprop:Generator_UserColumnName="SharesChanges" type="xs:string" minOccurs="0" />
+              <xs:element name="ShareTotals" msprop:Generator_ColumnVarNameInTable="columnShareTotals" msprop:Generator_ColumnPropNameInRow="ShareTotals" msprop:Generator_ColumnPropNameInTable="ShareTotalsColumn" msprop:Generator_UserColumnName="ShareTotals" type="xs:string" minOccurs="0" />
+              <xs:element name="CauseOfChange" msprop:Generator_ColumnVarNameInTable="columnCauseOfChange" msprop:Generator_ColumnPropNameInRow="CauseOfChange" msprop:Generator_ColumnPropNameInTable="CauseOfChangeColumn" msprop:Generator_UserColumnName="CauseOfChange" type="xs:string" minOccurs="0" />
+              <xs:element name="RegDate" msprop:Generator_ColumnVarNameInTable="columnRegDate" msprop:Generator_ColumnPropNameInRow="RegDate" msprop:Generator_ColumnPropNameInTable="RegDateColumn" msprop:Generator_UserColumnName="RegDate" type="xs:string" minOccurs="0" />
+              <xs:element name="Operator" msprop:Generator_ColumnVarNameInTable="columnOperator" msprop:Generator_ColumnPropNameInRow="Operator" msprop:Generator_ColumnPropNameInTable="OperatorColumn" msprop:Generator_UserColumnName="Operator" type="xs:string" minOccurs="0" />
+              <xs:element name="OriginalSharePrice" msprop:Generator_ColumnVarNameInTable="columnOriginalSharePrice" msprop:Generator_ColumnPropNameInRow="OriginalSharePrice" msprop:Generator_ColumnPropNameInTable="OriginalSharePriceColumn" msprop:Generator_UserColumnName="OriginalSharePrice" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Person_Shares_Withdrawal_Report" msprop:Generator_UserTableName="Person_Shares_Withdrawal_Report" msprop:Generator_RowEvArgName="Person_Shares_Withdrawal_ReportRowChangeEvent" msprop:Generator_TableVarName="tablePerson_Shares_Withdrawal_Report" msprop:Generator_TablePropName="Person_Shares_Withdrawal_Report" msprop:Generator_RowDeletingName="Person_Shares_Withdrawal_ReportRowDeleting" msprop:Generator_RowChangingName="Person_Shares_Withdrawal_ReportRowChanging" msprop:Generator_RowDeletedName="Person_Shares_Withdrawal_ReportRowDeleted" msprop:Generator_RowEvHandlerName="Person_Shares_Withdrawal_ReportRowChangeEventHandler" msprop:Generator_TableClassName="Person_Shares_Withdrawal_ReportDataTable" msprop:Generator_RowChangedName="Person_Shares_Withdrawal_ReportRowChanged" msprop:Generator_RowClassName="Person_Shares_Withdrawal_ReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WithdrawalDate" msprop:Generator_ColumnVarNameInTable="columnWithdrawalDate" msprop:Generator_ColumnPropNameInRow="WithdrawalDate" msprop:Generator_ColumnPropNameInTable="WithdrawalDateColumn" msprop:Generator_UserColumnName="WithdrawalDate" type="xs:string" minOccurs="0" />
+              <xs:element name="WithdrawalShareAmount" msprop:Generator_ColumnVarNameInTable="columnWithdrawalShareAmount" msprop:Generator_ColumnPropNameInRow="WithdrawalShareAmount" msprop:Generator_ColumnPropNameInTable="WithdrawalShareAmountColumn" msprop:Generator_UserColumnName="WithdrawalShareAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentSharePrice" msprop:Generator_ColumnVarNameInTable="columnCurrentSharePrice" msprop:Generator_ColumnPropNameInRow="CurrentSharePrice" msprop:Generator_ColumnPropNameInTable="CurrentSharePriceColumn" msprop:Generator_UserColumnName="CurrentSharePrice" type="xs:string" minOccurs="0" />
+              <xs:element name="WithdrawalSharesCurrentValue" msprop:Generator_ColumnVarNameInTable="columnWithdrawalSharesCurrentValue" msprop:Generator_ColumnPropNameInRow="WithdrawalSharesCurrentValue" msprop:Generator_ColumnPropNameInTable="WithdrawalSharesCurrentValueColumn" msprop:Generator_UserColumnName="WithdrawalSharesCurrentValue" type="xs:string" minOccurs="0" />
+              <xs:element name="WithdrawalSharesOriginalValue" msprop:Generator_ColumnVarNameInTable="columnWithdrawalSharesOriginalValue" msprop:Generator_ColumnPropNameInRow="WithdrawalSharesOriginalValue" msprop:Generator_ColumnPropNameInTable="WithdrawalSharesOriginalValueColumn" msprop:Generator_UserColumnName="WithdrawalSharesOriginalValue" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ShareOwnership_Change_Report" msprop:Generator_UserTableName="ShareOwnership_Change_Report" msprop:Generator_RowEvArgName="ShareOwnership_Change_ReportRowChangeEvent" msprop:Generator_TableVarName="tableShareOwnership_Change_Report" msprop:Generator_TablePropName="ShareOwnership_Change_Report" msprop:Generator_RowDeletingName="ShareOwnership_Change_ReportRowDeleting" msprop:Generator_RowChangingName="ShareOwnership_Change_ReportRowChanging" msprop:Generator_RowDeletedName="ShareOwnership_Change_ReportRowDeleted" msprop:Generator_RowEvHandlerName="ShareOwnership_Change_ReportRowChangeEventHandler" msprop:Generator_TableClassName="ShareOwnership_Change_ReportDataTable" msprop:Generator_RowChangedName="ShareOwnership_Change_ReportRowChanged" msprop:Generator_RowClassName="ShareOwnership_Change_ReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShareholderNumber" msprop:Generator_ColumnVarNameInTable="columnShareholderNumber" msprop:Generator_ColumnPropNameInRow="ShareholderNumber" msprop:Generator_ColumnPropNameInTable="ShareholderNumberColumn" msprop:Generator_UserColumnName="ShareholderNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="JobNumber" msprop:Generator_ColumnVarNameInTable="columnJobNumber" msprop:Generator_ColumnPropNameInRow="JobNumber" msprop:Generator_ColumnPropNameInTable="JobNumberColumn" msprop:Generator_UserColumnName="JobNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="PeifaBonusShares" msprop:Generator_ColumnVarNameInTable="columnPeifaBonusShares" msprop:Generator_ColumnPropNameInRow="PeifaBonusShares" msprop:Generator_ColumnPropNameInTable="PeifaBonusSharesColumn" msprop:Generator_UserColumnName="PeifaBonusShares" type="xs:string" minOccurs="0" />
+              <xs:element name="ZhuanrangBonusShares" msprop:Generator_ColumnVarNameInTable="columnZhuanrangBonusShares" msprop:Generator_ColumnPropNameInRow="ZhuanrangBonusShares" msprop:Generator_ColumnPropNameInTable="ZhuanrangBonusSharesColumn" msprop:Generator_UserColumnName="ZhuanrangBonusShares" type="xs:string" minOccurs="0" />
+              <xs:element name="GerenGuomaiShares" msprop:Generator_ColumnVarNameInTable="columnGerenGuomaiShares" msprop:Generator_ColumnPropNameInRow="GerenGuomaiShares" msprop:Generator_ColumnPropNameInTable="GerenGuomaiSharesColumn" msprop:Generator_UserColumnName="GerenGuomaiShares" type="xs:string" minOccurs="0" />
+              <xs:element name="ShareTotals" msprop:Generator_ColumnVarNameInTable="columnShareTotals" msprop:Generator_ColumnPropNameInRow="ShareTotals" msprop:Generator_ColumnPropNameInTable="ShareTotalsColumn" msprop:Generator_UserColumnName="ShareTotals" type="xs:string" minOccurs="0" />
+              <xs:element name="SharePrice" msprop:Generator_ColumnVarNameInTable="columnSharePrice" msprop:Generator_ColumnPropNameInRow="SharePrice" msprop:Generator_ColumnPropNameInTable="SharePriceColumn" msprop:Generator_UserColumnName="SharePrice" type="xs:string" minOccurs="0" />
+              <xs:element name="ShareholderName" msprop:Generator_ColumnVarNameInTable="columnShareholderName" msprop:Generator_ColumnPropNameInRow="ShareholderName" msprop:Generator_ColumnPropNameInTable="ShareholderNameColumn" msprop:Generator_UserColumnName="ShareholderName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ShareOwnershipStatistics" msprop:Generator_TableClassName="ShareOwnershipStatisticsDataTable" msprop:Generator_RowEvArgName="ShareOwnershipStatisticsRowChangeEvent" msprop:Generator_TableVarName="tableShareOwnershipStatistics" msprop:Generator_TablePropName="ShareOwnershipStatistics" msprop:Generator_RowDeletingName="ShareOwnershipStatisticsRowDeleting" msprop:Generator_RowChangingName="ShareOwnershipStatisticsRowChanging" msprop:Generator_RowDeletedName="ShareOwnershipStatisticsRowDeleted" msprop:Generator_RowEvHandlerName="ShareOwnershipStatisticsRowChangeEventHandler" msprop:Generator_UserTableName="ShareOwnershipStatistics" msprop:Generator_RowChangedName="ShareOwnershipStatisticsRowChanged" msprop:Generator_RowClassName="ShareOwnershipStatisticsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShareholderNumber" msprop:Generator_ColumnVarNameInTable="columnShareholderNumber" msprop:Generator_ColumnPropNameInRow="ShareholderNumber" msprop:Generator_ColumnPropNameInTable="ShareholderNumberColumn" msprop:Generator_UserColumnName="ShareholderNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="EntrustedAgentName" msprop:Generator_ColumnVarNameInTable="columnEntrustedAgentName" msprop:Generator_ColumnPropNameInRow="EntrustedAgentName" msprop:Generator_ColumnPropNameInTable="EntrustedAgentNameColumn" msprop:Generator_UserColumnName="EntrustedAgentName" type="xs:string" minOccurs="0" />
+              <xs:element name="CountOfShareholder" msprop:Generator_ColumnVarNameInTable="columnCountOfShareholder" msprop:Generator_ColumnPropNameInRow="CountOfShareholder" msprop:Generator_ColumnPropNameInTable="CountOfShareholderColumn" msprop:Generator_UserColumnName="CountOfShareholder" type="xs:string" minOccurs="0" />
+              <xs:element name="SharesAmount" msprop:Generator_ColumnVarNameInTable="columnSharesAmount" msprop:Generator_ColumnPropNameInRow="SharesAmount" msprop:Generator_ColumnPropNameInTable="SharesAmountColumn" msprop:Generator_UserColumnName="SharesAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="SharesRatio" msprop:Generator_ColumnVarNameInTable="columnSharesRatio" msprop:Generator_ColumnPropNameInRow="SharesRatio" msprop:Generator_ColumnPropNameInTable="SharesRatioColumn" msprop:Generator_UserColumnName="SharesRatio" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PersonClearingReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="姓名" type="xs:string" minOccurs="0" />
+              <xs:element name="股东号" type="xs:string" minOccurs="0" />
+              <xs:element name="BarCode" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="工号" type="xs:string" minOccurs="0" />
+              <xs:element name="性别" type="xs:string" minOccurs="0" />
+              <xs:element name="身份证号" type="xs:string" minOccurs="0" />
+              <xs:element name="人员类别" type="xs:string" minOccurs="0" />
+              <xs:element name="代理人" type="xs:string" minOccurs="0" />
+              <xs:element name="所在单位" type="xs:string" minOccurs="0" />
+              <xs:element name="退出时间" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="退出股权数" type="xs:decimal" minOccurs="0" />
+              <xs:element name="交易价格" type="xs:decimal" minOccurs="0" />
+              <xs:element name="总股值" type="xs:decimal" minOccurs="0" />
+              <xs:element name="个人出资" type="xs:decimal" minOccurs="0" />
+              <xs:element name="税前收益" type="xs:decimal" minOccurs="0" />
+              <xs:element name="个人所得税" type="xs:decimal" minOccurs="0" />
+              <xs:element name="实际回款" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

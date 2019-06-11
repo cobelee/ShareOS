@@ -1,0 +1,17 @@
+﻿.MessageDialog
+{
+    background-color: #ffffdd;
+    border-width: 3px;
+    border-style: solid;
+    border-color: Gray;
+    padding: 10px;
+    width: 350px;
+    text-align: center;
+}
+
+.MessageDialogBackground
+{
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://10.137.70.2/PMS.WebUI" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://10.137.70.2/PMS.WebUI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">关于镇海石化工贸公司内部职工信息查询的 WebService </wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://10.137.70.2/PMS.WebUI">
+      <s:element name="GetPersonBaseInfo_ByJobNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jobNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonBaseInfo_ByJobNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonBaseInfo_ByJobNumberResult" type="tns:PersonBaseInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonBaseInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="JobNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RealName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="出生日期" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="身份证号" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="工种" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="岗位类别" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="参加工作时间" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="进入本系统工作时间" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPersonnelByJobNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jobNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonnelByJobNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonnelByJobNumberResult" type="tns:Personnel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Personnel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Corporation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Department" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Job" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Individual" type="tns:Individual" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="tns:Telephone" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="tns:Address" />
+          <s:element minOccurs="0" maxOccurs="1" name="ECommunication" type="tns:ECommunication" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Individual">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sex" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdentityCard" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Telephone">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MobilePhone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobilePhone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileShort1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileShort2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeTelephone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeTelephone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeFax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessTelephone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessTelephone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessFax" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NativePlace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NativePlaceZipcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Corporation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CorporationZipcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DwellingPlace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DwellingPlaceZipcode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ECommunication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Email1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSN" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPersonInfoByJobNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jobNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonInfoByJobNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonInfoByJobNumberResult" type="tns:PersonInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="JobNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sex" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Department" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Job" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mobilephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileShort" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPersonInfoByBlurInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonInfoByBlurInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonInfoByBlurInfoResult" type="tns:ArrayOfPersonInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersonInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PersonInfo" nillable="true" type="tns:PersonInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPersonInfoListByDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departmentName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonInfoListByDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonInfoListByDepartmentResult" type="tns:ArrayOfPersonInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistJobNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jobNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistJobNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExistJobNumberResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartments">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDepartmentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentsResult" type="tns:ArrayOfDepartment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDepartment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Department" nillable="true" type="tns:Department" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Department">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPersonBaseInfo_ByJobNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonBaseInfo_ByJobNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonBaseInfo_ByJobNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonBaseInfo_ByJobNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonnelByJobNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonnelByJobNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonnelByJobNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonnelByJobNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonInfoByJobNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonInfoByJobNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonInfoByJobNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonInfoByJobNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonInfoByBlurInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonInfoByBlurInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonInfoByBlurInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonInfoByBlurInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonInfoListByDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonInfoListByDepartment" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonInfoListByDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonInfoListByDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExistJobNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:ExistJobNumber" />
+  </wsdl:message>
+  <wsdl:message name="ExistJobNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:ExistJobNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartments" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PersonnelRollSoap">
+    <wsdl:operation name="GetPersonBaseInfo_ByJobNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据工号获取人员基础信息。</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonBaseInfo_ByJobNumberSoapIn" />
+      <wsdl:output message="tns:GetPersonBaseInfo_ByJobNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonnelByJobNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据工号获取公司职工信息。</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonnelByJobNumberSoapIn" />
+      <wsdl:output message="tns:GetPersonnelByJobNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonInfoByJobNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据工号获取公司职工普通信息。</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonInfoByJobNumberSoapIn" />
+      <wsdl:output message="tns:GetPersonInfoByJobNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonInfoByBlurInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取关键查询信息指定的职工集合,keyWord可以是姓名、工号、部门、手机长号、手机短号、固定电话、家庭地址等信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonInfoByBlurInfoSoapIn" />
+      <wsdl:output message="tns:GetPersonInfoByBlurInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonInfoListByDepartment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取指定部门或单位名称的人员列表。</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonInfoListByDepartmentSoapIn" />
+      <wsdl:output message="tns:GetPersonInfoListByDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistJobNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">判断指定工号的人员是否存在。</wsdl:documentation>
+      <wsdl:input message="tns:ExistJobNumberSoapIn" />
+      <wsdl:output message="tns:ExistJobNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取公司组织机构信息。</wsdl:documentation>
+      <wsdl:input message="tns:GetDepartmentsSoapIn" />
+      <wsdl:output message="tns:GetDepartmentsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PersonnelRollSoap" type="tns:PersonnelRollSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPersonBaseInfo_ByJobNumber">
+      <soap:operation soapAction="http://10.137.70.2/PMS.WebUI/GetPersonBaseInfo_ByJobNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonnelByJobNumber">
+      <soap:operation soapAction="http://10.137.70.2/PMS.WebUI/GetPersonnelByJobNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonInfoByJobNumber">
+      <soap:operation soapAction="http://10.137.70.2/PMS.WebUI/GetPersonInfoByJobNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonInfoByBlurInfo">
+      <soap:operation soapAction="http://10.137.70.2/PMS.WebUI/GetPersonInfoByBlurInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonInfoListByDepartment">
+      <soap:operation soapAction="http://10.137.70.2/PMS.WebUI/GetPersonInfoListByDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistJobNumber">
+      <soap:operation soapAction="http://10.137.70.2/PMS.WebUI/ExistJobNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartments">
+      <soap:operation soapAction="http://10.137.70.2/PMS.WebUI/GetDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PersonnelRollSoap12" type="tns:PersonnelRollSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPersonBaseInfo_ByJobNumber">
+      <soap12:operation soapAction="http://10.137.70.2/PMS.WebUI/GetPersonBaseInfo_ByJobNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonnelByJobNumber">
+      <soap12:operation soapAction="http://10.137.70.2/PMS.WebUI/GetPersonnelByJobNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonInfoByJobNumber">
+      <soap12:operation soapAction="http://10.137.70.2/PMS.WebUI/GetPersonInfoByJobNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonInfoByBlurInfo">
+      <soap12:operation soapAction="http://10.137.70.2/PMS.WebUI/GetPersonInfoByBlurInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonInfoListByDepartment">
+      <soap12:operation soapAction="http://10.137.70.2/PMS.WebUI/GetPersonInfoListByDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistJobNumber">
+      <soap12:operation soapAction="http://10.137.70.2/PMS.WebUI/ExistJobNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartments">
+      <soap12:operation soapAction="http://10.137.70.2/PMS.WebUI/GetDepartments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PersonnelRoll">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">关于镇海石化工贸公司内部职工信息查询的 WebService </wsdl:documentation>
+    <wsdl:port name="PersonnelRollSoap" binding="tns:PersonnelRollSoap">
+      <soap:address location="http://www.tiyigroup.com/PMS.WebUI/WebServices/PersonnelRoll.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PersonnelRollSoap12" binding="tns:PersonnelRollSoap12">
+      <soap12:address location="http://www.tiyigroup.com/PMS.WebUI/WebServices/PersonnelRoll.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

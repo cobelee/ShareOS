@@ -1,0 +1,25 @@
+﻿    
+将股权变动信息从Excel
+	Declare @ShareholderNumber int
+		,@Shares int
+
+	Declare Cur1 Cursor For
+
+	SELECT 股东号, 个人购股
+    FROM OPENROWSET('Microsoft.Jet.OLEDB.4.0', 'Excel 8.0;HDR=Yes;IMEX=1;Database=c:\2014年股权变动表.xls', [Sheet1$])
+
+	Open Cur1
+	Fetch next From Cur1 Into  @ShareholderNumber, @Shares
+
+	While @@fetch_status=0
+	Begin
+		IF EXISTS (SELECT ShareholderNumber FROM Shareholder WHERE ShareholderNumber = @ShareholderNumber)
+		BEGIN
+			IF @Shares>0
+			EXEC Reg_ShareOwnership @ShareholderNumber,@Shares,1.5398,'个人购买', 1, '2014-08-14 11:02:35','System';
+		END
+		Fetch next From Cur1 Into  @ShareholderNumber, @Shares
+	End  
+
+	Close Cur1
+	Deallocate Cur1

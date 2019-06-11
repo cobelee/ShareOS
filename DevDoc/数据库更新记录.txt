@@ -1,0 +1,29 @@
+﻿新增记录，从上往下写
+
+2017.04.22 Select_Shares_Withdrawal_Report 存储过程增加IdentityCard,DepName字段       （已同步）
+--------------------------------------------
+
+以下未更新到公司服务器
+2015.04.07  更新储存过程   （直接在服务器上修改，未在本地同步）
+2015.04.17  修改储存过程  [GetCurrentTotalShares] （直接在服务器上修改，未在本地同步）
+2015.04.17  修改存储过程  [Reg_ShareOwnership] （直接在服务器上修改，未在本地同步）
+
+
+--------------------------------------------------------------------------
+新增标值函数：GetSharePriceByIssueNumber          (已同步的服务器)
+
+修改存储过程：Select_ShareOwnership_Change_By_IssueNumber     (已同步到服务器)
+
+以下更新同步更新到公司数据库服务器，但未同步到本机数据库服务器     
+2014.4.22  表 ShareOwnership  增加两个字段。CauseOfChange IsPrincipal          （已同步）
+
+修改储存过程：Select_Person_Shares_Withdrawal_Report             （已同步）             
+      [Select_ShareOwnership_Change_By_IssueNumber]  增加字段（已同步）
+
+新增储存过程：Select_Shares_Withdrawal_Report（已同步）
+
+
+--------------------------------------------
+以下已更新至公司数据库服务器
+2014.4.17
+新增存储过程： Select_Corporate_ShareTotals（已同步）

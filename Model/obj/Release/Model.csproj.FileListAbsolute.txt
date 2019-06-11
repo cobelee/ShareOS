@@ -1,0 +1,15 @@
+E:\dotnet4.0开发\ShareOS\Model\obj\Release\ResolveAssemblyReference.cache
+E:\dotnet4.0开发\ShareOS\Model\obj\Release\ShareOS.Model.dll
+E:\dotnet4.0开发\ShareOS\Model\obj\Release\ShareOS.Model.pdb
+E:\dotnet4.0开发\ShareOS\Model\bin\Release\ShareOS.Model.dll
+E:\dotnet4.0开发\ShareOS\Model\bin\Release\ShareOS.Model.pdb
+E:\Weiyun\dotnet4.0开发\ShareOS\Model\bin\Release\ShareOS.Model.dll
+E:\Weiyun\dotnet4.0开发\ShareOS\Model\bin\Release\ShareOS.Model.pdb
+E:\Weiyun\dotnet4.0开发\ShareOS\Model\obj\Release\ResolveAssemblyReference.cache
+E:\Weiyun\dotnet4.0开发\ShareOS\Model\obj\Release\ShareOS.Model.dll
+E:\Weiyun\dotnet4.0开发\ShareOS\Model\obj\Release\ShareOS.Model.pdb
+D:\BaiduYun\dotnet4.0开发\ShareOS\Model\bin\Release\ShareOS.Model.dll
+D:\BaiduYun\dotnet4.0开发\ShareOS\Model\bin\Release\ShareOS.Model.pdb
+D:\BaiduYun\dotnet4.0开发\ShareOS\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+D:\BaiduYun\dotnet4.0开发\ShareOS\Model\obj\Release\ShareOS.Model.dll
+D:\BaiduYun\dotnet4.0开发\ShareOS\Model\obj\Release\ShareOS.Model.pdb

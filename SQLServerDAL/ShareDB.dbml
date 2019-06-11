@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="ShareOS" EntityNamespace="Tiyi.ShareOS.SQLServerDAL" ContextNamespace="Tiyi.ShareOS.SQLServerDAL" Class="ShareDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.Account" Member="Account">
+    <Type Name="Account">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NChar(32)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NChar(32)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NChar(32)" CanBeNull="true" />
+      <Column Name="TrueName" Type="System.String" DbType="NChar(32)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AgentAssistant" Member="AgentAssistant">
+    <Type Name="AgentAssistant">
+      <Column Name="AgentShareholderNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AssistantJobNumber" Type="System.String" DbType="NChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BonusRecord" Member="BonusRecord">
+    <Type Name="BonusRecord">
+      <Column Name="IssueNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShareholderNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CashBonus" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EntrustedAgent" Member="EntrustedAgent">
+    <Type Name="EntrustedAgent">
+      <Column Name="ShareholderNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FundAccount" Member="FundAccount">
+    <Type Name="FundAccount">
+      <Column Name="FundAccountId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IssueNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShareholderNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChangeMoney" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ChangeReason" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="ChangeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PersonType" Member="PersonType">
+    <Type Name="PersonType">
+      <Column Name="PersonTypeName" Type="System.String" DbType="NVarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shareholder" Member="Shareholder">
+    <Type Name="Shareholder">
+      <Column Name="ShareholderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShareholderNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BarCode" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="JobNumber" Type="System.String" DbType="NChar(6)" CanBeNull="true" />
+      <Column Name="ShareholderName" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdentityCard" Type="System.String" DbType="NChar(18)" CanBeNull="true" />
+      <Column Name="PersonType" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="EntrustedAgent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShareOwnership" Member="ShareOwnership">
+    <Type Name="ShareOwnership">
+      <Column Name="RegId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IssueNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShareholderNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SharesChanges" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="ShareTotals" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="OriginalSharePrice" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="CauseOfChange" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsPrincipal" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RegDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Operator" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShareOwnershipApply" Member="ShareOwnershipApply">
+    <Type Name="ShareOwnershipApply">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IssueNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShareholderNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SharesAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateOfApply" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SharesIssueConfig" Member="SharesIssueConfig">
+    <Type Name="SharesIssueConfig">
+      <Column Name="SICId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IssueNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IssueYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bonus" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SharePrice" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="IsDistributed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsOpen" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SysLogs" Member="SysLogs">
+    <Type Name="SysLogs">
+      <Column Name="LogId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LogType" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="LogDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>无标题页</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <!-- wrap starts here -->
+    <div id="wrap">
+        <!--header -->
+        <div id="header">
+            <div style="float: left; font-family: 微软雅黑;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;镇海石化工贸股权查询</div>
+            <div id="header-links">
+                <div>
+                    <a href="/">公司网站</a> | <a href="/AccountCenter/">登录帐户</a>|
+                    <asp:HyperLink ID="hlQuery" runat="server">股权查询</asp:HyperLink>
+                    |
+                    <asp:HyperLink ID="hlAdmin" runat="server">管理平台</asp:HyperLink>
+                </div>
+            </div>
+            <!--header ends-->
+        </div>
+        <!-- content-wrap starts -->
+        <div id="content-wrap" class="two-col">
+            <div id="sidebar">
+                <h1>
+                    个人股权查询</h1>
+                <ul class="sidemenu">
+                    <li>
+                        <asp:HyperLink ID="hlPersonInfo" runat="server">个人股东信息</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="hlShareOwnershipRecord" runat="server">股权变动记录</asp:HyperLink></li>
+                </ul>
+                <h1>
+                    委托代理人查询</h1>
+                <ul class="sidemenu">
+                    <li>
+                        <asp:HyperLink ID="hlAssignAssistant" runat="server">设置代理助理</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="hlShareholderList" runat="server">代理股东查询</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="hlShareOwnershipList" runat="server">代理股权查询</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="hlCompanySharesStructure" runat="server">公司股权结构</asp:HyperLink></li>
+                </ul>
+                
+                <h1>
+                    当前股价</h1>
+                <p>
+                    最近交易期数：<asp:Label ID="lbIssueNumber" runat="server" Text=""></asp:Label><br />
+                    最近交易年份：<asp:Label ID="lbYear" runat="server" Text=""></asp:Label><br />
+                    当前股价：<asp:Label ID="lbSharesPrice" runat="server" Text=""></asp:Label><br />
+                </p>
+                <!-- sidebar ends -->
+            </div>
+            <div id="main">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- content-wrap ends-->
+        </div>
+        <!-- footer starts -->
+        <div id="footer-wrap">
+            <div id="footer">
+                <p>
+                    &copy; 2010-2015 <strong>ZPITC</strong> | 镇海石化工业贸易有限责任公司职工股管理办公室
+                </p>
+            </div>
+        </div>
+        <!-- footer ends-->
+        <!-- wrap ends here -->
+    </div>
+    </form>
+</body>
+</html>

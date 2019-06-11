@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CBB34C4A-4C70-4FFC-9C7B-56B6702AD518}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinUI</RootNamespace>
+    <AssemblyName>Shares</AssemblyName>
+    <ApplicationIcon>SharesIcon.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/Shares/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="BarCode, Version=1.5.2840.25357, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ImportDLL\BarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Common, Version=1.23.3762.34245, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ImportDLL\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Visual Studio 10.0\ReportViewer\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Visual Studio 10.0\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="org.in2bits.MyXls, Version=0.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ImportDLL\org.in2bits.MyXls.dll</HintPath>
+    </Reference>
+    <Reference Include="PMS.BLL, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PMS\BLL\bin\Debug\PMS.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="PMS.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PMS\BLL\bin\Debug\PMS.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="PMS.SQLServerDAL, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PMS\SQLServerDAL\bin\Debug\PMS.SQLServerDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BonusQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BonusQuery.Designer.cs">
+      <DependentUpon>BonusQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\ApplyForShares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\ApplyForShares.Designer.cs">
+      <DependentUpon>ApplyForShares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BuyShareOwnership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BuyShareOwnership.Designer.cs">
+      <DependentUpon>BuyShareOwnership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\SellShareOwnership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\SellShareOwnership.Designer.cs">
+      <DependentUpon>SellShareOwnership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntrustedAgentManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntrustedAgentManage.Designer.cs">
+      <DependentUpon>EntrustedAgentManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportIdentityCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportIdentityCard.Designer.cs">
+      <DependentUpon>ImportIdentityCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportShareholder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportShareholder.Designer.cs">
+      <DependentUpon>ImportShareholder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewPersonWithdrawalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreviewPersonWithdrawalReport.Designer.cs">
+      <DependentUpon>PreviewPersonWithdrawalReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print\BuySharesApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print\BuySharesApplication.Designer.cs">
+      <DependentUpon>BuySharesApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print\InvestmentCertification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print\InvestmentCertification.Designer.cs">
+      <DependentUpon>InvestmentCertification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print\InvestmentCertificationPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print\InvestmentCertificationPreview.Designer.cs">
+      <DependentUpon>InvestmentCertificationPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print\ShareOwnershipStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print\ShareOwnershipStatistics.Designer.cs">
+      <DependentUpon>ShareOwnershipStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrinter.cs" />
+    <Compile Include="DemoPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoPrint.Designer.cs">
+      <DependentUpon>DemoPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\AddShareholder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\AddShareholder.Designer.cs">
+      <DependentUpon>AddShareholder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\GetInteger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\GetInteger.Designer.cs">
+      <DependentUpon>GetInteger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\GetSharesIssueConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\GetSharesIssueConfig.Designer.cs">
+      <DependentUpon>GetSharesIssueConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option.designer.cs">
+      <DependentUpon>Option.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\SelectShareholder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\SelectShareholder.Designer.cs">
+      <DependentUpon>SelectShareholder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\SelectEntrustedAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\SelectEntrustedAgent.Designer.cs">
+      <DependentUpon>SelectEntrustedAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIMain.Designer.cs">
+      <DependentUpon>MDIMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalBonusRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalBonusRecord.Designer.cs">
+      <DependentUpon>PersonalBonusRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalShareOwnership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalShareOwnership.Designer.cs">
+      <DependentUpon>PersonalShareOwnership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonTypeManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonTypeManage.Designer.cs">
+      <DependentUpon>PersonTypeManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BonusQuery.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BonusQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemoPrint.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DemoPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\AddShareholder.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddShareholder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\ApplyForShares.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ApplyForShares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BuyShareOwnership.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BuyShareOwnership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\GetInteger.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GetInteger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\GetSharesIssueConfig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GetSharesIssueConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\SellShareOwnership.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SellShareOwnership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntrustedAgentManage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EntrustedAgentManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportIdentityCard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImportIdentityCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportShareholder.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImportShareholder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option.resx">
+      <DependentUpon>Option.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\SelectShareholder.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectShareholder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\SelectEntrustedAgent.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectEntrustedAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MDIMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalBonusRecord.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PersonalBonusRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalShareOwnership.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PersonalShareOwnership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonTypeManage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PersonTypeManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewPersonWithdrawalReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PreviewPersonWithdrawalReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print\BuySharesApplication.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BuySharesApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print\InvestmentCertification.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InvestmentCertification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print\InvestmentCertificationPreview.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InvestmentCertificationPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print\ShareOwnershipStatistics.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShareOwnershipStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="ReportShareApplication.rdlc" />
+    <EmbeddedResource Include="ScaleRationedShares.resx">
+      <DependentUpon>ScaleRationedShares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShareholderBarCode.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShareholderBarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShareholderRegister.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShareholderRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShareOwnershipApplyFor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShareOwnershipApplyFor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShareOwnershipManage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShareOwnershipManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShareOwnershipWithdrawal.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShareOwnershipWithdrawal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SharesIssueConfig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SharesIssueConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysConfig\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\SettingDeveloper.resx">
+      <DependentUpon>SettingDeveloper.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\SettingIRPEF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SettingIRPEF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="个人股权变动记录.rdlc" />
+    <EmbeddedResource Include="个人股权退出清算报告.rdlc" />
+    <EmbeddedResource Include="出资证明书.rdlc" />
+    <EmbeddedResource Include="委托代理股权统计.rdlc" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Tiyi.PMS\PersonnelRoll.wsdl" />
+    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.ExistJobNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetDepartmentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetPersonBaseInfo_ByJobNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetPersonInfoByBlurInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetPersonInfoByJobNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetPersonInfoListByDepartmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetPersonnelByJobNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="ShareOSDataSet.xsc">
+      <DependentUpon>ShareOSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ShareOSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShareOSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ShareOSDataSet.xss">
+      <DependentUpon>ShareOSDataSet.xsd</DependentUpon>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ScaleRationedShares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScaleRationedShares.Designer.cs">
+      <DependentUpon>ScaleRationedShares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Tiyi.PMS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ShareholderBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShareholderBarCode.Designer.cs">
+      <DependentUpon>ShareholderBarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShareholderRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShareholderRegister.Designer.cs">
+      <DependentUpon>ShareholderRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShareOSDataSet.cs">
+      <DependentUpon>ShareOSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ShareOSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShareOSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ShareOwnershipApplyFor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShareOwnershipApplyFor.Designer.cs">
+      <DependentUpon>ShareOwnershipApplyFor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShareOwnershipManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShareOwnershipManage.Designer.cs">
+      <DependentUpon>ShareOwnershipManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShareOwnershipWithdrawal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShareOwnershipWithdrawal.Designer.cs">
+      <DependentUpon>ShareOwnershipWithdrawal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SharesIssueConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharesIssueConfig.Designer.cs">
+      <DependentUpon>SharesIssueConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysConfig\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysConfig\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\SettingDeveloper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\SettingDeveloper.Designer.cs">
+      <DependentUpon>SettingDeveloper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\SettingIRPEF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\SettingIRPEF.Designer.cs">
+      <DependentUpon>SettingIRPEF.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{109AB58B-7E13-4292-9403-1A4ED47D684A}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{357C183C-5BE1-4880-B7F7-BF8364E85755}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLServerDAL\SQLServerDAL.csproj">
+      <Project>{B7DDEACB-356A-452E-A252-B525E858ABD4}</Project>
+      <Name>SQLServerDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data.xml" />
+    <None Include="Service References\Tiyi.PMS\PersonnelRoll.disco" />
+    <None Include="Service References\Tiyi.PMS\configuration91.svcinfo" />
+    <None Include="Service References\Tiyi.PMS\configuration.svcinfo" />
+    <None Include="Service References\Tiyi.PMS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="SharesIcon.ico" />
+    <None Include="Resources\SharesIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ImportDLL\" />
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Tiyi.PMS\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

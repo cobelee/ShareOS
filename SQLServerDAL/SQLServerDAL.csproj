@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B7DDEACB-356A-452E-A252-B525E858ABD4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShareOS.SQLServerDAL</RootNamespace>
+    <AssemblyName>ShareOS.SQLServerDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common, Version=1.22.3630.21612, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WebUI\ImportDLL\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ShareDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShareDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ShareDB_Extend.cs" />
+    <Compile Include="ShareholderDA.cs" />
+    <Compile Include="DBProcedure\Delete_Account.cs" />
+    <Compile Include="DBProcedure\Delete_Agent_Assistant.cs" />
+    <Compile Include="DBProcedure\Delete_BonusRecord_By_Issue.cs" />
+    <Compile Include="DBProcedure\Delete_EntrustedAgent.cs" />
+    <Compile Include="DBProcedure\Delete_PersonType.cs" />
+    <Compile Include="DBProcedure\Delete_Shareholder.cs" />
+    <Compile Include="DBProcedure\Delete_ShareOwnershipApply.cs" />
+    <Compile Include="DBProcedure\Delete_ShareOwnership_By_RegId.cs" />
+    <Compile Include="DBProcedure\Delete_SharesIssueConfig.cs" />
+    <Compile Include="DBProcedure\Delete_SysLogs.cs" />
+    <Compile Include="DBProcedure\Insert_Account.cs" />
+    <Compile Include="DBProcedure\Insert_BonusRecord.cs" />
+    <Compile Include="DBProcedure\Insert_EntrustedAgent.cs" />
+    <Compile Include="DBProcedure\Insert_FundAccount.cs" />
+    <Compile Include="DBProcedure\Insert_PersonType.cs" />
+    <Compile Include="DBProcedure\Insert_Shareholder.cs" />
+    <Compile Include="DBProcedure\Insert_ShareOwnershipApply.cs" />
+    <Compile Include="DBProcedure\Insert_SharesIssueConfig.cs" />
+    <Compile Include="DBProcedure\Insert_SysLogs.cs" />
+    <Compile Include="DBProcedure\Reg_ShareOwnership.cs" />
+    <Compile Include="DBProcedure\Report_ShareOwnership_Statistics_By_EntrustedAgent.cs" />
+    <Compile Include="DBProcedure\ScaleRationedShares.cs" />
+    <Compile Include="DBProcedure\Select_Account.cs" />
+    <Compile Include="DBProcedure\Select_Account_By_UserName.cs" />
+    <Compile Include="DBProcedure\Select_Agent_Assistant.cs" />
+    <Compile Include="DBProcedure\Select_All_ShareOwnership.cs" />
+    <Compile Include="DBProcedure\Select_Assistant_Agent.cs" />
+    <Compile Include="DBProcedure\Select_Bonus_List_By_Issue.cs" />
+    <Compile Include="DBProcedure\Select_Corporate_ShareTotals.cs" />
+    <Compile Include="DBProcedure\Select_CurrentSharePrice.cs" />
+    <Compile Include="DBProcedure\Select_EntrustedAgent_All.cs" />
+    <Compile Include="DBProcedure\Select_EntrustedAgent_One.cs" />
+    <Compile Include="DBProcedure\Select_Personal_ShareOwnership_Record.cs" />
+    <Compile Include="DBProcedure\Select_PersonType.cs" />
+    <Compile Include="DBProcedure\Select_Person_Bonus_Record.cs" />
+    <Compile Include="DBProcedure\Select_Person_FundAccount.cs" />
+    <Compile Include="DBProcedure\Select_Person_Have_No_Share.cs" />
+    <Compile Include="DBProcedure\Select_Person_Shares_Change_Record.cs" />
+    <Compile Include="DBProcedure\Select_Person_Shares_Withdrawal_Report.cs" />
+    <Compile Include="DBProcedure\Select_Person_ShareTotals.cs" />
+    <Compile Include="DBProcedure\Select_Shareholder_All.cs" />
+    <Compile Include="DBProcedure\Select_Shareholder_By_EntrustedAgent.cs" />
+    <Compile Include="DBProcedure\Select_Shareholder_By_JobNumber.cs" />
+    <Compile Include="DBProcedure\Select_Shareholder_One.cs" />
+    <Compile Include="DBProcedure\Select_ShareIssueConfig.cs" />
+    <Compile Include="DBProcedure\Select_ShareIssueConfig_One.cs" />
+    <Compile Include="DBProcedure\Select_ShareOwnershipApply_By_IssueNumber.cs" />
+    <Compile Include="DBProcedure\Select_ShareOwnership_Change_By_IssueNumber.cs" />
+    <Compile Include="DBProcedure\Select_ShareOwnership_Withdrawal_Record.cs" />
+    <Compile Include="DBProcedure\Select_SharesLastIssueNumber.cs" />
+    <Compile Include="DBProcedure\Select_Shares_Withdrawal_Report.cs" />
+    <Compile Include="DBProcedure\Select_SysLogs.cs" />
+    <Compile Include="DBProcedure\Set_Agent_Assistant.cs" />
+    <Compile Include="DBProcedure\Update_Account.cs" />
+    <Compile Include="DBProcedure\Update_FundAccount.cs" />
+    <Compile Include="DBProcedure\Update_PersonType.cs" />
+    <Compile Include="DBProcedure\Update_Shareholder.cs" />
+    <Compile Include="DBProcedure\Update_Shareholder_AgentRelation.cs" />
+    <Compile Include="DBProcedure\Update_Shareholder_BarCode.cs" />
+    <Compile Include="DBProcedure\Update_Shareholder_Status.cs" />
+    <Compile Include="DBProcedure\Update_ShareOwnershipApply.cs" />
+    <Compile Include="DBProcedure\Update_SharesIssueConfig.cs" />
+    <Compile Include="DBTable\Account.cs" />
+    <Compile Include="DBTable\BonusRecord.cs" />
+    <Compile Include="DBTable\FundAccount.cs" />
+    <Compile Include="DS\Column.cs" />
+    <Compile Include="DS\Connection.cs" />
+    <Compile Include="DS\ConnectionString.cs" />
+    <Compile Include="DS\Parameter.cs" />
+    <Compile Include="DBTable\PersonType.cs" />
+    <Compile Include="EntrustedAgent.cs" />
+    <Compile Include="FundAccount.cs" />
+    <Compile Include="MonitorOffice.cs" />
+    <Compile Include="PersonType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DBTable\Shareholder.cs" />
+    <Compile Include="DBTable\ShareOwnership.cs" />
+    <Compile Include="DBTable\SharesIssueConfig.cs" />
+    <Compile Include="DBTable\SysLogs.cs" />
+    <Compile Include="Shareholder.cs" />
+    <Compile Include="ShareIssueConfigDA.cs" />
+    <Compile Include="ShareOwnership.cs" />
+    <Compile Include="ShareOwnershipDA.cs" />
+    <Compile Include="SharesBonus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IDAL\IDAL.csproj">
+      <Project>{76325A59-FC79-4A61-AAF5-812A9BBC4F7E}</Project>
+      <Name>IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{357C183C-5BE1-4880-B7F7-BF8364E85755}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ShareDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ShareDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ShareDB.dbml.layout">
+      <DependentUpon>ShareDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

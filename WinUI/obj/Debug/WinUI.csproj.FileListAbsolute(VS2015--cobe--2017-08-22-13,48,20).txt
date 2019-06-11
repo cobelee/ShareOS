@@ -1,0 +1,3 @@
+D:\BaiduYun\dotnet4.0开发\ShareOS\WinUI\bin\Debug\Shares.exe.config
+D:\BaiduYun\dotnet4.0开发\ShareOS\WinUI\obj\Debug\Shares.exe
+D:\BaiduYun\dotnet4.0开发\ShareOS\WinUI\obj\Debug\Shares.pdb

@@ -1,0 +1,12 @@
+﻿
+本股权交易软件支持包
+
+【Web版】
+
+
+【客户端】
+
+
+【开发环境】
+本软件需 Microsoft Report viewer 2015 的支持。
+安装 Microsoft Report Viewer 2015 之前，需安装 SQLSysClrTypes.exe   for sql server 2014。

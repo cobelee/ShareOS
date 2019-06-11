@@ -1,0 +1,68 @@
+    Declare @ShareholderNumber int
+			,@JobNumber nchar(6)
+			,@ShareholderName nvarchar(16)
+			,@Sex nchar(6)
+			,@Sexbit bit
+			,@PersonType nvarchar(32)
+			,@EntrustedAgent int
+			,@ShareSix int
+			,@ShareSeven int
+			,@ShareE int
+			,@ShareN int
+
+	Declare Cur1 Cursor For
+
+	SELECT 股东号,工号,姓名,性别,人员类别,股权受托人股东号,six,seven,eight,nine
+    FROM OPENROWSET('Microsoft.Jet.OLEDB.4.0', 'Excel 8.0;HDR=Yes;IMEX=1;Database=c:\2009年分红及2010年股权受让.xls', [Sheet1$])
+
+	Open Cur1
+	Fetch next From Cur1 Into  @ShareholderNumber
+								,@JobNumber
+								,@ShareholderName
+								,@Sex
+								,@PersonType 
+								,@EntrustedAgent
+								,@ShareSix
+								,@ShareSeven
+								,@ShareE
+								,@ShareN
+
+	While @@fetch_status=0
+	Begin
+--		IF Exists (Select C0101 From RetA01 Where C0101=@JobNumber)
+--			BEGIN
+--				Update RetA01
+--				   SET [C0125] = @BankCard
+--				WHERE C0101 = @JobNumber
+--			END 
+		SELECT @ShareholderName = REPLACE(@ShareholderName, ' ', '')
+
+		IF NOT EXISTS (SELECT ShareholderNumber FROM Shareholder WHERE ShareholderNumber = @ShareholderNumber)
+		BEGIN
+			IF @Sex = '男'
+				SET @Sexbit = 1
+			ELSE
+				SET @Sexbit = 0
+
+			EXEC Insert_Shareholder @ShareholderNumber,@JobNumber,@ShareholderName,@Sexbit,'',@PersonType,'股东',@EntrustedAgent
+
+			EXEC Reg_ShareOwnership @ShareholderNumber,@ShareSix,'2006-04-01 00:00:00','System';
+			EXEC Reg_ShareOwnership @ShareholderNumber,@ShareSeven,'2007-04-01 00:00:00','System';
+			EXEC Reg_ShareOwnership @ShareholderNumber,@ShareE,'2008-04-01 00:00:00','System';
+			EXEC Reg_ShareOwnership @ShareholderNumber,@ShareN,'2009-04-01 00:00:00','System';
+
+		END
+				Fetch next From Cur1 Into  @ShareholderNumber
+								,@JobNumber
+								,@ShareholderName
+								,@Sex
+								,@PersonType 
+								,@EntrustedAgent
+								,@ShareSix
+								,@ShareSeven
+								,@ShareE
+								,@ShareN
+	End  
+
+	Close Cur1
+	Deallocate Cur1

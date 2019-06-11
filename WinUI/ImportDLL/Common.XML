@@ -1,0 +1,1912 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Common</name>
+    </assembly>
+    <members>
+        <member name="T:Common.Web.FileUploader">
+            <summary>
+            文件上传控件 FileUploader ，可识别图片文件。
+            </summary>
+        </member>
+        <member name="M:Common.Web.FileUploader.Upload(System.Web.HttpPostedFile)">
+            <summary>
+            <para>上传一个文件到指定的文件夹。</para>
+            <para>保存路径由 SaveFilePath 属性指定。</para>
+            <para>返回的是已保存后的文件路径及文件名。</para>
+            </summary>
+            <param name="postedFile">上传的 System.Web.HttpPostedFile 类型的文件.</param>
+            <returns>若保存成功,返回保存文件的路径名,若不成功,返回空字符串.</returns>
+        </member>
+        <member name="M:Common.Web.FileUploader.Save(System.Web.HttpPostedFile)">
+            <summary>
+            保存一个文件到指定的文件夹.
+            </summary>
+            <param name="postedFile">上传的 System.Web.HttpPostedFile 类型的文件.</param>
+            <returns>若保存成功,返回保存文件的路径名,若不成功,返回空字符串.</returns>
+        </member>
+        <member name="M:Common.Web.FileUploader.Delete(System.String,System.String,System.Int32)">
+            <summary>
+            <para>删除指定目录中的文档。</para>
+            <para>说明：searchPattern 指定查找文档类型，格式如： *.jpg </para>
+            <para>　　　dayBeforeNow ，指定删除几天前的文档。</para>
+            </summary>
+            <param name="path">需要删除文件的绝对路径。</param>
+            <param name="searchPattern">根据文档格式设置查找的筛选条件。如：“*.doc”。</param>
+            <param name="daysBeforeNow">设置要删除的历史文档离距离今天的天数。</param>
+        </member>
+        <member name="M:Common.Web.FileUploader.Delete(System.String,System.Int32)">
+            <summary>
+            <para>删除上传目录中满足筛选条件的文档。</para>
+            <para>说明：searchPattern 指定筛选文档的格式，格式如： *.jpg </para>
+            <para>　　　dayBeforeNow ，指定要删除的历史文档离距离今天的天数。</para>
+            </summary>
+            <param name="searchPattern">根据文档格式设置查找的筛选条件。如：“*.doc”。</param>
+            <param name="daysBeforeNow">指定要删除的历史文档离距离今天的天数。</param>
+        </member>
+        <member name="P:Common.Web.FileUploader.UploadDir">
+            <summary>
+            文件保存的路径。磁盘物理路径。
+            </summary>
+        </member>
+        <member name="P:Common.Web.FileUploader.EnableImageFilter">
+            <summary>
+            设置图片过滤器是否生效。默认为 false;
+            </summary>
+        </member>
+        <member name="T:Common.Net.Ping">
+            <summary>
+            <para>网络连通测试工具.</para>
+            </summary>
+        </member>
+        <member name="M:Common.Net.Ping.Send(System.String,System.Int32)">
+            <summary>
+            <para>发送数据包到指定的远程计算机上.</para>
+            </summary>
+            <param name="HostNameOrIPAddress">远程计算机的主机名或IP地址.</param>
+            <param name="Timeout">一个 System.Int32 值，指定(发送回送消息后)等待 ICMP 回送答复消息的最大毫秒数。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.RandomCode.RandomCodeGenerator.Create">
+            <summary>
+            Randomly creates a password.
+            </summary>
+            <returns>A random string of characters.</returns>
+        </member>
+        <member name="M:Common.RandomCode.RandomCodeGenerator.getCharacterTypes">
+            <summary>
+            Determines which character types should be used to generate
+            the current password.
+            </summary>
+            <returns>A string[] of character that should be used to generate the current password.</returns>
+        </member>
+        <member name="M:Common.RandomCode.RandomCodeGenerator.getCharacter">
+            <summary>
+            Randomly determines a character type to return from the 
+            available CharacterType enum.
+            </summary>
+            <returns>The string character to append to the password.</returns>
+        </member>
+        <member name="T:Common.DBUtility.SqlHelper">
+            <summary>
+            The SqlHelper class is intended to encapsulate high performance, 
+            scalable best practices for common uses of SqlClient.
+            </summary>
+        </member>
+        <member name="M:Common.DBUtility.SqlHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a SqlConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.SqlHelper.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against an existing database connection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="conn">an existing database connection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.SqlHelper.ExecuteNonQuery(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) using an existing SQL Transaction 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="trans">an existing sql transaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.SqlHelper.ExecuteReader(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand that returns a resultset against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             SqlDataReader r = ExecuteReader(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a SqlConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>A SqlDataReader containing the results</returns>
+        </member>
+        <member name="M:Common.DBUtility.SqlHelper.ExecuteScalar(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand that returns the first column of the first record against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a SqlConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>An object that should be converted to the expected type using Convert.To{Type}</returns>
+        </member>
+        <member name="M:Common.DBUtility.SqlHelper.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand that returns the first column of the first record against an existing database connection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="conn">an existing database connection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>An object that should be converted to the expected type using Convert.To{Type}</returns>
+        </member>
+        <member name="M:Common.DBUtility.SqlHelper.CacheParameters(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            add parameter array to the cache
+            </summary>
+            <param name="cacheKey">Key to the parameter cache</param>
+            <param name="cmdParms">an array of SqlParamters to be cached</param>
+        </member>
+        <member name="M:Common.DBUtility.SqlHelper.GetCachedParameters(System.String)">
+            <summary>
+            Retrieve cached parameters
+            </summary>
+            <param name="cacheKey">key used to lookup parameters</param>
+            <returns>Cached SqlParamters array</returns>
+        </member>
+        <member name="M:Common.DBUtility.SqlHelper.PrepareCommand(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Prepare a command for execution
+            </summary>
+            <param name="cmd">SqlCommand object</param>
+            <param name="conn">SqlConnection object</param>
+            <param name="trans">SqlTransaction object</param>
+            <param name="cmdType">Cmd type e.g. stored procedure or text</param>
+            <param name="cmdText">Command text, e.g. Select * from Products</param>
+            <param name="cmdParms">SqlParameters to use in the command</param>
+        </member>
+        <member name="T:Common.RandomCode.EncryptType">
+            <summary>
+            验证码的加密类型, 其值是 SHA1 或是 MD5.
+            </summary>
+        </member>
+        <member name="T:Common.RandomCode.VerifyCode">
+            <summary>
+            VerifyCode 用于产生验证码.
+            </summary>
+        </member>
+        <member name="F:Common.RandomCode.VerifyCode.EncryptType">
+            <summary>
+            验证码加密类型,其值是 SHA1 或是 MD5, 默认值是 SHA1.
+            </summary>
+        </member>
+        <member name="F:Common.RandomCode.VerifyCode.Encrypt">
+            <summary>
+            验证码码是否需要加密, 默认值是 true, 需要加密.
+            </summary>
+        </member>
+        <member name="M:Common.RandomCode.VerifyCode.GenerateVerifyCode">
+            <summary>
+            获取随机校验码.
+            </summary>
+            <returns>返回校验码.</returns>
+        </member>
+        <member name="M:Common.RandomCode.VerifyCode.Save(System.Int32)">
+            <summary>
+            将随机产生的校验码存入网页的 Session 中.
+            </summary>
+            <param name="VerifyCode">随机产生的校验码.</param>
+        </member>
+        <member name="M:Common.RandomCode.VerifyCode.Verify(System.String)">
+            <summary>
+            校验用户输入的校验码是否与系统存于 Session 中的校验码相符.
+            </summary>
+            <param name="VerifyCode">用户输入的校验码.</param>
+            <returns>若相符的话,返回 true, 否则,返回 false.</returns>
+        </member>
+        <member name="P:Common.RandomCode.VerifyCode.VerifyCodeNumber">
+            <summary>
+            检验码数字.
+            </summary>
+        </member>
+        <member name="P:Common.RandomCode.VerifyCode.VerifyCodeMin">
+            <summary>
+            检验码最小值, 默认值是 0.
+            </summary>
+        </member>
+        <member name="P:Common.RandomCode.VerifyCode.VerifyCodeMax">
+            <summary>
+            检验码最大值, 默认值是 9999.
+            </summary>
+        </member>
+        <member name="P:Common.RandomCode.VerifyCode.Name">
+            <summary>
+            检验码名称,主要用于作 Session 名称, 默认值是 VerifyCode.
+            </summary>
+        </member>
+        <member name="T:Common.Gender">
+            <summary>
+            性别的三态表示
+            </summary>
+        </member>
+        <member name="T:Common.DBUtility.OracleHelper">
+            <summary>
+            A helper class used to execute queries against an Oracle database
+            </summary>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute a database query which does not include a select
+            </summary>
+            <param name="connString">Connection string to database</param>
+            <param name="cmdType">Command type either stored procedure or SQL</param>
+            <param name="cmdText">Acutall SQL Command</param>
+            <param name="commandParameters">Parameters to bind to the command</param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.ExecuteNonQuery(System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand (that returns no resultset) against an existing database transaction 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="trans">an existing database transaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.ExecuteNonQuery(System.Data.OracleClient.OracleConnection,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand (that returns no resultset) against an existing database connection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="conn">an existing database connection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.ExecuteReader(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.ExecuteScalar(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand that returns the first column of the first record against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a SqlConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>An object that should be converted to the expected type using Convert.To{Type}</returns>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.ExecuteScalar(System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute	a OracleCommand (that returns a 1x1 resultset)	against	the	specified SqlTransaction
+            using the provided parameters.
+            </summary>
+            <param name="transaction">A	valid SqlTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name	or PL/SQL command</param>
+            <param name="commandParameters">An array of	OracleParamters used to execute the command</param>
+            <returns>An	object containing the value	in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.ExecuteScalar(System.Data.OracleClient.OracleConnection,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand that returns the first column of the first record against an existing database connection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Object obj = ExecuteScalar(conn, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="conn">an existing database connection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>An object that should be converted to the expected type using Convert.To{Type}</returns>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.CacheParameters(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Add a set of parameters to the cached
+            </summary>
+            <param name="cacheKey">Key value to look up the parameters</param>
+            <param name="commandParameters">Actual parameters to cached</param>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.GetCachedParameters(System.String)">
+            <summary>
+            Fetch parameters from the cache
+            </summary>
+            <param name="cacheKey">Key to look up the parameters</param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.PrepareCommand(System.Data.OracleClient.OracleCommand,System.Data.OracleClient.OracleConnection,System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Internal function to prepare a command for execution by the database
+            </summary>
+            <param name="cmd">Existing command object</param>
+            <param name="conn">Database connection object</param>
+            <param name="trans">Optional transaction object</param>
+            <param name="cmdType">Command type, e.g. stored procedure</param>
+            <param name="cmdText">Command test</param>
+            <param name="commandParameters">Parameters for the command</param>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.OraBit(System.Boolean)">
+            <summary>
+            Converter to use boolean data type with Oracle
+            </summary>
+            <param name="value">Value to convert</param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.DBUtility.OracleHelper.OraBool(System.String)">
+            <summary>
+            Converter to use boolean data type with Oracle
+            </summary>
+            <param name="value">Value to convert</param>
+            <returns></returns>
+        </member>
+        <member name="T:Common.DateUtil">
+            <summary>
+            DateUtil 关于日期的一些常用工具.
+            Final Update : 2005-09-25
+            
+            </summary>
+        </member>
+        <member name="M:Common.DateUtil.GetDaysOfYear(System.Int32)">
+            <summary>返回本年有多少天</summary>
+            <param name="iYear">年份</param>
+            <returns>本年的天数</returns>
+        </member>
+        <member name="M:Common.DateUtil.GetDaysOfYear(System.DateTime)">
+            <summary>本年有多少天</summary>
+            <param name="dt">日期</param>
+            <returns>本天在当年的天数</returns>
+        </member>
+        <member name="M:Common.DateUtil.GetDaysOfMonth(System.Int32,System.Int32)">
+            <summary>本月有多少天</summary>
+            <param name="iYear">年</param>
+            <param name="Month">月</param>
+            <returns>天数</returns>
+        </member>
+        <member name="M:Common.DateUtil.GetDaysOfMonth(System.DateTime)">
+            <summary>本月有多少天</summary>
+            <param name="dt">日期</param>
+            <returns>天数</returns>
+        </member>
+        <member name="M:Common.DateUtil.GetFirstDayOfMonth(System.Int32,System.Int32)">
+            <summary>
+            本月的第一天
+            </summary>
+            <param name="Year">年</param>
+            <param name="Month">月</param>
+            <returns>返回本月第一天的日期</returns>
+        </member>
+        <member name="M:Common.DateUtil.GetFirstDayOfMonth(System.DateTime)">
+            <summary>
+            本月的第一天
+            </summary>
+            <param name="dt">日期</param>
+            <returns>返回本月第一天的日期</returns>
+        </member>
+        <member name="M:Common.DateUtil.GetFinalDayOfMonth(System.Int32,System.Int32)">
+            <summary>
+            本月最后一天
+            </summary>
+            <param name="Year">年</param>
+            <param name="Month">月</param>
+            <returns>返回本月的最后一天的日期</returns>
+        </member>
+        <member name="M:Common.DateUtil.GetFinalDayOfMonth(System.DateTime)">
+            <summary>
+            本月最后一天
+            </summary>
+            <param name="dt">日期</param>
+            <returns>返回本月最后一天的日期</returns>
+        </member>
+        <member name="M:Common.DateUtil.GetWeekNameOfDay(System.DateTime)">
+            <summary>返回当前日期的星期名称</summary>
+            <param name="dt">日期</param>
+            <returns>星期名称</returns>
+        </member>
+        <member name="M:Common.DateUtil.GetWeekNameOfDay(System.String)">
+            <summary>
+            将英文的星期名称转换为中文星期名称
+            </summary>
+            <param name="day_of_week">英文星期名称</param>
+            <returns>中文星期名称</returns>
+        </member>
+        <member name="M:Common.DateUtil.GetWeekNumberOfDay(System.DateTime)">
+            <summary>返回当前日期的星期编号</summary>
+            <param name="dt">日期</param>
+            <returns>星期数字编号</returns>
+        </member>
+        <member name="M:Common.DateUtil.DiffDays(System.DateTime,System.DateTime)">
+            <summary>返回两个日期之间相差的天数</summary>
+            <param name="dt">两个日期参数</param>
+            <returns>天数</returns>
+            该函数好像未写完
+        </member>
+        <member name="M:Common.DateUtil.IsRuYear(System.DateTime)">
+            <summary>判断当前日期所属的年份是否是闰年，私有函数</summary>
+            <param name="dt">日期</param>
+            <returns>是闰年：True ，不是闰年：False</returns>
+        </member>
+        <member name="M:Common.DateUtil.IsRuYear(System.Int32)">
+            <summary>判断当前年份是否是闰年，私有函数</summary>
+            <param name="dt">年份</param>
+            <returns>是闰年：True ，不是闰年：False</returns>
+        </member>
+        <member name="M:Common.DateUtil.ConvertStringToDate(System.String)">
+            <summary>
+            将输入的字符串转化为日期。如果字符串的格式非法，则返回当前日期。
+            </summary>
+            <param name="strInput">输入字符串</param>
+            <returns>日期对象</returns>
+        </member>
+        <member name="M:Common.DateUtil.ConvertDateToString(System.DateTime,System.String)">
+            <summary>
+            将日期对象转化为格式字符串
+            </summary>
+            <param name="oDateTime">日期对象</param>
+            <param name="strFormat">
+               格式：
+                   "SHORTDATE"===短日期
+                   "LONGDATE"==长日期
+                   其它====自定义格式
+            </param>
+            <returns>日期字符串</returns>
+        </member>
+        <member name="M:Common.DateUtil.IsDateTime(System.String)">
+            <summary>
+            判断是否为合法日期，必须大于1800年1月1日
+            </summary>
+            <param name="strDate">输入日期字符串</param>
+            <returns>True/False</returns>
+        </member>
+        <member name="T:Common.DBUtility.SqlDataReaderHelper">
+            <summary>
+            操作 System.Data.SqlCient.SqlDataReader 类的辅助工具。
+            </summary>
+        </member>
+        <member name="M:Common.DBUtility.SqlDataReaderHelper.#ctor(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            用 SqlDataReader 对象，实例化本类。
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:Common.DBUtility.SqlDataReaderHelper.LoopReadToTable(System.Data.DataTable@)">
+            <summary>
+            <para>根据 DataReader 实例，生成 tableFormatted 各列，并循环</para>
+            <para>读取DataReader，将行数据填充到 tableFormated表格。</para>
+            </summary>
+            <param name="tableFormatted"></param>
+        </member>
+        <member name="P:Common.DBUtility.SqlDataReaderHelper.DataReader">
+            <summary>
+            要对其操作的 SqlDataReader 对象。
+            </summary>
+        </member>
+        <member name="T:Common.RandomCode.MachineKey">
+            <summary>
+            MachineKey 的摘要说明。
+            </summary>
+        </member>
+        <member name="M:Common.RandomCode.MachineKey.CreateMachineKey(System.Int32)">
+            <summary>
+            创建机器密钥.
+            </summary>
+            <param name="length">可以为16,64,128</param>
+            <returns></returns>
+        </member>
+        <member name="T:Common.Web.GraphicString">
+            <summary>
+            GraphicString 按指定的文字格式输出一幅文字图片,主要用于检验码的输出。
+            </summary>
+        </member>
+        <member name="M:Common.Web.GraphicString.InitBackGround">
+            <summary>
+            初始化图纸
+            </summary>
+        </member>
+        <member name="M:Common.Web.GraphicString.InitFont">
+            <summary>
+            初始化字体.
+            </summary>
+        </member>
+        <member name="M:Common.Web.GraphicString.DrawString">
+            <summary>
+            在图纸上按指定的文字格式画出文字.
+            </summary>
+            <returns>返回画好文字的图纸.</returns>
+        </member>
+        <member name="P:Common.Web.GraphicString.Width">
+            <summary>
+            图片宽度, 默认宽度为 100 像素.
+            </summary>
+        </member>
+        <member name="P:Common.Web.GraphicString.Height">
+            <summary>
+            图片高度, 高度为 30 像素.
+            </summary>
+        </member>
+        <member name="P:Common.Web.GraphicString.BackColor">
+            <summary>
+            背景颜色, 默认背景为白色.
+            </summary>
+        </member>
+        <member name="P:Common.Web.GraphicString.FontFamilyName">
+            <summary>
+            字样名称, 字体名称为 Arial.
+            </summary>
+        </member>
+        <member name="P:Common.Web.GraphicString.FontStyle">
+            <summary>
+            字体样式, 默认字体样形为 规则.
+            </summary>
+        </member>
+        <member name="P:Common.Web.GraphicString.FontSize">
+            <summary>
+            字号, 默认字号为 18.
+            </summary>
+        </member>
+        <member name="P:Common.Web.GraphicString.FontColor">
+            <summary>
+            字体颜色, 默认颜色为 黑色.
+            </summary>
+        </member>
+        <member name="T:Common.Finance">
+            <summary>
+            关于财务数字转化为中文大写的类。
+            </summary>
+        </member>
+        <member name="M:Common.Finance.ConvertToCn(System.Decimal)">
+            <summary>
+            <para>将财务数字转化为大写中文字符。</para>
+            <remarks>
+            <para>数值范围为 0 - 9999999999999.99，小数点前13位，小数点后2后。</para>
+            <para>负数不允许。</para>
+            </remarks>
+            <example>
+            <para>　　例如：将1234567.89转化为：壹佰贰拾叁万肆仟伍佰陆拾柒元捌角玖分。</para>
+            </example>
+            </summary>
+            <param name="num">待转化的财务数值。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.Finance.ConvertToCn(System.String)">
+            <summary>
+            <para>将财务数字转化为大写中文字符。</para>
+            <remarks>
+            <para>数值范围为 0 - 9999999999999.99，小数点前13位，小数点后2后。</para>
+            <para>负数不允许。</para>
+            </remarks>
+            <example>
+            <para>　　例如：将1234567.89转化为：壹佰贰拾叁万肆仟伍佰陆拾柒元捌角玖分。</para>
+            </example>
+            </summary>
+            <param name="num">待转化的字符串型财务数值。</param>
+            <returns></returns>
+        </member>
+        <member name="T:Common.DBUtility.SQLProcedure">
+            <summary>
+            协助执行存储过程的帮助类。
+            </summary>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.ExecuteNonQuery(System.String)">
+            <summary>
+            执行存储过程，仅返回是否成功标志
+            </summary>
+            <param name="Procedure">存储过程名</param>
+            <returns>是否成功标志</returns>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.ExecuteNonQuery">
+            <summary>
+            执行存储过程，仅返回是否成功标志
+            </summary>
+            <returns>是否成功标志</returns>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.ExecuteReader(System.String)">
+            <summary>
+            执行存储过程，返回SqlDataReader
+            </summary>
+            <param name="Procedure">存储过程名</param>
+            <returns>数据库读取行的只进流SqlDataReader</returns>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.ExecuteReader">
+            <summary>
+            执行存储过程，返回SqlDataReader
+            </summary>
+            <returns>数据库读取行的只进流SqlDataReader</returns>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.ExecuteAdapter(System.String)">
+            <summary>
+            执行存储过程，返回SqlDataAdapter
+            </summary>
+            <param name="Procedure">存储过程名</param>
+            <returns>SqlDataAdapter</returns>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.ExecuteAdapter">
+            <summary>
+            执行存储过程，返回SqlDataAdapter
+            </summary>
+            <returns>SqlDataAdapter</returns>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.GetOutputValue(System.String)">
+            <summary>
+            获取output的键值
+            </summary>
+            <param name="Output">output键名称</param>
+            <returns>output键值</returns>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.SetInputValue(System.String,System.Object)">
+            <summary>
+            设置Input参数值
+            </summary>
+            <param name="Key">参数名</param>
+            <param name="Value">参数值</param>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.GetInputValue(System.String)">
+            <summary>
+            获取已设置的Input参数值
+            注：存储过程被成功执行后, Input参数被清空
+            </summary>
+            <param name="Key">参数名</param>
+            <returns>参数值</returns>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.CloseSqlConnection">
+            <summary>
+            <para>关闭数据库连接。以避免瞬时大量消耗系统资源。</para>
+            <para></para>
+            <para>作者：Cobe lee</para>
+            <para>时间：2009-12-08</para>
+            </summary>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.Dispose">
+            <summary>
+            <para>释放由 SQLProcedure 占用的所有资源。</para>
+            <para></para>
+            <para>作者：Cobe lee</para>
+            <para>时间：2009-12-08</para>
+            </summary>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.Bindings">
+            <summary>
+            给SqlCommand对象绑定参数
+            </summary>
+            <returns>是否成功标志</returns>
+        </member>
+        <member name="M:Common.DBUtility.SQLProcedure.GetParameters">
+            <summary>
+            由存储过程名, 取包含参数的XmlReader
+            </summary>
+            <param name="Procedure">存储过程名</param>
+            <returns>包含参数的XmlReader</returns>
+        </member>
+        <member name="P:Common.DBUtility.SQLProcedure.LastError">
+            <summary>
+            获取 存储过程执行中的错误信息。
+            </summary>
+        </member>
+        <member name="P:Common.DBUtility.SQLProcedure.ReturnValue">
+            <summary>
+            获取 储存过程执行完毕后的返回值。
+            </summary>
+        </member>
+        <member name="P:Common.DBUtility.SQLProcedure.SqlConnection">
+            <summary>
+            获取 或 设置 SQL Server 数据库的连接。
+            </summary>
+        </member>
+        <member name="P:Common.DBUtility.SQLProcedure.Procedure">
+            <summary>
+            获取 或 设置 SQL Server 数据库的存储过程名称。
+            </summary>
+        </member>
+        <member name="P:Common.DBUtility.SQLProcedure.Parameters">
+            <summary>
+            获取存储过程参数的集合. System.Data.SqlClient.SqlParameterCollection
+            </summary>
+        </member>
+        <member name="T:Common.JScript">
+            <summary>
+            提供向页面输出客户端代码实现特殊功能的方法
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:Common.JScript.JscriptSender(System.Web.UI.Page)">
+            <summary>
+            向客户端发送函数KendoPostBack(eventTarget, eventArgument)
+            服务器端可接收__EVENTTARGET,__EVENTARGUMENT的值
+            </summary>
+            <param name="page">System.Web.UI.Page 一般为this</param>
+        </member>
+        <member name="M:Common.JScript.Alert(System.String)">
+            <summary>
+            弹出JavaScript小窗口
+            </summary>
+            <param name="js">窗口信息</param>
+        </member>
+        <member name="M:Common.JScript.GoHistory(System.Int32)">
+            <summary>
+            回到历史页面
+            </summary>
+            <param name="value">-1/1</param>
+        </member>
+        <member name="M:Common.JScript.CloseWindow">
+            <summary>
+            关闭当前窗口
+            </summary>
+        </member>
+        <member name="M:Common.JScript.RefreshParent">
+            <summary>
+            刷新父窗口
+            </summary>
+        </member>
+        <member name="M:Common.JScript.JSStringFormat(System.String)">
+            <summary>
+            格式化为JS可解释的字符串
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.JScript.RefreshOpener">
+            <summary>
+            刷新打开窗口
+            </summary>
+        </member>
+        <member name="M:Common.JScript.OpenWebForm(System.String)">
+            <summary>
+            打开窗口
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:Common.JScript.OpenWebForm(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            函数名:OpenWebForm	
+            功能描述:打开新Web窗口,去掉菜单栏、工具栏和标题栏,可以自定义窗口大小和位置.
+            处理流程:
+            算法描述:
+            作 者: 李峰
+            日 期: 2005-12-08
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+            <param name="url">新开窗口的页面指向地址.</param>
+            <param name="height">新开窗口的高.</param>
+            <param name="width">新开窗口的宽.</param>
+            <param name="top">新开窗口上端离屏幕上端像素点距.</param>
+            <param name="left">新开窗口左边离屏幕左边像素点距.</param>
+        </member>
+        <member name="M:Common.JScript.OpenWebForm(System.String,System.Boolean)">
+            <summary>		
+            函数名:OpenWebForm	
+            功能描述:打开WEB窗口	
+            处理流程:
+            算法描述:
+            作 者: 孙洪彪
+            日 期: 2003-04-29 17:00
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+            <param name="url">WEB窗口</param>
+            <param name="isFullScreen">是否全屏幕</param>
+        </member>
+        <member name="M:Common.JScript.OpenWebForm(System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            函数名:OpenWebForm	
+            功能描述:打开新Web窗口,去掉菜单栏、工具栏和标题栏,可以自定义窗口大小并使窗口上下居中.
+            处理流程:
+            算法描述:
+            作 者: 李峰
+            日 期: 2005-12-08
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+            <param name="url">新开窗口的页面指向地址.</param>
+            <param name="height">新开窗口的高.</param>
+            <param name="width">新开窗口的宽.</param>
+            <param name="isCenter">窗口上下居中</param>
+        </member>
+        <member name="M:Common.JScript.JavaScriptLocationHref(System.String)">
+            <summary>
+            转向Url制定的页面
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:Common.JScript.JavaScriptFrameHref(System.String,System.String)">
+            <summary>
+            指定的框架页面转换
+            </summary>
+            <param name="FrameName"></param>
+            <param name="url"></param>
+        </member>
+        <member name="M:Common.JScript.JavaScriptResetPage(System.String)">
+             <summary>
+            重置页面
+             </summary>
+        </member>
+        <member name="M:Common.JScript.JavaScriptSetCookie(System.String,System.String)">
+            <summary>
+            函数名:JavaScriptSetCookie
+            功能描述:客户端方法设置Cookie
+            作者:sxs
+            日期：2003-4-9
+            版本：1.0
+            </summary>
+            <param name="strName">Cookie名</param>
+            <param name="strValue">Cookie值</param>
+        </member>
+        <member name="M:Common.JScript.GotoParentWindow(System.String)">
+            <summary>		
+            函数名:GotoParentWindow	
+            功能描述:返回父窗口	
+            处理流程:
+            算法描述:
+            作 者: 孙洪彪
+            日 期: 2003-04-30 10:00
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+            <param name="parentWindowUrl">父窗口</param>		
+        </member>
+        <member name="M:Common.JScript.ReplaceParentWindow(System.String,System.String,System.String)">
+            <summary>		
+            函数名:ReplaceParentWindow	
+            功能描述:替换父窗口	
+            处理流程:
+            算法描述:
+            作 者: 孙洪彪
+            日 期: 2003-04-30 10:00
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+            <param name="parentWindowUrl">父窗口</param>
+            <param name="caption">窗口提示</param>
+            <param name="future">窗口特征参数</param>
+        </member>
+        <member name="M:Common.JScript.ReplaceOpenerWindow(System.String)">
+            <summary>		
+            函数名:ReplaceOpenerWindow	
+            功能描述:替换当前窗体的打开窗口	
+            处理流程:
+            算法描述:
+            作 者: 孙洪彪
+            日 期: 2003-04-30 16:00
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+            <param name="openerWindowUrl">当前窗体的打开窗口</param>		
+        </member>
+        <member name="M:Common.JScript.ReplaceOpenerParentFrame(System.String,System.String)">
+            <summary>		
+            函数名:ReplaceOpenerParentWindow	
+            功能描述:替换当前窗体的打开窗口的父窗口	
+            处理流程:
+            算法描述:
+            作 者: 孙洪彪
+            日 期: 2003-07-03 19:00
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+            <param name="openerWindowUrl">当前窗体的打开窗口的父窗口</param>		
+        </member>
+        <member name="M:Common.JScript.ReplaceOpenerParentWindow(System.String)">
+            <summary>		
+            函数名:ReplaceOpenerParentWindow	
+            功能描述:替换当前窗体的打开窗口的父窗口	
+            处理流程:
+            算法描述:
+            作 者: 孙洪彪
+            日 期: 2003-07-03 19:00
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+            <param name="openerWindowUrl">当前窗体的打开窗口的父窗口</param>		
+        </member>
+        <member name="M:Common.JScript.CloseParentWindow">
+            <summary>		
+            函数名:CloseParentWindow	
+            功能描述:关闭窗口	
+            处理流程:
+            算法描述:
+            作 者: 孙洪彪
+            日 期: 2003-04-30 16:00
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+        </member>
+        <member name="M:Common.JScript.ShowModalDialogJavascript(System.String)">
+            <summary>
+            函数名:ShowModalDialogJavascript	
+            功能描述:返回打开模式窗口的脚本	
+            处理流程:
+            算法描述:
+            作 者: 孙洪彪
+            日 期: 2003-04-30 15:00
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+            <param name="webFormUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.JScript.ShowModalDialogWindow(System.String)">
+            <summary>
+            函数名:ShowModalDialogWindow	
+            功能描述:打开模式窗口	
+            处理流程:
+            算法描述:
+            作 者: 孙洪彪
+            日 期: 2003-04-30 15:00
+            修 改:
+            日 期:
+            版 本:
+            </summary>
+            <param name="webFormUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Common.ChineseDate">
+            <summary>
+            关于中国农历历法的实用工具,有效年份从1901年---2050年
+            </summary>
+        </member>
+        <member name="M:Common.ChineseDate.GetConstellation">
+            <summary>
+            获取指定日期的星座序号 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Common.ChineseDate.GetConstellationName">
+            <summary>
+            <para>获取指定日期的星座名称.</para>
+            <example>指定日期8月19日，返回“狮子座”。</example>
+            </summary>
+            <returns>返回星座名称。</returns>
+        </member>
+        <member name="M:Common.ChineseDate.l_GetLunarHolDay">
+            <summary>
+            计算公历当天对应的节气 0-23，-1表示不是节气 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Common.ChineseDate.FormatMonth(System.UInt16,System.Boolean)">
+            <summary>
+            将数字月份转化为中文月份。
+            </summary>
+            <param name="iMonth"></param>
+            <param name="bLunar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.ChineseDate.FormatLunarDay(System.UInt16)">
+            <summary>
+            将农历数字型日期转换为中文农历表示。
+            如农历7号，表示为“初七”。
+            </summary>
+            <param name="iDay"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.ChineseDate.GetLeapMonth(System.UInt16)">
+            <summary>
+            返回阴历iLunarYear年的闰月月份，如没有返回0 
+            <para>　　适用时间范围：1901年1月---2050年12月。</para>
+            </summary>
+            <param name="iLunarYear"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.ChineseDate.LunarMonthDays(System.UInt16,System.UInt16)">
+            <summary>
+            <para>返回阴历iLunarYer年阴历iLunarMonth月的天数， </para>
+            <para>如果iLunarMonth为闰月，高字为第二个iLunarMonth月</para>
+            <para>的天数，否则高字为0 1901年1月---2050年12月 </para>
+            </summary>
+            <param name="iLunarYear">阴历年.</param>
+            <param name="iLunarMonth">阴历月.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.ChineseDate.LunarYearDays(System.UInt16)">
+            <summary>
+            <para>获取阴历iLunarYear年的总天数。</para>
+            <para>　　时间范围：1901年1月---2050年12月</para>
+            </summary>
+            <param name="iLunarYear">阴历年。</param>
+            <returns>阴历iLunarYear年的总天数。</returns>
+        </member>
+        <member name="M:Common.ChineseDate.l_CalcLunarDate(System.UInt16@,System.UInt16@,System.UInt16@,System.UInt32)">
+            <summary>
+            计算从1901年1月1日过iSpanDays天后的阴历日期 
+            </summary>
+            <param name="iYear"></param>
+            <param name="iMonth"></param>
+            <param name="iDay"></param>
+            <param name="iSpanDays"></param>
+        </member>
+        <member name="M:Common.ChineseDate.FormatLunarYear">
+            <summary>
+            将数字表示的年份，转化为天干记年法表示的字符串。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Common.JavaScript.JavaEffect">
+            <summary>
+            JavaEffect 关于Java 特效的类
+            </summary>
+        </member>
+        <member name="M:Common.JavaScript.JavaEffect.HtmlFollowCursor(System.String)">
+            <summary>
+            <para>将一串HTML代码添加到当前网页中，该代码显示的任何内容可以跟随光标一起运动.</para>
+            </summary>
+            <remarks>
+            作 者: 李峰
+            日 期: 2005-12-15
+            </remarks>
+            <param name="HtmlText">跟在光标后面的 HTML 代码,可以为任何HTML脚本,如文本或是图片等.</param>
+        </member>
+        <member name="T:Common.StringUtil">
+            <summary>
+            字符串操作工具集
+            </summary>
+        </member>
+        <member name="M:Common.StringUtil.Remove(System.String,System.String)">
+            <summary>
+            从字符串中的尾部删除指定的字符串
+            </summary>
+            <param name="sourceString"></param>
+            <param name="removedString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.StringUtil.RightSplit(System.String,System.Char)">
+            <summary>
+            获取拆分符右边的字符串
+            </summary>
+            <param name="sourceString"></param>
+            <param name="splitChar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.StringUtil.LeftSplit(System.String,System.Char)">
+            <summary>
+            获取拆分符左边的字符串
+            </summary>
+            <param name="sourceString"></param>
+            <param name="splitChar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.StringUtil.DelLastComma(System.String)">
+            <summary>
+            去掉最后一个逗号
+            </summary>
+            <param name="origin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.StringUtil.DeleteUnVisibleChar(System.String)">
+            <summary>
+            删除不可见字符
+            </summary>
+            <param name="sourceString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.StringUtil.GetArrayString(System.String[])">
+            <summary>
+            获取数组元素的合并字符串
+            </summary>
+            <param name="stringArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.StringUtil.GetStringCount(System.String[],System.String)">
+            <summary>
+            	获取某一字符串在字符串数组中出现的次数
+            </summary>
+            <param name="stringArray" type="string[]">
+                <para>
+                    
+                </para>
+            </param>
+            <param name="findString" type="string">
+                <para>
+                    
+                </para>
+            </param>
+            <returns>
+                A int value...
+            </returns>
+        </member>
+        <member name="M:Common.StringUtil.GetStringCount(System.String,System.String)">
+            <summary>
+                获取某一字符串在字符串中出现的次数
+            </summary>
+            <param name="stringArray" type="string">
+                <para>
+                    原字符串
+                </para>
+            </param>
+            <param name="findString" type="string">
+                <para>
+                    匹配字符串
+                </para>
+            </param>
+            <returns>
+                匹配字符串数量
+            </returns>
+        </member>
+        <member name="M:Common.StringUtil.GetSubString(System.String,System.String)">
+            <summary>
+            截取从startString开始到原字符串结尾的所有字符   
+            </summary>
+            <param name="sourceString" type="string">
+                <para>
+                    
+                </para>
+            </param>
+            <param name="startString" type="string">
+                <para>
+                    
+                </para>
+            </param>
+            <returns>
+                A string value...
+            </returns>
+        </member>
+        <member name="M:Common.StringUtil.GetByteCount(System.String)">
+            <summary>
+            按字节数取出字符串的长度
+            </summary>
+            <param name="strTmp">要计算的字符串</param>
+            <returns>字符串的字节数</returns>
+        </member>
+        <member name="M:Common.StringUtil.GetByteIndex(System.Int32,System.String)">
+            <summary>
+            按字节数要在字符串的位置
+            </summary>
+            <param name="intIns">字符串的位置</param>
+            <param name="strTmp">要计算的字符串</param>
+            <returns>字节的位置</returns>
+        </member>
+        <member name="M:Common.StringUtil.ExistSubString(System.String,System.String)">
+            <summary>
+            判断字符串中是否存在指定的字符串.
+            作者:李峰
+            创建时间:2006年06月02日
+            </summary>
+            <param name="Value">母字符串.</param>
+            <param name="SubString">指定的字符串.</param>
+            <returns>若存在返回 true,不存在返回 false.</returns>
+        </member>
+        <member name="T:Common.DBUtility.OleHelper">
+            <summary>
+            The OleDbHelper class is intended to encapsulate high performance, scalable best practices for 
+            common uses of OleDbClient.
+            </summary>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.AttachParameters(System.Data.OleDb.OleDbCommand,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            This method is used to attach array's of OleDbParameters to an OleDbCommand.
+            
+            This method will assign a value of DbNull to any parameter with a direction of
+            InputOutput and a value of null.  
+            
+            This behavior will prevent default values from being used, but
+            this will be the less common case than an intended pure output parameter (derived as InputOutput)
+            where the user provided no input value.
+            </summary>
+            <param name="command">The command to which the parameters will be added</param>
+            <param name="commandParameters">an array of OleDbParameters tho be added to command</param>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.AssignParameterValues(System.Data.OleDb.OleDbParameter[],System.Object[])">
+            <summary>
+            This method assigns an array of values to an array of OleDbParameters.
+            </summary>
+            <param name="commandParameters">array of OleDbParameters to be assigned values</param>
+            <param name="parameterValues">array of objects holding the values to be assigned</param>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.PrepareCommand(System.Data.OleDb.OleDbCommand,System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            This method opens (if necessary) and assigns a connection, transaction, command type and parameters 
+            to the provided command.
+            </summary>
+            <param name="command">the OleDbCommand to be prepared</param>
+            <param name="connection">a valid OleDbConnection, on which to execute this command</param>
+            <param name="transaction">a valid OleDbTransaction, or 'null'</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param> 
+            <param name="commandParameters">an array of OleDbParameters to be associated with the command or 'null' if no parameters are required</param>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute an OleDbCommand (that returns no resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="connectionString">a valid connection string for an OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>  
+            <returns>an int representing the number of rows affected by the command</returns>
+            
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute an OleDbCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>  
+            <param name="commandParameters">an array of OleDbParameters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteNonQuery(System.String,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via an OleDbCommand (that returns no resultset) against the database specified in 
+            the connection string using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             int result = ExecuteNonQuery(connString, "PublishOrders", 24, 36);
+            </remarks>
+            <param name="connectionString">a valid connection string for a OleDbConnection</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteNonQuery(System.Data.OleDb.OleDbConnection,System.String)">
+            <summary>
+            Execute an OleDbDbCommand (that returns no resultset and takes no parameters) against the provided OleDbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+            
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteNonQuery(System.Data.OleDb.OleDbConnection,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute an OleDbCommand (that returns no resultset) against the specified OleDbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>  
+            <param name="commandParameters">an array of OleDbParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteNonQuery(System.Data.OleDb.OleDbConnection,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via an OleDbCommand (that returns no resultset) against the specified OleDbConnection 
+            using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             int result = ExecuteNonQuery(conn, "PublishOrders", 24, 36);
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteNonQuery(System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute an OleDbCommand (that returns no resultset and takes no parameters) against the provided OleDbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "PublishOrders");
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>  
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteNonQuery(System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute an OleDbCommand (that returns no resultset) against the specified OleDbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "GetOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>  
+            <param name="commandParameters">an array of OleDbParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteNonQuery(System.Data.OleDb.OleDbTransaction,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via an OleDbCommand (that returns no resultset) against the specified 
+            OleDbTransaction using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             int result = ExecuteNonQuery(conn, trans, "PublishOrders", 24, 36);
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="spName">the name of the stored procedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteDataset(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connectionString">a valid connection string for an OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>  
+            <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteDataset(System.String,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for an OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param> 
+            <param name="commandParameters">an array of OleDbParamters used to execute the command</param>
+            <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteDataset(System.String,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via an OleDbCommand (that returns a resultset) against the database specified in 
+            the conneciton string using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             DataSet ds = ExecuteDataset(connString, "GetOrders", 24, 36);
+            </remarks>
+            <param name="connectionString">a valid connection string for an OleDbConnection</param>
+            <param name="spName">the name of the stored procedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteDataset(System.Data.OleDb.OleDbConnection,System.Data.CommandType,System.String)">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset and takes no parameters) against the provided OleDbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteDataset(System.Data.OleDb.OleDbConnection,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset) against the specified OleDbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param> 
+            <param name="commandParameters">an array of OleDbParamters used to execute the command</param>
+            <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteDataset(System.Data.OleDb.OleDbConnection,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via an OleDbCommand (that returns a resultset) against the specified OleDbConnection 
+            using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             DataSet ds = ExecuteDataset(conn, "GetOrders", 24, 36);
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteDataset(System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset and takes no parameters) against the provided OleDbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(trans, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param> 
+            <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteDataset(System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset) against the specified OleDbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             DataSet ds = ExecuteDataset(trans, CommandType.StoredProcedure, "GetOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param> 
+            <param name="commandParameters">an array of OleDbParamters used to execute the command</param>
+            <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteDataset(System.Data.OleDb.OleDbTransaction,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via an OleDbCommand (that returns a resultset) against the specified 
+            OleDbTransaction using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             DataSet ds = ExecuteDataset(trans, "GetOrders", 24, 36);
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteReader(System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[],Common.DBUtility.OleHelper.OleDbConnectionOwnership)">
+            <summary>
+            Create and prepare an OleDbCommand, and call ExecuteReader with the appropriate CommandBehavior.
+            </summary>
+            <remarks>
+            If we created and opened the connection, we want the connection to be closed when the DataReader is closed.
+            
+            If the caller provided the connection, we want to leave it to them to manage.
+            </remarks>
+            <param name="connection">a valid OleDbConnection, on which to execute this command</param>
+            <param name="transaction">a valid OleDbTransaction, or 'null'</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param> 
+            <param name="commandParameters">an array of OleDbParameters to be associated with the command or 'null' if no parameters are required</param>
+            <param name="connectionOwnership">indicates whether the connection parameter was provided by the caller, or created by OleDbHelper</param>
+            <returns>OleDbDataReader containing the results of the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteReader(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             OleDbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connectionString">a valid connection string for an OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>  
+            <returns>an OleDbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteReader(System.String,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             OleDbDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for an OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>  
+            <param name="commandParameters">an array of OleDbParameters used to execute the command</param>
+            <returns>an OleDbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteReader(System.String,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via an OleDbCommand (that returns a resultset) against the database specified in 
+            the connection string using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             OleDbDataReader dr = ExecuteReader(connString, "GetOrders", 24, 36);
+            </remarks>
+            <param name="connectionString">a valid connection string for an OleDbConnection</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>an OleDbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteReader(System.Data.OleDb.OleDbConnection,System.String)">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset and takes no parameters) against the provided OleDbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             OleDbDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <returns>an OleDbDataReader containing the resultset generated by the command</returns>
+            
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteReader(System.Data.OleDb.OleDbConnection,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset) against the specified OleDbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             OleDbDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>  
+            <param name="commandParameters">an array of OleDbParamters used to execute the command</param>
+            <returns>an OleDbDataReader containing the resultset generated by the command</returns>
+            
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteReader(System.Data.OleDb.OleDbConnection,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via an OleDbCommand (that returns a resultset) against the specified OleDbConnection 
+            using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             OleDbDataReader dr = ExecuteReader(conn, "GetOrders", 24, 36);
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="spName">the name of the stored procedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>an OleDbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteReader(System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset and takes no parameters) against the provided OleDbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             OleDbDataReader dr = ExecuteReader(trans, CommandType.StoredProcedure, "GetOrders");
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>  
+            <returns>an OleDbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteReader(System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute an OleDbCommand (that returns a resultset) against the specified OleDbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+              OleDbDataReader dr = ExecuteReader(trans, CommandType.StoredProcedure, "GetOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param> 
+            <param name="commandParameters">an array of OleDbParameters used to execute the command</param>
+            <returns>an OleDbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteReader(System.Data.OleDb.OleDbTransaction,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via an OleDbCommand (that returns a resultset) against the specified
+            OleDbTransaction using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             OleDbDataReader dr = ExecuteReader(trans, "GetOrders", 24, 36);
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>an OleDbDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteScalar(System.String,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a OleDbCommand (that returns a 1x1 resultset and takes no parameters) against the database specified in 
+            the connection string. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connectionString">a valid connection string for a OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-OleDb command</param>
+            <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteScalar(System.String,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute a OleDbCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-OleDb command</param>
+            <param name="commandParameters">an array of OleDbParamters used to execute the command</param>
+            <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteScalar(System.String,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via a OleDbCommand (that returns a 1x1 resultset) against the database specified in 
+            the conneciton string using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(connString, "GetOrderCount", 24, 36);
+            </remarks>
+            <param name="connectionString">a valid connection string for a OleDbConnection</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteScalar(System.Data.OleDb.OleDbConnection,System.String)">
+            <summary>
+            Execute a OleDbCommand (that returns a 1x1 resultset and takes no parameters) against the provided OleDbConnection. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-OleDb command</param>
+            <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+            
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteScalar(System.Data.OleDb.OleDbConnection,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute a OleDbCommand (that returns a 1x1 resultset) against the specified OleDbConnection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-OleDb command</param>
+            <param name="commandParameters">an array of OleDbParamters used to execute the command</param>
+            <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteScalar(System.Data.OleDb.OleDbConnection,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via a OleDbCommand (that returns a 1x1 resultset) against the specified OleDbConnection 
+            using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(conn, "GetOrderCount", 24, 36);
+            </remarks>
+            <param name="connection">a valid OleDbConnection</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteScalar(System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String)">
+            <summary>
+            Execute a OleDbCommand (that returns a 1x1 resultset and takes no parameters) against the provided OleDbTransaction. 
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(trans, CommandType.StoredProcedure, "GetOrderCount");
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-OleDb command</param>
+            <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteScalar(System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            Execute a OleDbCommand (that returns a 1x1 resultset) against the specified OleDbTransaction
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(trans, CommandType.StoredProcedure, "GetOrderCount", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-OleDb command</param>
+            <param name="commandParameters">an array of OleDbParamters used to execute the command</param>
+            <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleHelper.ExecuteScalar(System.Data.OleDb.OleDbTransaction,System.String,System.Object[])">
+            <summary>
+            Execute a stored procedure via a OleDbCommand (that returns a 1x1 resultset) against the specified
+            OleDbTransaction using the provided parameter values.  This method will query the database to discover the parameters for the 
+            stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+            </summary>
+            <remarks>
+            This method provides no access to output parameters or the stored procedure's return value parameter.
+            
+            e.g.:  
+             int orderCount = (int)ExecuteScalar(trans, "GetOrderCount", 24, 36);
+            </remarks>
+            <param name="transaction">a valid OleDbTransaction</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+            <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="T:Common.DBUtility.OleHelper.OleDbConnectionOwnership">
+            <summary>
+            this enum is used to indicate weather the connection was provided by the caller, or created by OleDbHelper, so that
+            we can set the appropriate CommandBehavior when calling ExecuteReader()
+            </summary>
+        </member>
+        <member name="F:Common.DBUtility.OleHelper.OleDbConnectionOwnership.Internal">
+            <summary>Connection is owned and managed by OleDbHelper</summary>
+        </member>
+        <member name="F:Common.DBUtility.OleHelper.OleDbConnectionOwnership.External">
+            <summary>Connection is owned and managed by the caller</summary>
+        </member>
+        <member name="T:Common.DBUtility.OleDbHelperParameterCache">
+            <summary>
+            OleDbHelperParameterCache provides functions to leverage a static cache of procedure parameters, and the
+            ability to discover parameters for stored procedures at run-time.
+            </summary>
+        </member>
+        <member name="M:Common.DBUtility.OleDbHelperParameterCache.DiscoverSpParameterSet(System.String,System.String,System.Boolean)">
+            <summary>
+            resolve at run-time the appropriate set of OleDbParameters for a stored procedure
+            </summary>
+            <param name="connectionString">a valid connection string for a OleDbConnection</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <param name="includeReturnValueParameter">weather or not to onclude ther return value parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.DBUtility.OleDbHelperParameterCache.CacheParameterSet(System.String,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            add parameter array to the cache
+            </summary>
+            <param name="connectionString">a valid connection string for an OleDbConnection</param>
+            <param name="commandText">the stored procedure name or T-OleDb command</param>
+            <param name="commandParameters">an array of OleDbParamters to be cached</param>
+        </member>
+        <member name="M:Common.DBUtility.OleDbHelperParameterCache.GetCachedParameterSet(System.String,System.String)">
+            <summary>
+            retrieve a parameter array from the cache
+            </summary>
+            <param name="connectionString">a valid connection string for a OleDbConnection</param>
+            <param name="commandText">the stored procedure name or T-OleDb command</param>
+            <returns>an array of OleDbParameters</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleDbHelperParameterCache.GetSpParameterSet(System.String,System.String)">
+            <summary>
+            Retrieves the set of OleDbParameters appropriate for the stored procedure
+            </summary>
+            <remarks>
+            This method will query the database for this information, and then store it in a cache for future requests.
+            </remarks>
+            <param name="connectionString">a valid connection string for a OleDbConnection</param>
+            <param name="spName">the name of the stored prcedure</param>
+            <returns>an array of OleDbParameters</returns>
+        </member>
+        <member name="M:Common.DBUtility.OleDbHelperParameterCache.GetSpParameterSet(System.String,System.String,System.Boolean)">
+            <summary>
+            Retrieves the set of OleDbParameters appropriate for the stored procedure
+            </summary>
+            <remarks>
+            This method will query the database for this information, and then store it in a cache for future requests.
+            </remarks>
+            <param name="connectionString">a valid connection string for an OleDbConnection</param>
+            <param name="spName">the name of the stored procedure</param>
+            <param name="includeReturnValueParameter">a bool value indicating weather the return value parameter should be included in the results</param>
+            <returns>an array of OleDbParameters</returns>
+        </member>
+    </members>
+</doc>
