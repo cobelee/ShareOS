@@ -90,6 +90,9 @@
                         <li>
                             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/UpdateEntrustedAgent.aspx">批量更新股东代理信息</asp:HyperLink>
                         </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Admin/Shareholder/ImportBankAccount.aspx">更新银行账户信息</asp:HyperLink>
+                        </li>
                     </ul>
                     <h1>报表导出
                     </h1>

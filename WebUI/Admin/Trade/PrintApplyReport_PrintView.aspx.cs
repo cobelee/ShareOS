@@ -49,7 +49,6 @@ public partial class Admin_Trade_PrintApplyReport_PrintView : System.Web.UI.Page
         string dataSourceName = reportPrinter.LocalReport.GetDataSourceNames()[0];
         DataTable tableSource = GetDataSource(hfShareholderNumbers.Value);
 
-
         reportPrinter.LocalReport.DataSources.Add(new ReportDataSource(dataSourceName, tableSource));
 
         //设置报表参数值。

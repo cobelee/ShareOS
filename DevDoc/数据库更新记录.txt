@@ -1,5 +1,9 @@
 ﻿新增记录，从上往下写
 
+2019.08.25
+在数据表Shareholder中，新增 AccountHolder 、 BankName 、 AccountNumber 三个字段
+
+--------------------------------------------
 2017.04.22 Select_Shares_Withdrawal_Report 存储过程增加IdentityCard,DepName字段       （已同步）
 --------------------------------------------
 

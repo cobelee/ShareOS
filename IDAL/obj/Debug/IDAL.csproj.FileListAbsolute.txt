@@ -35,3 +35,10 @@ D:\BaiduYun\dotnet4.0开发\ShareOS\IDAL\bin\Debug\ShareOS.Model.pdb
 D:\BaiduYun\dotnet4.0开发\ShareOS\IDAL\obj\Debug\IDAL.csprojResolveAssemblyReference.cache
 D:\BaiduYun\dotnet4.0开发\ShareOS\IDAL\obj\Debug\ShareOS.IDAL.dll
 D:\BaiduYun\dotnet4.0开发\ShareOS\IDAL\obj\Debug\ShareOS.IDAL.pdb
+D:\GithubRepoBank\ShareOS\IDAL\bin\Debug\ShareOS.IDAL.dll
+D:\GithubRepoBank\ShareOS\IDAL\bin\Debug\ShareOS.IDAL.pdb
+D:\GithubRepoBank\ShareOS\IDAL\bin\Debug\ShareOS.Model.dll
+D:\GithubRepoBank\ShareOS\IDAL\bin\Debug\ShareOS.Model.pdb
+D:\GithubRepoBank\ShareOS\IDAL\obj\Debug\IDAL.csprojResolveAssemblyReference.cache
+D:\GithubRepoBank\ShareOS\IDAL\obj\Debug\ShareOS.IDAL.dll
+D:\GithubRepoBank\ShareOS\IDAL\obj\Debug\ShareOS.IDAL.pdb

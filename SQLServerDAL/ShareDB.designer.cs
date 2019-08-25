@@ -866,6 +866,12 @@ namespace Tiyi.ShareOS.SQLServerDAL
 		
 		private string _DepName;
 		
+		private string _AccountHolder;
+		
+		private string _BankName;
+		
+		private string _AccountNumber;
+		
     #region 可扩展性方法定义
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -892,6 +898,12 @@ namespace Tiyi.ShareOS.SQLServerDAL
     partial void OnEntrustedAgentChanged();
     partial void OnDepNameChanging(string value);
     partial void OnDepNameChanged();
+    partial void OnAccountHolderChanging(string value);
+    partial void OnAccountHolderChanged();
+    partial void OnBankNameChanging(string value);
+    partial void OnBankNameChanged();
+    partial void OnAccountNumberChanging(string value);
+    partial void OnAccountNumberChanged();
     #endregion
 		
 		public Shareholder()
@@ -1115,6 +1127,66 @@ namespace Tiyi.ShareOS.SQLServerDAL
 					this._DepName = value;
 					this.SendPropertyChanged("DepName");
 					this.OnDepNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountHolder", DbType="NVarChar(32)")]
+		public string AccountHolder
+		{
+			get
+			{
+				return this._AccountHolder;
+			}
+			set
+			{
+				if ((this._AccountHolder != value))
+				{
+					this.OnAccountHolderChanging(value);
+					this.SendPropertyChanging();
+					this._AccountHolder = value;
+					this.SendPropertyChanged("AccountHolder");
+					this.OnAccountHolderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BankName", DbType="NVarChar(32)")]
+		public string BankName
+		{
+			get
+			{
+				return this._BankName;
+			}
+			set
+			{
+				if ((this._BankName != value))
+				{
+					this.OnBankNameChanging(value);
+					this.SendPropertyChanging();
+					this._BankName = value;
+					this.SendPropertyChanged("BankName");
+					this.OnBankNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountNumber", DbType="NVarChar(32)")]
+		public string AccountNumber
+		{
+			get
+			{
+				return this._AccountNumber;
+			}
+			set
+			{
+				if ((this._AccountNumber != value))
+				{
+					this.OnAccountNumberChanging(value);
+					this.SendPropertyChanging();
+					this._AccountNumber = value;
+					this.SendPropertyChanged("AccountNumber");
+					this.OnAccountNumberChanged();
 				}
 			}
 		}

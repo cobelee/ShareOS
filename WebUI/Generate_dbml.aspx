@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
         已生成的 dbml 文件请到 SQLServerDAL 项目所在的目录下查找！<br />
-        D:\BaiduYun\dotnet4.0开发\ShareOS\SQLServerDAL
+        D:\GithubRepoBank\ShareOS\SQLServerDAL\SQLServerDAL
     </div>
     </form>
 </body>

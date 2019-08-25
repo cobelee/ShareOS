@@ -21,7 +21,7 @@ public partial class Admin_Admin : System.Web.UI.MasterPage
             Load_Shares_Config();
 
             hlQuery.NavigateUrl = "~/Default.aspx";
-            hlAdmin.NavigateUrl = "~/Admin/ShareOwnershipList.aspx";
+            hlAdmin.NavigateUrl = "~/Admin/Trade/Open.aspx";
 
             hlChangeAgent.NavigateUrl = "~/Admin/ChangeAgent.aspx";
             hlChangeStatus.NavigateUrl = "~/Admin/LogoutShareholderStatus.aspx";

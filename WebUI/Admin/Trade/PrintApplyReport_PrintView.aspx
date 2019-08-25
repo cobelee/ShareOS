@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:HiddenField ID="hfShareholderNumbers" runat="server" Value="" />
-        <rsweb:ReportViewer ID="reportPrinter" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="800px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
+        <rsweb:ReportViewer ID="reportPrinter" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="900px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%" WaitControlDisplayAfter="10">
             <LocalReport ReportPath="RDLCFile\ReportShareApplication.rdlc">
             </LocalReport>
         </rsweb:ReportViewer>

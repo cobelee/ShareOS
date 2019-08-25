@@ -55,6 +55,9 @@
       <Column Name="Status" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
       <Column Name="EntrustedAgent" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DepName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="AccountHolder" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.ShareOwnership" Member="ShareOwnership">

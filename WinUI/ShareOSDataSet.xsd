@@ -28,6 +28,7 @@
               <xs:element name="ShareTotals" msprop:Generator_ColumnVarNameInTable="columnShareTotals" msprop:Generator_ColumnPropNameInRow="ShareTotals" msprop:Generator_ColumnPropNameInTable="ShareTotalsColumn" msprop:Generator_UserColumnName="ShareTotals" type="xs:string" minOccurs="0" />
               <xs:element name="BarCode" msprop:Generator_ColumnVarNameInTable="columnBarCode" msprop:Generator_ColumnPropNameInRow="BarCode" msprop:Generator_ColumnPropNameInTable="BarCodeColumn" msprop:Generator_UserColumnName="BarCode" type="xs:string" minOccurs="0" />
               <xs:element name="QichuShares" msprop:Generator_ColumnVarNameInTable="columnQichuShares" msprop:Generator_ColumnPropNameInRow="QichuShares" msprop:Generator_ColumnPropNameInTable="QichuSharesColumn" msprop:Generator_UserColumnName="QichuShares" type="xs:string" minOccurs="0" />
+              <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -71,7 +72,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ShareOwnershipStatistics" msprop:Generator_TableClassName="ShareOwnershipStatisticsDataTable" msprop:Generator_RowEvArgName="ShareOwnershipStatisticsRowChangeEvent" msprop:Generator_TableVarName="tableShareOwnershipStatistics" msprop:Generator_TablePropName="ShareOwnershipStatistics" msprop:Generator_RowDeletingName="ShareOwnershipStatisticsRowDeleting" msprop:Generator_RowChangingName="ShareOwnershipStatisticsRowChanging" msprop:Generator_RowDeletedName="ShareOwnershipStatisticsRowDeleted" msprop:Generator_RowEvHandlerName="ShareOwnershipStatisticsRowChangeEventHandler" msprop:Generator_RowChangedName="ShareOwnershipStatisticsRowChanged" msprop:Generator_UserTableName="ShareOwnershipStatistics" msprop:Generator_RowClassName="ShareOwnershipStatisticsRow">
+        <xs:element name="ShareOwnershipStatistics" msprop:Generator_TableClassName="ShareOwnershipStatisticsDataTable" msprop:Generator_RowEvArgName="ShareOwnershipStatisticsRowChangeEvent" msprop:Generator_TableVarName="tableShareOwnershipStatistics" msprop:Generator_TablePropName="ShareOwnershipStatistics" msprop:Generator_RowDeletingName="ShareOwnershipStatisticsRowDeleting" msprop:Generator_RowChangingName="ShareOwnershipStatisticsRowChanging" msprop:Generator_RowDeletedName="ShareOwnershipStatisticsRowDeleted" msprop:Generator_RowClassName="ShareOwnershipStatisticsRow" msprop:Generator_RowEvHandlerName="ShareOwnershipStatisticsRowChangeEventHandler" msprop:Generator_RowChangedName="ShareOwnershipStatisticsRowChanged" msprop:Generator_UserTableName="ShareOwnershipStatistics">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ShareholderNumber" msprop:Generator_ColumnVarNameInTable="columnShareholderNumber" msprop:Generator_ColumnPropNameInRow="ShareholderNumber" msprop:Generator_ColumnPropNameInTable="ShareholderNumberColumn" msprop:Generator_UserColumnName="ShareholderNumber" type="xs:string" minOccurs="0" />

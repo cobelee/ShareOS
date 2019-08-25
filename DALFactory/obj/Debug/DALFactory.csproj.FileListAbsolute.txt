@@ -45,3 +45,12 @@ D:\BaiduYun\dotnet4.0开发\ShareOS\DALFactory\bin\Debug\ShareOS.Model.pdb
 D:\BaiduYun\dotnet4.0开发\ShareOS\DALFactory\obj\Debug\DALFactory.csprojResolveAssemblyReference.cache
 D:\BaiduYun\dotnet4.0开发\ShareOS\DALFactory\obj\Debug\ShareOS.DALFactory.dll
 D:\BaiduYun\dotnet4.0开发\ShareOS\DALFactory\obj\Debug\ShareOS.DALFactory.pdb
+D:\GithubRepoBank\ShareOS\DALFactory\bin\Debug\ShareOS.DALFactory.dll
+D:\GithubRepoBank\ShareOS\DALFactory\bin\Debug\ShareOS.DALFactory.pdb
+D:\GithubRepoBank\ShareOS\DALFactory\bin\Debug\ShareOS.IDAL.dll
+D:\GithubRepoBank\ShareOS\DALFactory\bin\Debug\ShareOS.Model.dll
+D:\GithubRepoBank\ShareOS\DALFactory\bin\Debug\ShareOS.IDAL.pdb
+D:\GithubRepoBank\ShareOS\DALFactory\bin\Debug\ShareOS.Model.pdb
+D:\GithubRepoBank\ShareOS\DALFactory\obj\Debug\DALFactory.csprojResolveAssemblyReference.cache
+D:\GithubRepoBank\ShareOS\DALFactory\obj\Debug\ShareOS.DALFactory.dll
+D:\GithubRepoBank\ShareOS\DALFactory\obj\Debug\ShareOS.DALFactory.pdb

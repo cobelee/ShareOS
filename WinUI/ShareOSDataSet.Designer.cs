@@ -441,6 +441,8 @@ namespace WinUI {
             
             private global::System.Data.DataColumn columnQichuShares;
             
+            private global::System.Data.DataColumn columnDepartment;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ShareOwnershipInfoDataTable() {
@@ -564,6 +566,14 @@ namespace WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DepartmentColumn {
+                get {
+                    return this.columnDepartment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -599,7 +609,7 @@ namespace WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ShareOwnershipInfoRow AddShareOwnershipInfoRow(string ShareholderId, string ShareholderNumber, string JobNumber, string ShareholderName, string Sex, string PersonType, string EntrustedAgent, string EntrustedAgentName, string ShareTotals, string BarCode, string QichuShares) {
+            public ShareOwnershipInfoRow AddShareOwnershipInfoRow(string ShareholderId, string ShareholderNumber, string JobNumber, string ShareholderName, string Sex, string PersonType, string EntrustedAgent, string EntrustedAgentName, string ShareTotals, string BarCode, string QichuShares, string Department) {
                 ShareOwnershipInfoRow rowShareOwnershipInfoRow = ((ShareOwnershipInfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ShareholderId,
@@ -612,7 +622,8 @@ namespace WinUI {
                         EntrustedAgentName,
                         ShareTotals,
                         BarCode,
-                        QichuShares};
+                        QichuShares,
+                        Department};
                 rowShareOwnershipInfoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowShareOwnershipInfoRow);
                 return rowShareOwnershipInfoRow;
@@ -646,6 +657,7 @@ namespace WinUI {
                 this.columnShareTotals = base.Columns["ShareTotals"];
                 this.columnBarCode = base.Columns["BarCode"];
                 this.columnQichuShares = base.Columns["QichuShares"];
+                this.columnDepartment = base.Columns["Department"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -673,6 +685,8 @@ namespace WinUI {
                 base.Columns.Add(this.columnBarCode);
                 this.columnQichuShares = new global::System.Data.DataColumn("QichuShares", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQichuShares);
+                this.columnDepartment = new global::System.Data.DataColumn("Department", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartment);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2301,6 +2315,22 @@ namespace WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Department {
+                get {
+                    try {
+                        return ((string)(this[this.tableShareOwnershipInfo.DepartmentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“ShareOwnershipInfo”中列“Department”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableShareOwnershipInfo.DepartmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsShareholderIdNull() {
                 return this.IsNull(this.tableShareOwnershipInfo.ShareholderIdColumn);
             }
@@ -2429,6 +2459,18 @@ namespace WinUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetQichuSharesNull() {
                 this[this.tableShareOwnershipInfo.QichuSharesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDepartmentNull() {
+                return this.IsNull(this.tableShareOwnershipInfo.DepartmentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDepartmentNull() {
+                this[this.tableShareOwnershipInfo.DepartmentColumn] = global::System.Convert.DBNull;
             }
         }
         

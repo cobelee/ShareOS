@@ -24,3 +24,7 @@ D:\BaiduYun\dotnet4.0开发\ShareOS\Model\bin\Debug\ShareOS.Model.dll
 D:\BaiduYun\dotnet4.0开发\ShareOS\Model\bin\Debug\ShareOS.Model.pdb
 D:\BaiduYun\dotnet4.0开发\ShareOS\Model\obj\Debug\ShareOS.Model.dll
 D:\BaiduYun\dotnet4.0开发\ShareOS\Model\obj\Debug\ShareOS.Model.pdb
+D:\GithubRepoBank\ShareOS\Model\bin\Debug\ShareOS.Model.dll
+D:\GithubRepoBank\ShareOS\Model\bin\Debug\ShareOS.Model.pdb
+D:\GithubRepoBank\ShareOS\Model\obj\Debug\ShareOS.Model.dll
+D:\GithubRepoBank\ShareOS\Model\obj\Debug\ShareOS.Model.pdb
