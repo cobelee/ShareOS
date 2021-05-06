@@ -4,6 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" />
 <head runat="server">
     <title>无标题页</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,7 +14,7 @@
             <!--header -->
             <div id="header">
                 <div style="float: left; font-family: 微软雅黑;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;镇海石化工贸股权查询
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;非上市企业内部股权交易系统
                 </div>
                 <div id="header-links">
                     <div>
@@ -48,15 +50,18 @@
                             <asp:HyperLink ID="hlPrintClearing" runat="server" NavigateUrl="~/Admin/Trade/PrintClearingReport.aspx">第五步：打印股权清退报告</asp:HyperLink>
                         </li>
                         <li>
-                            <asp:HyperLink ID="hlCreateShareholder" runat="server" NavigateUrl="~/Admin/CreateShareholder.aspx">创建新股东</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Admin/Trade/DataCollection.aspx">第六步：股权转让受让数据采集表</asp:HyperLink>
                         </li>
-                        <li>
-                            <asp:HyperLink ID="hlChangeAgent" runat="server">变更股东代理人</asp:HyperLink></li>
-                        <li>
-                            <asp:HyperLink ID="hlChangeStatus" runat="server">注销股东身份</asp:HyperLink></li>
+
+
                         <li>
                             <asp:HyperLink ID="hlPrintBSL" runat="server" NavigateUrl="~/Admin/Trade/PrintBSLogReport.aspx">批量打印股权变动报告</asp:HyperLink>
                         </li>
+                    </ul>
+                    <h1>股权清退管理</h1>
+                    <ul class="sidemenu">
+                        <li>
+                            <asp:HyperLink ID="hlExportWithdrawReport" runat="server" NavigateUrl="~/Admin/ShareOwnershipWithdrawal.aspx">导出退出人员汇总报表</asp:HyperLink></li>
                     </ul>
                     <h1>股权查询</h1>
                     <ul class="sidemenu">
@@ -65,8 +70,6 @@
 
                         <li>
                             <asp:HyperLink ID="hlShareOwershipAll" runat="server" NavigateUrl="~/Admin/ShareOwnershipListAll.aspx">所有股东股权</asp:HyperLink></li>
-                        <li>
-                            <asp:HyperLink ID="hlShareholdersInfo" runat="server" NavigateUrl="~/Admin/ShareholderInfo.aspx">所有股东信息</asp:HyperLink></li>
                         <li>
                             <asp:HyperLink ID="hlMonitorPlatform" runat="server" NavigateUrl="~/Admin/MonitorPlatform.aspx">公司股权统计信息</asp:HyperLink>
                         </li>
@@ -80,25 +83,46 @@
                         <li>
                             <asp:HyperLink ID="hl" runat="server" NavigateUrl="~/Admin/Agency/SO_Sum.aspx">所有代理人名下股权统计</asp:HyperLink>
                         </li>
+                        <li>
+                            <asp:HyperLink ID="hlChangeAgent" runat="server">变更股东代理人</asp:HyperLink></li>
+                    </ul>
+                    <h1>股东管理</h1>
+                    <ul class="sidemenu">
+                        <li>
+                            <asp:HyperLink ID="hlCreateShareholder" runat="server" NavigateUrl="~/Admin/CreateShareholder.aspx">创建新股东</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Admin/Shareholder/ShareholderList.aspx">股东信息维护</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="hlLogOffIdentity" runat="server">注销股东身份</asp:HyperLink></li>
                     </ul>
                     <h1>数据导入
                     </h1>
                     <ul class="sidemenu">
                         <li>
-                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/ImportShareChanges.aspx">导入股权变动数据</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/ImportShareChanges.aspx">批量导入股权变动数据</asp:HyperLink>
                         </li>
                         <li>
                             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/UpdateEntrustedAgent.aspx">批量更新股东代理信息</asp:HyperLink>
                         </li>
                         <li>
-                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Admin/Shareholder/ImportBankAccount.aspx">更新银行账户信息</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Admin/Shareholder/ImportBankAccount.aspx">批量更新银行账户信息</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Admin/SyncDepName.aspx">同步股东部门信息</asp:HyperLink>
                         </li>
                     </ul>
-                    <h1>报表导出
-                    </h1>
+                    <h1>财务结算</h1>
                     <ul class="sidemenu">
                         <li>
-                            <asp:HyperLink ID="hlExportWithdrawReport" runat="server" NavigateUrl="~/Admin/ShareOwnershipWithdrawal.aspx">导出退出人员汇总报表</asp:HyperLink></li>
+                            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Admin/Finance/YearlySettlement.aspx">在职股东年度结算</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/Admin/Finance/Clearing.aspx">退休离职人员清算</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Admin/Finance/BankPaymentSlip.aspx">导出银行转账清单</asp:HyperLink>
+                        </li>
                     </ul>
                     <h1>当前股价</h1>
                     <p>
@@ -109,8 +133,10 @@
                     <!-- sidebar ends -->
                 </div>
                 <div id="main">
+
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
+
                 </div>
                 <!-- content-wrap ends-->
             </div>
@@ -118,7 +144,7 @@
             <div id="footer-wrap">
                 <div id="footer">
                     <p>
-                        &copy; 2010-2019 <strong>ZPITC</strong> | 镇海石化工业贸易有限责任公司董事会办公室
+                        &copy; 2010-2021 <strong>ZPITC</strong> | 镇海石化工业贸易有限责任公司董事会办公室
                     </p>
                 </div>
             </div>

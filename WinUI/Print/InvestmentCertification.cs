@@ -6,14 +6,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using Tiyi.ShareOS;
+using System.Linq;
 
 namespace WinUI.Print
 {
     public partial class InvestmentCertification : Form
     {
         ShareOS.BLL.ShareOwnershipManage bll_som = new ShareOS.BLL.ShareOwnershipManage();
-        ShareOS.BLL.SharesBonusManage bll_bonus = new ShareOS.BLL.SharesBonusManage();
-        PMS.BLL.Personnel bll_Person = new PMS.BLL.Personnel();
+        ShareOS.BLL.ShareIssueManage bll_Issue = new ShareOS.BLL.ShareIssueManage();
         ReportPrinter reportPrinter;
 
         public InvestmentCertification()
@@ -25,7 +26,14 @@ namespace WinUI.Print
         {
             cbbIssueNumber_DataBind();
             if (cbbIssueNumber.Items.Count > 0)
+            {
                 cbbIssueNumber.SelectedIndex = 0;
+                int issueNumber = Convert.ToInt32(cbbIssueNumber.SelectedItem);
+                var config = bll_Issue.GetIssueConfig(issueNumber);
+                lbIssue.Text = config.DisplayText;
+            }
+
+
         }
 
         /// <summary>
@@ -33,12 +41,13 @@ namespace WinUI.Print
         /// </summary>
         private void cbbIssueNumber_DataBind()
         {
-            int currentIssueNumber = 0;
-            currentIssueNumber = bll_bonus.GetLastIssueNumber();
+            var issues = bll_Issue.GetAllIssueConfigs();
+            issues = issues.OrderByDescending(a => a.IssueNumber);
             cbbIssueNumber.Items.Clear();
-            for (int i = currentIssueNumber; i >= 0; i--)
+
+            foreach (var issue in issues)
             {
-                cbbIssueNumber.Items.Add(i);
+                cbbIssueNumber.Items.Add(issue.IssueNumber);
             }
         }
 
@@ -49,13 +58,25 @@ namespace WinUI.Print
 
         private void cbHideBonus_CheckedChanged(object sender, EventArgs e)
         {
-            Load_Data();
+            DataView dv = dgvShareholder.DataSource as DataView;
+            if (cbHideBonus.Checked)
+            {
+                dv.RowFilter = "ShareTotals>0";
+            }
+            else
+            {
+                dv.RowFilter = "";
+            }
+
         }
 
         protected void Load_Data()
         {
             int currentIssueNumber = 0;
-            currentIssueNumber = Convert.ToInt32(cbbIssueNumber.SelectedItem);
+
+            currentIssueNumber = (int)cbbIssueNumber.SelectedItem;
+            var config = bll_Issue.GetIssueConfig(currentIssueNumber);
+            lbIssue.Text = config.DisplayText;
             DataTable dtShareOwnershipChange = bll_som.GetShareOwnershipChange(currentIssueNumber);
             DataTable newTable = dtShareOwnershipChange.Copy();
             if (cbHideBonus.Checked)
@@ -63,24 +84,9 @@ namespace WinUI.Print
                 newTable = RemoveHongguAllSelled(dtShareOwnershipChange);
             }
 
-            AddDepartmentColumn(newTable);
-
             DataView dvShareOwnershipChange = newTable.DefaultView;
 
             dgvShareholder.DataSource = dvShareOwnershipChange;
-        }
-
-        //添加一个单位字段到数据表
-        protected void AddDepartmentColumn(DataTable tableReport)
-        {
-            DataColumn col = new DataColumn("Department", typeof(string));
-            tableReport.Columns.Add(col);
-            foreach (DataRow row in tableReport.Rows)
-            {
-                string jobNumber = Convert.ToString(row["JobNumber"]);
-
-                row["Department"] = bll_Person.GetPersonInfoByJobNumber(jobNumber).Department;
-            }
         }
 
         /// <summary>
@@ -142,7 +148,7 @@ namespace WinUI.Print
             foreach (DataGridViewRow row in dgvShareholder.SelectedRows)
             {
                 DataRow newrow = tableTarget.NewRow();
-                for (int i = 0; i < row.Cells.Count - 1; i++)
+                for (int i = 0; i < row.Cells.Count; i++)
                 {
                     newrow[i] = row.Cells[i].Value;
                 }
@@ -152,11 +158,12 @@ namespace WinUI.Print
             reportPrinter.LocalReport.DataSources.Add(new ReportDataSource(reportDataSourceName0, tableTarget));
 
             //设置报表参数值。
-            ReportParameter[] parameters = new ReportParameter[3];
+            ReportParameter[] parameters = new ReportParameter[4];
             parameters[0] = new ReportParameter("PARM_CompanyName", Properties.Settings.Default.CompanyName);
             parameters[1] = new ReportParameter("PARM_IssueNumber", cbbIssueNumber.SelectedItem.ToString());
-            ShareOS.Model.SharesIssueConfig config = bll_bonus.SelectConfig(Convert.ToInt32(cbbIssueNumber.SelectedItem));
+            var config = bll_Issue.GetIssueConfig(Convert.ToInt32(cbbIssueNumber.SelectedItem));
             parameters[2] = new ReportParameter("PARM_SharePrice", config.SharePrice.ToString());
+            parameters[3] = new ReportParameter("PARM_IssueYear", config.IssueYear.ToString());
 
             report.SetParameters(parameters);
         }
@@ -177,9 +184,13 @@ namespace WinUI.Print
         private void btnSort_Click(object sender, EventArgs e)
         {
             DataView dv = dgvShareholder.DataSource as DataView;
-            dv.Sort = "EntrustedAgentName,Department";
+            dv.Sort = "EntrustedAgentName,DepName";
         }
 
-
+        private void btnSortDep_Click(object sender, EventArgs e)
+        {
+            DataView dv = dgvShareholder.DataSource as DataView;
+            dv.Sort = "DepName,EntrustedAgentName";
+        }
     }
 }

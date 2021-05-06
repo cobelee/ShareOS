@@ -15,7 +15,6 @@ public partial class EntrustedAgent_ShareOwnershipList : System.Web.UI.Page
     ShareOS.BLL.EntrustedAgent bll_ea = new ShareOS.BLL.EntrustedAgent();
     ShareOS.BLL.ShareholderRegister bll_sr = new ShareOS.BLL.ShareholderRegister();
     ShareOS.BLL.ShareOwnershipManage bll_som = new ShareOS.BLL.ShareOwnershipManage();
-    Tiyi.PMS.PersonnelRoll ws_person = new Tiyi.PMS.PersonnelRoll();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -90,16 +89,5 @@ public partial class EntrustedAgent_ShareOwnershipList : System.Web.UI.Page
         return sum;
     }
 
-    protected string GetOtherMessage(string jobNumber)
-    {
-        System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
-        Tiyi.PMS.Personnel person = ws_person.GetPersonnelByJobNumber(jobNumber);
-        sb.Append("身份证号：");
-        sb.AppendLine(person.Individual.IdentityCard);
-        sb.AppendLine("<br />");
-        sb.Append("家庭地址：");
-        sb.AppendLine(person.Address.NativePlace);
-        return sb.ToString();
-    }
 }

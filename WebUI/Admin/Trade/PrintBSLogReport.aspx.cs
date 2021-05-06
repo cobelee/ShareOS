@@ -11,7 +11,7 @@ public partial class Admin_SyncDepName : System.Web.UI.Page
     ShareOS.BLL.ShareOwnershipManage bll_Shares = new ShareOS.BLL.ShareOwnershipManage();
     ShareOS.BLL.ShareIssueManage bll_Issue = new ShareOS.BLL.ShareIssueManage();
     ShareOS.BLL.ShareholderManage bll_shareholder = new ShareOS.BLL.ShareholderManage();
-
+    Tiyi.MyDesktop.BLL.DepManage bll_dep = new Tiyi.MyDesktop.BLL.DepManage();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -40,12 +40,11 @@ public partial class Admin_SyncDepName : System.Web.UI.Page
 
     private void Load_DepName()
     {
-        Tiyi.PMS.Organization bll_org = new Tiyi.PMS.Organization();
-        Tiyi.PMS.Department[] deps = bll_org.GetDepartments();
+        var deps = bll_dep.GetDep();
         ddlDep.Items.Clear();
-        foreach (Tiyi.PMS.Department dep in deps)
+        foreach (var dep in deps)
         {
-            ddlDep.Items.Add(dep.Name);
+            ddlDep.Items.Add(dep.DepName);
         }
         ddlDep.Items.Insert(0, "--所有部门--");
         ddlDep.SelectedIndex = 0;

@@ -70,3 +70,4 @@ D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Debug\ShareOS.Model.pdb
 D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Debug\Common.xml
 D:\GithubRepoBank\ShareOS\SQLServerDAL\obj\Debug\ShareOS.SQLServerDAL.dll
 D:\GithubRepoBank\ShareOS\SQLServerDAL\obj\Debug\ShareOS.SQLServerDAL.pdb
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Debug\Common.pdb

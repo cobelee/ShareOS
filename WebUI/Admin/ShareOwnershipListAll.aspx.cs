@@ -28,7 +28,7 @@ public partial class Admin_ShareOwnershipListAll : System.Web.UI.Page
         foreach (GridViewRow row in gvShareOwnership.Rows)
         {
             decimal shareTotals = 0m;
-            decimal.TryParse(row.Cells[6].Text, out shareTotals);
+            decimal.TryParse(row.Cells[8].Text, out shareTotals);
             sum += shareTotals;
         }
         return sum;

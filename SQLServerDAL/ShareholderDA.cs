@@ -1,11 +1,11 @@
-﻿  using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Tiyi.ShareOS.SQLServerDAL
 {
-    public class ShareholderDA
+    public class ShareholderDA : IDisposable
     {
         ShareDataContext dbContext = new ShareDataContext(Tiyi.ShareOS.SQLServerDAL.Connection.GetConnectionString());
 
@@ -26,6 +26,14 @@ namespace Tiyi.ShareOS.SQLServerDAL
         ~ShareholderDA()
         {
             this.Dispose();
+        }
+
+        /// <summary>
+        /// 提交以使数据库更改生效。
+        /// </summary>
+        public void Submit()
+        {
+            dbContext.SubmitChanges();
         }
 
         ///// <summary>
@@ -69,7 +77,7 @@ namespace Tiyi.ShareOS.SQLServerDAL
         public Tiyi.ShareOS.SQLServerDAL.Shareholder SelectShareholder(int shareholderNumber)
         {
             var query = from item in dbContext.Shareholder
-                        where item.ShareholderNumber == shareholderNumber && item.Status == "股东"
+                        where item.ShareholderNumber == shareholderNumber
                         select item;
             return query.FirstOrDefault();
         }
@@ -82,7 +90,7 @@ namespace Tiyi.ShareOS.SQLServerDAL
         public Tiyi.ShareOS.SQLServerDAL.Shareholder SelectShareholder(string jobNumber)
         {
             var query = from item in dbContext.Shareholder
-                        where item.JobNumber == jobNumber && item.Status == "股东"
+                        where item.JobNumber == jobNumber
                         select item;
             return query.FirstOrDefault();
         }
@@ -94,34 +102,10 @@ namespace Tiyi.ShareOS.SQLServerDAL
         public IQueryable<Tiyi.ShareOS.SQLServerDAL.Shareholder> SelectShareholder()
         {
             var query = from item in dbContext.Shareholder
-                        where item.Status == "股东"
+                        where item.Status == "股东" || item.Status == "待退股东"
                         select item;
-            return query.AsQueryable<Tiyi.ShareOS.SQLServerDAL.Shareholder>();
+            return query;
         }
-
-        ///// <summary>
-        ///// 获取所有银行对象。
-        ///// </summary>
-        ///// <returns></returns>
-        //public IQueryable<Bank> GetBank()
-        //{
-        //    var query = from m in dbContext.Bank
-        //                select m;
-        //    return query.AsQueryable<Bank>();
-        //}
-
-        ///// <summary>
-        ///// 根据银行编号获取仓库对象。
-        ///// </summary>
-        ///// <param name="bankId">银行编号。</param>
-        ///// <returns></returns>
-        //public Bank GetBank(int bankId)
-        //{
-        //    var query = from m in dbContext.Bank
-        //                where m.BankId == bankId
-        //                select m;
-        //    return query.FirstOrDefault<Bank>();
-        //}
 
 
         /// <summary>
@@ -132,6 +116,22 @@ namespace Tiyi.ShareOS.SQLServerDAL
         {
             if (shareHolders != null && shareHolders.Count() > 0)
                 dbContext.SubmitChanges();
+        }
+
+        /// <summary>
+        /// 更新股东银行账户信息
+        /// </summary>
+        /// <param name="shareholder"></param>
+        public void Update(Tiyi.ShareOS.SQLServerDAL.Shareholder shareholder)
+        {
+            var gd = SelectShareholder(shareholder.ShareholderNumber);
+            if (gd == null)
+                return;
+
+            gd.AccountHolder = shareholder.AccountHolder;
+            gd.BankName = shareholder.BankName;
+            gd.AccountNumber = shareholder.AccountNumber;
+            dbContext.SubmitChanges();
         }
 
         ///// <summary>

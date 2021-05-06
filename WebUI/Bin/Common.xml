@@ -4,6 +4,56 @@
         <name>Common</name>
     </assembly>
     <members>
+        <member name="T:Common.Web.FileUploader">
+            <summary>
+            文件上传控件 FileUploader ，可识别图片文件。
+            </summary>
+        </member>
+        <member name="M:Common.Web.FileUploader.Upload(System.Web.HttpPostedFile)">
+            <summary>
+            <para>上传一个文件到指定的文件夹。</para>
+            <para>保存路径由 SaveFilePath 属性指定。</para>
+            <para>返回的是已保存后的文件路径及文件名。</para>
+            </summary>
+            <param name="postedFile">上传的 System.Web.HttpPostedFile 类型的文件.</param>
+            <returns>若保存成功,返回保存文件的路径名,若不成功,返回空字符串.</returns>
+        </member>
+        <member name="M:Common.Web.FileUploader.Save(System.Web.HttpPostedFile)">
+            <summary>
+            保存一个文件到指定的文件夹.
+            </summary>
+            <param name="postedFile">上传的 System.Web.HttpPostedFile 类型的文件.</param>
+            <returns>若保存成功,返回保存文件的路径名,若不成功,返回空字符串.</returns>
+        </member>
+        <member name="M:Common.Web.FileUploader.Delete(System.String,System.String,System.Int32)">
+            <summary>
+            <para>删除指定目录中的文档。</para>
+            <para>说明：searchPattern 指定查找文档类型，格式如： *.jpg </para>
+            <para>　　　dayBeforeNow ，指定删除几天前的文档。</para>
+            </summary>
+            <param name="path">需要删除文件的绝对路径。</param>
+            <param name="searchPattern">根据文档格式设置查找的筛选条件。如：“*.doc”。</param>
+            <param name="daysBeforeNow">设置要删除的历史文档离距离今天的天数。</param>
+        </member>
+        <member name="M:Common.Web.FileUploader.Delete(System.String,System.Int32)">
+            <summary>
+            <para>删除上传目录中满足筛选条件的文档。</para>
+            <para>说明：searchPattern 指定筛选文档的格式，格式如： *.jpg </para>
+            <para>　　　dayBeforeNow ，指定要删除的历史文档离距离今天的天数。</para>
+            </summary>
+            <param name="searchPattern">根据文档格式设置查找的筛选条件。如：“*.doc”。</param>
+            <param name="daysBeforeNow">指定要删除的历史文档离距离今天的天数。</param>
+        </member>
+        <member name="P:Common.Web.FileUploader.UploadDir">
+            <summary>
+            文件保存的路径。磁盘物理路径。
+            </summary>
+        </member>
+        <member name="P:Common.Web.FileUploader.EnableImageFilter">
+            <summary>
+            设置图片过滤器是否生效。默认为 false;
+            </summary>
+        </member>
         <member name="T:Common.Net.Ping">
             <summary>
             <para>网络连通测试工具.</para>
@@ -707,6 +757,11 @@
         <member name="P:Common.DBUtility.SQLProcedure.Procedure">
             <summary>
             获取 或 设置 SQL Server 数据库的存储过程名称。
+            </summary>
+        </member>
+        <member name="P:Common.DBUtility.SQLProcedure.Parameters">
+            <summary>
+            获取存储过程参数的集合. System.Data.SqlClient.SqlParameterCollection
             </summary>
         </member>
         <member name="T:Common.JScript">
@@ -1852,56 +1907,6 @@
             <param name="spName">the name of the stored procedure</param>
             <param name="includeReturnValueParameter">a bool value indicating weather the return value parameter should be included in the results</param>
             <returns>an array of OleDbParameters</returns>
-        </member>
-        <member name="T:Common.Web.FileUploader">
-            <summary>
-            文件上传控件 FileUploader ，可识别图片文件。
-            </summary>
-        </member>
-        <member name="M:Common.Web.FileUploader.Upload(System.Web.HttpPostedFile)">
-            <summary>
-            <para>上传一个文件到指定的文件夹。</para>
-            <para>保存路径由 SaveFilePath 属性指定。</para>
-            <para>返回的是已保存后的文件路径及文件名。</para>
-            </summary>
-            <param name="postedFile">上传的 System.Web.HttpPostedFile 类型的文件.</param>
-            <returns>若保存成功,返回保存文件的路径名,若不成功,返回空字符串.</returns>
-        </member>
-        <member name="M:Common.Web.FileUploader.Save(System.Web.HttpPostedFile)">
-            <summary>
-            保存一个文件到指定的文件夹.
-            </summary>
-            <param name="postedFile">上传的 System.Web.HttpPostedFile 类型的文件.</param>
-            <returns>若保存成功,返回保存文件的路径名,若不成功,返回空字符串.</returns>
-        </member>
-        <member name="M:Common.Web.FileUploader.Delete(System.String,System.String,System.Int32)">
-            <summary>
-            <para>删除指定目录中的文档。</para>
-            <para>说明：searchPattern 指定查找文档类型，格式如： *.jpg </para>
-            <para>　　　dayBeforeNow ，指定删除几天前的文档。</para>
-            </summary>
-            <param name="path">需要删除文件的绝对路径。</param>
-            <param name="searchPattern">根据文档格式设置查找的筛选条件。如：“*.doc”。</param>
-            <param name="daysBeforeNow">设置要删除的历史文档离距离今天的天数。</param>
-        </member>
-        <member name="M:Common.Web.FileUploader.Delete(System.String,System.Int32)">
-            <summary>
-            <para>删除上传目录中满足筛选条件的文档。</para>
-            <para>说明：searchPattern 指定筛选文档的格式，格式如： *.jpg </para>
-            <para>　　　dayBeforeNow ，指定要删除的历史文档离距离今天的天数。</para>
-            </summary>
-            <param name="searchPattern">根据文档格式设置查找的筛选条件。如：“*.doc”。</param>
-            <param name="daysBeforeNow">指定要删除的历史文档离距离今天的天数。</param>
-        </member>
-        <member name="P:Common.Web.FileUploader.UploadDir">
-            <summary>
-            文件保存的路径。磁盘物理路径。
-            </summary>
-        </member>
-        <member name="P:Common.Web.FileUploader.EnableImageFilter">
-            <summary>
-            设置图片过滤器是否生效。默认为 false;
-            </summary>
         </member>
     </members>
 </doc>

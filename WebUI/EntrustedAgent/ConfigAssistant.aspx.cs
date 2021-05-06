@@ -9,7 +9,8 @@ public partial class EntrustedAgent_ConfigAssistant : System.Web.UI.Page
 {
     ShareOS.BLL.EntrustedAgent bll_ea = new ShareOS.BLL.EntrustedAgent();
     ShareOS.BLL.ShareholderRegister bll_sr = new ShareOS.BLL.ShareholderRegister();
-    Tiyi.PMS.PersonnelRoll bll_person = new Tiyi.PMS.PersonnelRoll();
+
+    Tiyi.MyDesktop.BLL.PersonManage bll_person = new Tiyi.MyDesktop.BLL.PersonManage();
 
 
     protected void Page_Load(object sender, EventArgs e)
@@ -62,7 +63,7 @@ public partial class EntrustedAgent_ConfigAssistant : System.Web.UI.Page
     {
         int agentShn;
         int.TryParse(hfAgentShareholderNumber.Value, out agentShn);
-        if (bll_person.ExistJobNumber(jobNumber))
+        if (bll_person.ExistPerson(jobNumber))
         {
             bll_ea.AssignAssistant(agentShn, jobNumber);
         }
@@ -71,7 +72,7 @@ public partial class EntrustedAgent_ConfigAssistant : System.Web.UI.Page
 
     public string GetName(string jobNumber)
     {
-        Tiyi.PMS.PersonInfo person = bll_person.GetPersonInfoByJobNumber(jobNumber);
+        var person = bll_person.GetPerson(jobNumber);
         return person.Name;
     }
 

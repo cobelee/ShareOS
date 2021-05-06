@@ -70,6 +70,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Microsoft Visual Studio 10.0\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="MyDesktop.BLL">
+      <HintPath>..\WebUI\ImportDLL\MyDesktop.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="MyDesktop.DALFactory">
+      <HintPath>..\WebUI\ImportDLL\MyDesktop.DALFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="MyDesktop.IDAL">
+      <HintPath>..\WebUI\ImportDLL\MyDesktop.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="MyDesktop.Model">
+      <HintPath>..\WebUI\ImportDLL\MyDesktop.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="MyDesktop.SQLServerDAL">
+      <HintPath>..\WebUI\ImportDLL\MyDesktop.SQLServerDAL.dll</HintPath>
+    </Reference>
     <Reference Include="org.in2bits.MyXls, Version=0.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ImportDLL\org.in2bits.MyXls.dll</HintPath>
@@ -361,8 +376,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
-    <EmbeddedResource Include="ReportShareApplication.rdlc" />
+    <EmbeddedResource Include="ReportShareApplication.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScaleRationedShares.resx">
       <DependentUpon>ScaleRationedShares.cs</DependentUpon>
     </EmbeddedResource>
@@ -402,10 +420,19 @@
       <SubType>Designer</SubType>
       <DependentUpon>SettingIRPEF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="个人股权变动记录.rdlc" />
-    <EmbeddedResource Include="个人股权退出清算报告.rdlc" />
-    <EmbeddedResource Include="出资证明书.rdlc" />
-    <EmbeddedResource Include="委托代理股权统计.rdlc" />
+    <EmbeddedResource Include="个人股权变动记录.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="个人股权退出清算报告.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="出资证明书.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="委托代理股权统计.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -417,28 +444,6 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\Tiyi.PMS\PersonnelRoll.wsdl" />
-    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.ExistJobNumberResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetDepartmentsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetPersonBaseInfo_ByJobNumberResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetPersonInfoByBlurInfoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetPersonInfoByJobNumberResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetPersonInfoListByDepartmentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Tiyi.PMS\WinUI.Tiyi.PMS.GetPersonnelByJobNumberResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="ShareOSDataSet.xsc">
       <DependentUpon>ShareOSDataSet.xsd</DependentUpon>
@@ -461,11 +466,6 @@
     </Compile>
     <Compile Include="ScaleRationedShares.Designer.cs">
       <DependentUpon>ScaleRationedShares.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\Tiyi.PMS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ShareholderBarCode.cs">
       <SubType>Form</SubType>
@@ -535,6 +535,14 @@
       <Project>{109AB58B-7E13-4292-9403-1A4ED47D684A}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DALFactory\DALFactory.csproj">
+      <Project>{488cb79e-ccbf-481e-87f7-cb379775aec0}</Project>
+      <Name>DALFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDAL\IDAL.csproj">
+      <Project>{76325a59-fc79-4a61-aaf5-812a9bbc4f7e}</Project>
+      <Name>IDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{357C183C-5BE1-4880-B7F7-BF8364E85755}</Project>
       <Name>Model</Name>
@@ -549,13 +557,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="data.xml" />
-    <None Include="Service References\Tiyi.PMS\PersonnelRoll.disco" />
-    <None Include="Service References\Tiyi.PMS\configuration91.svcinfo" />
-    <None Include="Service References\Tiyi.PMS\configuration.svcinfo" />
-    <None Include="Service References\Tiyi.PMS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="SharesIcon.ico" />
     <None Include="Resources\SharesIcon.ico" />
   </ItemGroup>
@@ -579,12 +580,6 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\Tiyi.PMS\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

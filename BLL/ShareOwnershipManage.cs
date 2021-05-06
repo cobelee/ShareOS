@@ -111,7 +111,7 @@ namespace ShareOS.BLL
                     item.总股值 = item.退出股权数 * item.交易价格;
                     item.个人出资 = this.GetPersonalSharesOriginalValue(item.股东号);
                     item.税前收益 = item.总股值 - item.个人出资;
-                    item.个人所得税 = item.税前收益 * 0.2m;  // 个人所得税建议参数化
+                    item.个人所得税 = Math.Round(item.税前收益 * 0.2m, 2);  // 个人所得税建议参数化
                     item.实际回款 = item.总股值 - item.个人所得税;
                 }
                 else

@@ -13,7 +13,6 @@ namespace WinUI.Print
     {
         ShareOS.BLL.ShareOwnershipManage bll_ownership = new ShareOS.BLL.ShareOwnershipManage();
         ShareOS.BLL.SharesBonusManage bll_bonus = new ShareOS.BLL.SharesBonusManage();
-        //Tiyi.PMS.PersonnelRollSoapClient ws_person = new Tiyi.PMS.PersonnelRollSoapClient();
         ReportPrinter reportPrinter;
 
         public BuySharesApplication()
@@ -24,26 +23,12 @@ namespace WinUI.Print
         protected void DataBind_ShareOwnership(int issueNumber)
         {
             DataTable tableReport = bll_ownership.GetShareOwnershipReport(issueNumber);
-            //AddDepartmentColumn(tableReport);
             DataView dv = tableReport.DefaultView;
 
             dgvShareOwnership.DataSource = dv;
             dgvShareOwnership.Columns["BarCode"].Visible = false;
         }
 
-        // 原表中已包含 Department 字段，该方法已失效。
-        //protected void AddDepartmentColumn(DataTable tableReport)
-        //{
-        //    //DataColumn col = new DataColumn("Department", typeof(string));
-        //    //tableReport.Columns.Add(col);
-        //    foreach (DataRow row in tableReport.Rows)
-        //    {
-        //        string jobNumber = Convert.ToString(row["JobNumber"]);
-        //        Tiyi.PMS.GetPersonInfoByJobNumberRequestBody body = new Tiyi.PMS.GetPersonInfoByJobNumberRequestBody(jobNumber);
-        //        Tiyi.PMS.GetPersonInfoByJobNumberRequest request = new Tiyi.PMS.GetPersonInfoByJobNumberRequest(body);
-        //        row["Department"] = ws_person.GetPersonInfoByJobNumber(request).Body.GetPersonInfoByJobNumberResult.Department;
-        //    }
-        //}
 
         #region 初始化加载
         private void BuySharesApplication_Load(object sender, EventArgs e)

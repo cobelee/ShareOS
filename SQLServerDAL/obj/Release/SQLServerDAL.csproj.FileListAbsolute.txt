@@ -33,3 +33,16 @@ D:\BaiduYun\dotnet4.0开发\ShareOS\SQLServerDAL\bin\Release\Common.xml
 D:\BaiduYun\dotnet4.0开发\ShareOS\SQLServerDAL\obj\Release\SQLServerDAL.csprojResolveAssemblyReference.cache
 D:\BaiduYun\dotnet4.0开发\ShareOS\SQLServerDAL\obj\Release\ShareOS.SQLServerDAL.dll
 D:\BaiduYun\dotnet4.0开发\ShareOS\SQLServerDAL\obj\Release\ShareOS.SQLServerDAL.pdb
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Release\ShareOS.SQLServerDAL.dll.config
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Release\ShareOS.SQLServerDAL.dll
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Release\ShareOS.SQLServerDAL.pdb
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Release\Common.dll
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Release\ShareOS.IDAL.dll
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Release\ShareOS.Model.dll
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Release\ShareOS.IDAL.pdb
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Release\ShareOS.Model.pdb
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Release\Common.pdb
+D:\GithubRepoBank\ShareOS\SQLServerDAL\bin\Release\Common.xml
+D:\GithubRepoBank\ShareOS\SQLServerDAL\obj\Release\SQLServerDAL.csprojResolveAssemblyReference.cache
+D:\GithubRepoBank\ShareOS\SQLServerDAL\obj\Release\ShareOS.SQLServerDAL.dll
+D:\GithubRepoBank\ShareOS\SQLServerDAL\obj\Release\ShareOS.SQLServerDAL.pdb

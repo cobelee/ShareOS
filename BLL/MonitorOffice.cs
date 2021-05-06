@@ -59,7 +59,7 @@ namespace ShareOS.BLL
         /// </summary>
         /// <param name="issueNumber">股权交易期数。</param>
         /// <returns></returns>
-        public int GetSharesAmountToClear(int issueNumber)
+        public decimal GetSharesAmountToClear(int issueNumber)
         {
             return dal.GetSharesAmountToClear(issueNumber);
         }
@@ -110,7 +110,7 @@ namespace ShareOS.BLL
         /// </summary>
         /// <param name="issueNumber">股权交易期数。</param>
         /// <returns></returns>
-        public int GetAmountOfBonusShareToSell(int issueNumber)
+        public decimal GetAmountOfBonusShareToSell(int issueNumber)
         {
             return dal.GetAmountOfBonusShareToSell(issueNumber);
         }

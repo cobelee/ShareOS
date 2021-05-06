@@ -42,6 +42,24 @@
       <Column Name="PersonTypeName" Type="System.String" DbType="NVarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.Settlement" Member="Settlement">
+    <Type Name="Settlement">
+      <Column Name="SId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IssueNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShareholderNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OpeningShares" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="DonateShares" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="SellingShares" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="SharePrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="IncomeTax" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Yingfa" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="SettlementType" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="ClosingShares" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Operator" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.Shareholder" Member="Shareholder">
     <Type Name="Shareholder">
       <Column Name="ShareholderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -58,6 +76,7 @@
       <Column Name="AccountHolder" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
       <Column Name="BankName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
       <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="FrozenTag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.ShareOwnership" Member="ShareOwnership">
@@ -88,6 +107,7 @@
       <Column Name="SICId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="IssueNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="IssueYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DisplayText" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
       <Column Name="Bonus" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="DPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="SharePrice" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />

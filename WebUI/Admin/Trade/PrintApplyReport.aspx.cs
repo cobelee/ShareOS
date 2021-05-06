@@ -11,6 +11,7 @@ public partial class Admin_Trade_PrintApplyReport : System.Web.UI.Page
     ShareOS.BLL.ShareOwnershipManage bll_Shares = new ShareOS.BLL.ShareOwnershipManage();
     ShareOS.BLL.ShareIssueManage bll_Issue = new ShareOS.BLL.ShareIssueManage();
     ShareOS.BLL.ShareholderManage bll_shareholder = new ShareOS.BLL.ShareholderManage();
+    Tiyi.MyDesktop.BLL.DepManage bll_depManage = new Tiyi.MyDesktop.BLL.DepManage();
 
 
     protected void Page_Load(object sender, EventArgs e)
@@ -40,12 +41,14 @@ public partial class Admin_Trade_PrintApplyReport : System.Web.UI.Page
 
     private void Load_DepName()
     {
-        Tiyi.PMS.Organization bll_org = new Tiyi.PMS.Organization();
-        Tiyi.PMS.Department[] deps = bll_org.GetDepartments();
+        var listSH = bll_shareholder.SelectShareholder();
+
+        var deptes = (from d in listSH orderby d.DepName select d.DepName).Distinct().OrderBy(d => d);
+
         ddlDep.Items.Clear();
-        foreach (Tiyi.PMS.Department dep in deps)
+        foreach (string dep in deptes)
         {
-            ddlDep.Items.Add(dep.Name);
+            ddlDep.Items.Add(dep);
         }
         ddlDep.Items.Insert(0, "--所有部门--");
         ddlDep.SelectedIndex = 0;
@@ -74,25 +77,6 @@ public partial class Admin_Trade_PrintApplyReport : System.Web.UI.Page
         gvShareOwnership.DataBind();
     }
 
-    protected void btnUpdateDepName_Click(object sender, EventArgs e)
-    {
-        Tiyi.PMS.PersonnelRoll ws_person = new Tiyi.PMS.PersonnelRoll();
-        var shareholders = bll_shareholder.SelectShareholder();
-        int count = 0;
-        if (shareholders != null)
-            count = shareholders.Count();
-        foreach (Tiyi.ShareOS.SQLServerDAL.Shareholder sh in shareholders)
-        {
-            Tiyi.PMS.PersonInfo person = ws_person.GetPersonInfoByJobNumber(sh.JobNumber);
-            if (person != null && !string.IsNullOrEmpty(person.Name))
-            {
-                sh.DepName = person.Department;
-            }
-        }
-        bll_shareholder.Update(shareholders);
-        ltlUpdateResult.Text = "部门信息更新完毕，本次已更新 " + count.ToString() + " 人";
-        ws_person.Dispose();
-    }
 
     protected void btnQuery_Click(object sender, EventArgs e)
     {

@@ -8,7 +8,7 @@
             <h1>代理股权数汇总</h1>
             <br />
             <p>
-                股权总数：<asp:Label ID="lbShO" runat="server" Text="" ></asp:Label><br />
+                股权总数：<asp:Label ID="lbShO" runat="server" Text=""></asp:Label><br />
                 计算方法：将历年所有进出股权数相加汇总。
             </p>
             <asp:HiddenField ID="hfIssueNumber" runat="server" />
@@ -50,6 +50,7 @@
                         <FooterTemplate>
                             <asp:Literal ID="ltlQichuSharesSum" runat="server" Text='<%# GetQichuSharesSum() %>'></asp:Literal>
                         </FooterTemplate>
+                        <HeaderStyle HorizontalAlign="Right" />
                         <ItemStyle HorizontalAlign="Right" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="期末股权总数">
@@ -59,6 +60,7 @@
                         <FooterTemplate>
                             <asp:Literal ID="ltlShareTotalsSum" runat="server" Text='<%# GetShareTotalsSum() %>'></asp:Literal>
                         </FooterTemplate>
+                        <HeaderStyle HorizontalAlign="Right" />
                         <ItemStyle HorizontalAlign="Right" />
                     </asp:TemplateField>
 

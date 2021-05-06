@@ -149,7 +149,6 @@ namespace Tiyi.ShareOS.SQLServerDAL
             if (sharehoderNumbers == null || sharehoderNumbers.Count() == 0)
                 return null;
 
-
             List<ShareholderCurrentShares> listPersonShare = new List<ShareholderCurrentShares>();
 
             listPersonShare = GetShareOwnershipReport(sharehoderNumbers);

@@ -13,7 +13,7 @@
             <asp:TextBox ID="tbAgent" runat="server" Text="" placeholder="股东代理人的股东号"></asp:TextBox>
             <asp:Button ID="btnAdd" runat="server" Text="新增" OnClick="btnAdd_Click" />
                 </div>
-            <asp:GridView ID="gvAgent" runat="server" AutoGenerateColumns="False"
+            <asp:GridView ID="gvAgent" runat="server" AutoGenerateColumns="False" Width="640px"
                 DataKeyNames="ShareholderId" OnRowCommand="gvAgent_RowCommand">
                 <Columns>
                     <asp:TemplateField HeaderText="No.">

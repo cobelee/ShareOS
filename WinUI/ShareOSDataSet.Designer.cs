@@ -1486,6 +1486,12 @@ namespace WinUI {
             
             private global::System.Data.DataColumn columnEntrustedAgentName;
             
+            private global::System.Data.DataColumn columnDepName;
+            
+            private global::System.Data.DataColumn columnTuiShares;
+            
+            private global::System.Data.DataColumn columnIdentityCard;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ShareOwnership_Change_ReportDataTable() {
@@ -1593,6 +1599,30 @@ namespace WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DepNameColumn {
+                get {
+                    return this.columnDepName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TuiSharesColumn {
+                get {
+                    return this.columnTuiShares;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdentityCardColumn {
+                get {
+                    return this.columnIdentityCard;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1628,7 +1658,7 @@ namespace WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ShareOwnership_Change_ReportRow AddShareOwnership_Change_ReportRow(string ShareholderNumber, string JobNumber, string PeifaBonusShares, string ZhuanrangBonusShares, string GerenGuomaiShares, string ShareTotals, string SharePrice, string ShareholderName, string EntrustedAgentName) {
+            public ShareOwnership_Change_ReportRow AddShareOwnership_Change_ReportRow(string ShareholderNumber, string JobNumber, string PeifaBonusShares, string ZhuanrangBonusShares, string GerenGuomaiShares, string ShareTotals, string SharePrice, string ShareholderName, string EntrustedAgentName, string DepName, string TuiShares, string IdentityCard) {
                 ShareOwnership_Change_ReportRow rowShareOwnership_Change_ReportRow = ((ShareOwnership_Change_ReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ShareholderNumber,
@@ -1639,7 +1669,10 @@ namespace WinUI {
                         ShareTotals,
                         SharePrice,
                         ShareholderName,
-                        EntrustedAgentName};
+                        EntrustedAgentName,
+                        DepName,
+                        TuiShares,
+                        IdentityCard};
                 rowShareOwnership_Change_ReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowShareOwnership_Change_ReportRow);
                 return rowShareOwnership_Change_ReportRow;
@@ -1671,6 +1704,9 @@ namespace WinUI {
                 this.columnSharePrice = base.Columns["SharePrice"];
                 this.columnShareholderName = base.Columns["ShareholderName"];
                 this.columnEntrustedAgentName = base.Columns["EntrustedAgentName"];
+                this.columnDepName = base.Columns["DepName"];
+                this.columnTuiShares = base.Columns["TuiShares"];
+                this.columnIdentityCard = base.Columns["IdentityCard"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1694,6 +1730,12 @@ namespace WinUI {
                 base.Columns.Add(this.columnShareholderName);
                 this.columnEntrustedAgentName = new global::System.Data.DataColumn("EntrustedAgentName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEntrustedAgentName);
+                this.columnDepName = new global::System.Data.DataColumn("DepName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepName);
+                this.columnTuiShares = new global::System.Data.DataColumn("TuiShares", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTuiShares);
+                this.columnIdentityCard = new global::System.Data.DataColumn("IdentityCard", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdentityCard);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3028,6 +3070,54 @@ namespace WinUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DepName {
+                get {
+                    try {
+                        return ((string)(this[this.tableShareOwnership_Change_Report.DepNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“ShareOwnership_Change_Report”中列“DepName”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableShareOwnership_Change_Report.DepNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TuiShares {
+                get {
+                    try {
+                        return ((string)(this[this.tableShareOwnership_Change_Report.TuiSharesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“ShareOwnership_Change_Report”中列“TuiShares”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableShareOwnership_Change_Report.TuiSharesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string IdentityCard {
+                get {
+                    try {
+                        return ((string)(this[this.tableShareOwnership_Change_Report.IdentityCardColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“ShareOwnership_Change_Report”中列“IdentityCard”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableShareOwnership_Change_Report.IdentityCardColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsShareholderNumberNull() {
                 return this.IsNull(this.tableShareOwnership_Change_Report.ShareholderNumberColumn);
             }
@@ -3132,6 +3222,42 @@ namespace WinUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEntrustedAgentNameNull() {
                 this[this.tableShareOwnership_Change_Report.EntrustedAgentNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDepNameNull() {
+                return this.IsNull(this.tableShareOwnership_Change_Report.DepNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDepNameNull() {
+                this[this.tableShareOwnership_Change_Report.DepNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTuiSharesNull() {
+                return this.IsNull(this.tableShareOwnership_Change_Report.TuiSharesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTuiSharesNull() {
+                this[this.tableShareOwnership_Change_Report.TuiSharesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdentityCardNull() {
+                return this.IsNull(this.tableShareOwnership_Change_Report.IdentityCardColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdentityCardNull() {
+                this[this.tableShareOwnership_Change_Report.IdentityCardColumn] = global::System.Convert.DBNull;
             }
         }
         

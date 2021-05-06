@@ -21,13 +21,13 @@ namespace ShareOS.DALFactory
 
         public static ShareOS.IDAL.IShareholderRegister CreateShareholderRegister()
         {
-            string className = SHARES_DAL_PATH + ".Shareholder";
+            string className = SHARES_DAL_PATH + ".ShareholderDAO";
             return (ShareOS.IDAL.IShareholderRegister)Assembly.Load(SHARES_DAL_PATH).CreateInstance(className);
         }
 
         public static ShareOS.IDAL.IShareholder CreateShareholder()
         {
-            string className = SHARES_DAL_PATH + ".Shareholder";
+            string className = SHARES_DAL_PATH + ".ShareholderDAO";
             return (ShareOS.IDAL.IShareholder)Assembly.Load(SHARES_DAL_PATH).CreateInstance(className);
         }
 

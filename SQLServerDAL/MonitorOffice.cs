@@ -67,13 +67,13 @@ namespace ShareOS.SQLServerDAL
         /// </summary>
         /// <param name="issueNumber">股权交易期数。</param>
         /// <returns></returns>
-        public int GetSharesAmountToClear(int issueNumber)
+        public decimal GetSharesAmountToClear(int issueNumber)
         {
-            int amount = 0;
+            decimal amount = 0;
             var query = from records in dbContext.ShareOwnership
                         where records.IssueNumber == issueNumber && records.CauseOfChange == "退股" && records.ShareTotals == 0
                         select records;
-            amount = Convert.ToInt32(query.Sum(o => o.SharesChanges));
+            amount = Convert.ToDecimal(query.Sum(o => o.SharesChanges));
             return amount;
         }
 
@@ -128,13 +128,13 @@ namespace ShareOS.SQLServerDAL
         /// </summary>
         /// <param name="issueNumber">股权交易期数。</param>
         /// <returns></returns>
-        public int GetAmountOfBonusShareToSell(int issueNumber)
+        public decimal GetAmountOfBonusShareToSell(int issueNumber)
         {
-            int amount = 0;
+            decimal amount = 0;
             var query = from records in dbContext.ShareOwnership
                         where records.IssueNumber == issueNumber && records.CauseOfChange == "红股转让" && records.SharesChanges < 0
                         select records;
-            amount = Convert.ToInt32(query.Sum(o => o.SharesChanges));
+            amount = Convert.ToDecimal(query.Sum(o => o.SharesChanges));
             return amount;
         }
 

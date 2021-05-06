@@ -48,6 +48,9 @@ namespace Tiyi.ShareOS.SQLServerDAL
     partial void InsertPersonType(PersonType instance);
     partial void UpdatePersonType(PersonType instance);
     partial void DeletePersonType(PersonType instance);
+    partial void InsertSettlement(Settlement instance);
+    partial void UpdateSettlement(Settlement instance);
+    partial void DeleteSettlement(Settlement instance);
     partial void InsertShareholder(Shareholder instance);
     partial void UpdateShareholder(Shareholder instance);
     partial void DeleteShareholder(Shareholder instance);
@@ -134,6 +137,14 @@ namespace Tiyi.ShareOS.SQLServerDAL
 			get
 			{
 				return this.GetTable<PersonType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Settlement> Settlement
+		{
+			get
+			{
+				return this.GetTable<Settlement>();
 			}
 		}
 		
@@ -838,6 +849,380 @@ namespace Tiyi.ShareOS.SQLServerDAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Settlement")]
+	public partial class Settlement : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _SId;
+		
+		private int _IssueNumber;
+		
+		private int _ShareholderNumber;
+		
+		private decimal _OpeningShares;
+		
+		private decimal _DonateShares;
+		
+		private decimal _SellingShares;
+		
+		private decimal _SharePrice;
+		
+		private decimal _Amount;
+		
+		private decimal _IncomeTax;
+		
+		private decimal _Yingfa;
+		
+		private string _SettlementType;
+		
+		private decimal _ClosingShares;
+		
+		private System.DateTime _DateTime;
+		
+		private string _Operator;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSIdChanging(System.Guid value);
+    partial void OnSIdChanged();
+    partial void OnIssueNumberChanging(int value);
+    partial void OnIssueNumberChanged();
+    partial void OnShareholderNumberChanging(int value);
+    partial void OnShareholderNumberChanged();
+    partial void OnOpeningSharesChanging(decimal value);
+    partial void OnOpeningSharesChanged();
+    partial void OnDonateSharesChanging(decimal value);
+    partial void OnDonateSharesChanged();
+    partial void OnSellingSharesChanging(decimal value);
+    partial void OnSellingSharesChanged();
+    partial void OnSharePriceChanging(decimal value);
+    partial void OnSharePriceChanged();
+    partial void OnAmountChanging(decimal value);
+    partial void OnAmountChanged();
+    partial void OnIncomeTaxChanging(decimal value);
+    partial void OnIncomeTaxChanged();
+    partial void OnYingfaChanging(decimal value);
+    partial void OnYingfaChanged();
+    partial void OnSettlementTypeChanging(string value);
+    partial void OnSettlementTypeChanged();
+    partial void OnClosingSharesChanging(decimal value);
+    partial void OnClosingSharesChanged();
+    partial void OnDateTimeChanging(System.DateTime value);
+    partial void OnDateTimeChanged();
+    partial void OnOperatorChanging(string value);
+    partial void OnOperatorChanged();
+    #endregion
+		
+		public Settlement()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SId", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid SId
+		{
+			get
+			{
+				return this._SId;
+			}
+			set
+			{
+				if ((this._SId != value))
+				{
+					this.OnSIdChanging(value);
+					this.SendPropertyChanging();
+					this._SId = value;
+					this.SendPropertyChanged("SId");
+					this.OnSIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IssueNumber", DbType="Int NOT NULL")]
+		public int IssueNumber
+		{
+			get
+			{
+				return this._IssueNumber;
+			}
+			set
+			{
+				if ((this._IssueNumber != value))
+				{
+					this.OnIssueNumberChanging(value);
+					this.SendPropertyChanging();
+					this._IssueNumber = value;
+					this.SendPropertyChanged("IssueNumber");
+					this.OnIssueNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShareholderNumber", DbType="Int NOT NULL")]
+		public int ShareholderNumber
+		{
+			get
+			{
+				return this._ShareholderNumber;
+			}
+			set
+			{
+				if ((this._ShareholderNumber != value))
+				{
+					this.OnShareholderNumberChanging(value);
+					this.SendPropertyChanging();
+					this._ShareholderNumber = value;
+					this.SendPropertyChanged("ShareholderNumber");
+					this.OnShareholderNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpeningShares", DbType="Decimal(18,4) NOT NULL")]
+		public decimal OpeningShares
+		{
+			get
+			{
+				return this._OpeningShares;
+			}
+			set
+			{
+				if ((this._OpeningShares != value))
+				{
+					this.OnOpeningSharesChanging(value);
+					this.SendPropertyChanging();
+					this._OpeningShares = value;
+					this.SendPropertyChanged("OpeningShares");
+					this.OnOpeningSharesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonateShares", DbType="Decimal(18,4) NOT NULL")]
+		public decimal DonateShares
+		{
+			get
+			{
+				return this._DonateShares;
+			}
+			set
+			{
+				if ((this._DonateShares != value))
+				{
+					this.OnDonateSharesChanging(value);
+					this.SendPropertyChanging();
+					this._DonateShares = value;
+					this.SendPropertyChanged("DonateShares");
+					this.OnDonateSharesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SellingShares", DbType="Decimal(18,4) NOT NULL")]
+		public decimal SellingShares
+		{
+			get
+			{
+				return this._SellingShares;
+			}
+			set
+			{
+				if ((this._SellingShares != value))
+				{
+					this.OnSellingSharesChanging(value);
+					this.SendPropertyChanging();
+					this._SellingShares = value;
+					this.SendPropertyChanged("SellingShares");
+					this.OnSellingSharesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SharePrice", DbType="Decimal(18,4) NOT NULL")]
+		public decimal SharePrice
+		{
+			get
+			{
+				return this._SharePrice;
+			}
+			set
+			{
+				if ((this._SharePrice != value))
+				{
+					this.OnSharePriceChanging(value);
+					this.SendPropertyChanging();
+					this._SharePrice = value;
+					this.SendPropertyChanged("SharePrice");
+					this.OnSharePriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Decimal(18,4) NOT NULL")]
+		public decimal Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this.OnAmountChanging(value);
+					this.SendPropertyChanging();
+					this._Amount = value;
+					this.SendPropertyChanged("Amount");
+					this.OnAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IncomeTax", DbType="Decimal(18,4) NOT NULL")]
+		public decimal IncomeTax
+		{
+			get
+			{
+				return this._IncomeTax;
+			}
+			set
+			{
+				if ((this._IncomeTax != value))
+				{
+					this.OnIncomeTaxChanging(value);
+					this.SendPropertyChanging();
+					this._IncomeTax = value;
+					this.SendPropertyChanged("IncomeTax");
+					this.OnIncomeTaxChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Yingfa", DbType="Decimal(18,4) NOT NULL")]
+		public decimal Yingfa
+		{
+			get
+			{
+				return this._Yingfa;
+			}
+			set
+			{
+				if ((this._Yingfa != value))
+				{
+					this.OnYingfaChanging(value);
+					this.SendPropertyChanging();
+					this._Yingfa = value;
+					this.SendPropertyChanged("Yingfa");
+					this.OnYingfaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SettlementType", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string SettlementType
+		{
+			get
+			{
+				return this._SettlementType;
+			}
+			set
+			{
+				if ((this._SettlementType != value))
+				{
+					this.OnSettlementTypeChanging(value);
+					this.SendPropertyChanging();
+					this._SettlementType = value;
+					this.SendPropertyChanged("SettlementType");
+					this.OnSettlementTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClosingShares", DbType="Decimal(18,4) NOT NULL")]
+		public decimal ClosingShares
+		{
+			get
+			{
+				return this._ClosingShares;
+			}
+			set
+			{
+				if ((this._ClosingShares != value))
+				{
+					this.OnClosingSharesChanging(value);
+					this.SendPropertyChanging();
+					this._ClosingShares = value;
+					this.SendPropertyChanged("ClosingShares");
+					this.OnClosingSharesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateTime", DbType="DateTime NOT NULL")]
+		public System.DateTime DateTime
+		{
+			get
+			{
+				return this._DateTime;
+			}
+			set
+			{
+				if ((this._DateTime != value))
+				{
+					this.OnDateTimeChanging(value);
+					this.SendPropertyChanging();
+					this._DateTime = value;
+					this.SendPropertyChanged("DateTime");
+					this.OnDateTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Operator", DbType="NVarChar(16) NOT NULL", CanBeNull=false)]
+		public string Operator
+		{
+			get
+			{
+				return this._Operator;
+			}
+			set
+			{
+				if ((this._Operator != value))
+				{
+					this.OnOperatorChanging(value);
+					this.SendPropertyChanging();
+					this._Operator = value;
+					this.SendPropertyChanged("Operator");
+					this.OnOperatorChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Shareholder")]
 	public partial class Shareholder : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -872,6 +1257,8 @@ namespace Tiyi.ShareOS.SQLServerDAL
 		
 		private string _AccountNumber;
 		
+		private bool _FrozenTag;
+		
     #region 可扩展性方法定义
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -904,6 +1291,8 @@ namespace Tiyi.ShareOS.SQLServerDAL
     partial void OnBankNameChanged();
     partial void OnAccountNumberChanging(string value);
     partial void OnAccountNumberChanged();
+    partial void OnFrozenTagChanging(bool value);
+    partial void OnFrozenTagChanged();
     #endregion
 		
 		public Shareholder()
@@ -1187,6 +1576,26 @@ namespace Tiyi.ShareOS.SQLServerDAL
 					this._AccountNumber = value;
 					this.SendPropertyChanged("AccountNumber");
 					this.OnAccountNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FrozenTag", DbType="Bit NOT NULL")]
+		public bool FrozenTag
+		{
+			get
+			{
+				return this._FrozenTag;
+			}
+			set
+			{
+				if ((this._FrozenTag != value))
+				{
+					this.OnFrozenTagChanging(value);
+					this.SendPropertyChanging();
+					this._FrozenTag = value;
+					this.SendPropertyChanged("FrozenTag");
+					this.OnFrozenTagChanged();
 				}
 			}
 		}
@@ -1660,6 +2069,8 @@ namespace Tiyi.ShareOS.SQLServerDAL
 		
 		private System.Nullable<int> _IssueYear;
 		
+		private string _DisplayText;
+		
 		private System.Nullable<decimal> _Bonus;
 		
 		private System.Nullable<System.DateTime> _DPD;
@@ -1680,6 +2091,8 @@ namespace Tiyi.ShareOS.SQLServerDAL
     partial void OnIssueNumberChanged();
     partial void OnIssueYearChanging(System.Nullable<int> value);
     partial void OnIssueYearChanged();
+    partial void OnDisplayTextChanging(string value);
+    partial void OnDisplayTextChanged();
     partial void OnBonusChanging(System.Nullable<decimal> value);
     partial void OnBonusChanged();
     partial void OnDPDChanging(System.Nullable<System.DateTime> value);
@@ -1753,6 +2166,26 @@ namespace Tiyi.ShareOS.SQLServerDAL
 					this._IssueYear = value;
 					this.SendPropertyChanged("IssueYear");
 					this.OnIssueYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayText", DbType="NVarChar(32)")]
+		public string DisplayText
+		{
+			get
+			{
+				return this._DisplayText;
+			}
+			set
+			{
+				if ((this._DisplayText != value))
+				{
+					this.OnDisplayTextChanging(value);
+					this.SendPropertyChanging();
+					this._DisplayText = value;
+					this.SendPropertyChanged("DisplayText");
+					this.OnDisplayTextChanged();
 				}
 			}
 		}

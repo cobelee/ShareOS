@@ -10,7 +10,7 @@ public partial class UserControls_SEA_Shareholder : System.Web.UI.UserControl
     ShareOS.BLL.PersonType bll_personType = new ShareOS.BLL.PersonType();
     ShareOS.BLL.ShareholderRegister bll_register = new ShareOS.BLL.ShareholderRegister();
     ShareOS.BLL.ShareholderManage bll_shareholderManage = new ShareOS.BLL.ShareholderManage();
-    Tiyi.PMS.PersonnelRoll wsPerson = new Tiyi.PMS.PersonnelRoll();
+    Tiyi.MyDesktop.BLL.PersonManage bll_person = new Tiyi.MyDesktop.BLL.PersonManage();
 
     public event EventHandler ShareholderCreated;
 
@@ -73,9 +73,9 @@ public partial class UserControls_SEA_Shareholder : System.Web.UI.UserControl
     {
         if (!string.IsNullOrEmpty(tbJobNumber.Text))
         {
-            Tiyi.PMS.Personnel person = wsPerson.GetPersonnelByJobNumber(tbJobNumber.Text);
-            tbName.Text = person.Individual.Name;
-            if (person.Individual.Sex)
+            var person = bll_person.GetPerson(tbJobNumber.Text);
+            tbName.Text = person.Name;
+            if (person.Gender == "男")
             {
                 rbtnMale.Checked = true;
                 rbtnFemale.Checked = false;
@@ -85,7 +85,7 @@ public partial class UserControls_SEA_Shareholder : System.Web.UI.UserControl
                 rbtnMale.Checked = false;
                 rbtnFemale.Checked = true;
             }
-            tbIdentityCard.Text = person.Individual.IdentityCard;
+            tbIdentityCard.Text = person.Identity_card;
         }
     }
 }

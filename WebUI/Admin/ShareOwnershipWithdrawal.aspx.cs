@@ -11,6 +11,7 @@ public partial class Admin_ShareOwnershipWithdrawal : System.Web.UI.Page
 {
     ShareOS.BLL.ShareOwnershipManage bll_manage = new ShareOS.BLL.ShareOwnershipManage();
     ShareOS.BLL.SharesBonusManage bll_Bonus = new ShareOS.BLL.SharesBonusManage();
+    ShareOS.BLL.ShareholderManage bll_sh = new ShareOS.BLL.ShareholderManage();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -195,4 +196,21 @@ public partial class Admin_ShareOwnershipWithdrawal : System.Web.UI.Page
 
     }
 
+
+    protected void btnConvert_Click(object sender, EventArgs e)
+    {
+        int issueNumber = Convert.ToInt32(ddlIssueNumber.SelectedItem.Value);
+        DataTable report = bll_manage.GetSharesWithdrawal(issueNumber);
+
+        int rowCount = report.Rows.Count;
+
+        for (int rowIndex = 0; rowIndex < rowCount; rowIndex++)
+        {
+            int shnum = Convert.ToInt32(report.Rows[rowIndex]["ShareholderNumber"]);
+            var sh = bll_sh.SelectShareholder(shnum);
+            sh.Status = "待退股东";
+        }
+        bll_sh.Submit();
+        gvOwnershipChange.DataBind();
+    }
 }

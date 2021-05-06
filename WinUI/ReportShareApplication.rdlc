@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>25.3cm</Height>
+              <Height>25cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -434,7 +434,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!EntrustedAgentName.Value</Value>
+                                  <Value EvaluationMode="Constant" />
                                   <Style>
                                     <FontFamily>仿宋_GB2312</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -570,37 +570,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>本人申请转让2018年度利润分配所得的股票股利</Value>
-                                  <Style>
-                                    <FontFamily>仿宋_GB2312</FontFamily>
-                                    <FontSize>14pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
-                                  <Value xml:space="preserve">                   </Value>
-                                  <Style>
-                                    <FontFamily>仿宋_GB2312</FontFamily>
-                                    <FontSize>14pt</FontSize>
-                                    <TextDecoration>Underline</TextDecoration>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
-                                  <Value>股，税后所得共</Value>
-                                  <Style>
-                                    <FontFamily>仿宋_GB2312</FontFamily>
-                                    <FontSize>14pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
-                                  <Value xml:space="preserve">                </Value>
-                                  <Style>
-                                    <FontFamily>仿宋_GB2312</FontFamily>
-                                    <FontSize>14pt</FontSize>
-                                    <TextDecoration>Underline</TextDecoration>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
-                                  <Value>元。</Value>
+                                  <Value>="本人申请转让" + Variables!Var_LastYear.Value.ToString() + "年度利润分配所得的股票股利_____________股，税后所得共_____________元。"</Value>
                                   <Style>
                                     <FontFamily>仿宋_GB2312</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -1654,37 +1624,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>本人申请受让2019年公司股权</Value>
-                                  <Style>
-                                    <FontFamily>仿宋_GB2312</FontFamily>
-                                    <FontSize>14pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
-                                  <Value xml:space="preserve">              </Value>
-                                  <Style>
-                                    <FontFamily>仿宋_GB2312</FontFamily>
-                                    <FontSize>14pt</FontSize>
-                                    <TextDecoration>Underline</TextDecoration>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
-                                  <Value>股，受让款共</Value>
-                                  <Style>
-                                    <FontFamily>仿宋_GB2312</FontFamily>
-                                    <FontSize>14pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
-                                  <Value xml:space="preserve">               </Value>
-                                  <Style>
-                                    <FontFamily>仿宋_GB2312</FontFamily>
-                                    <FontSize>14pt</FontSize>
-                                    <TextDecoration>Underline</TextDecoration>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
-                                  <Value>元。</Value>
+                                  <Value>="本人申请受让" + Parameters!Parm_IssueYear.Value + "年公司股权_____________股，受让款共_____________元。"</Value>
                                   <Style>
                                     <FontFamily>仿宋_GB2312</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -1739,20 +1679,39 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <Top>0.5cm</Top>
-        <Left>0.23cm</Left>
-        <Height>25.3cm</Height>
+        <Left>1.8cm</Left>
+        <Height>25cm</Height>
         <Width>18.25cm</Width>
         <Style>
           <FontFamily>宋体</FontFamily>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>26.12688cm</Height>
+    <Height>25cm</Height>
     <Style />
   </Body>
-  <Width>18.7cm</Width>
+  <Width>21cm</Width>
   <Page>
+    <PageHeader>
+      <Height>2.5cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>2.2cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <InteractiveHeight>27.7cm</InteractiveHeight>

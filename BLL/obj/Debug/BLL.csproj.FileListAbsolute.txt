@@ -90,3 +90,4 @@ D:\GithubRepoBank\ShareOS\BLL\bin\Debug\Common.xml
 D:\GithubRepoBank\ShareOS\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\GithubRepoBank\ShareOS\BLL\obj\Debug\ShareOS.BLL.dll
 D:\GithubRepoBank\ShareOS\BLL\obj\Debug\ShareOS.BLL.pdb
+D:\GithubRepoBank\ShareOS\BLL\bin\Debug\Common.pdb

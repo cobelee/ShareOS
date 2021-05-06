@@ -47,9 +47,21 @@ public partial class Admin_SO_Sum : System.Web.UI.Page
     /// <returns></returns>
     protected int GetCount(int shareholderNumber)
     {
-        int agencyCount = 0;
-        agencyCount = bll_monitor.GetAgencyCount(shareholderNumber);
-        return agencyCount;
+        if (report == null)
+            return 0;
+
+        int count = 0;
+        foreach (DataRow row in report.Rows)
+        {
+            int agent = Convert.ToInt32(row["EntrustedAgent"]);
+            if (shareholderNumber == agent)
+                count++;
+        }
+
+        return count;
+        //int agencyCount = 0;
+        //agencyCount = bll_monitor.GetAgencyCount(shareholderNumber);
+        //return agencyCount;
     }
 
     protected string GetQichuShares(int agentShnum)
@@ -101,6 +113,6 @@ public partial class Admin_SO_Sum : System.Web.UI.Page
     {
         return shareTotalsSum.ToString("N2");
     }
-    
+
 
 }

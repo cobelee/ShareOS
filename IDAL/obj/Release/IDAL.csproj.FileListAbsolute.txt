@@ -19,3 +19,10 @@ D:\BaiduYun\dotnet4.0开发\ShareOS\IDAL\bin\Release\ShareOS.Model.pdb
 D:\BaiduYun\dotnet4.0开发\ShareOS\IDAL\obj\Release\IDAL.csprojResolveAssemblyReference.cache
 D:\BaiduYun\dotnet4.0开发\ShareOS\IDAL\obj\Release\ShareOS.IDAL.dll
 D:\BaiduYun\dotnet4.0开发\ShareOS\IDAL\obj\Release\ShareOS.IDAL.pdb
+D:\GithubRepoBank\ShareOS\IDAL\bin\Release\ShareOS.IDAL.dll
+D:\GithubRepoBank\ShareOS\IDAL\bin\Release\ShareOS.IDAL.pdb
+D:\GithubRepoBank\ShareOS\IDAL\bin\Release\ShareOS.Model.dll
+D:\GithubRepoBank\ShareOS\IDAL\bin\Release\ShareOS.Model.pdb
+D:\GithubRepoBank\ShareOS\IDAL\obj\Release\IDAL.csprojResolveAssemblyReference.cache
+D:\GithubRepoBank\ShareOS\IDAL\obj\Release\ShareOS.IDAL.dll
+D:\GithubRepoBank\ShareOS\IDAL\obj\Release\ShareOS.IDAL.pdb

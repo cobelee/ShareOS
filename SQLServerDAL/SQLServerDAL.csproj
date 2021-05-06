@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="DBProcedure\GenerateClearingRecord_Mass.cs" />
+    <Compile Include="DBProcedure\GenerateSettlementRecord_Mass.cs" />
+    <Compile Include="DBProcedure\Report_DataCollection_Table.cs" />
+    <Compile Include="DBProcedure\Report_Finance_BankPaymentSlip_By_IssueNumber.cs" />
+    <Compile Include="DBProcedure\Report_ShareOwnership_Statistics_By_EntrustedAgent.cs" />
+    <Compile Include="FinanceDAO.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -81,7 +87,7 @@
     <Compile Include="DBProcedure\Insert_SharesIssueConfig.cs" />
     <Compile Include="DBProcedure\Insert_SysLogs.cs" />
     <Compile Include="DBProcedure\Reg_ShareOwnership.cs" />
-    <Compile Include="DBProcedure\Report_ShareOwnership_Statistics_By_EntrustedAgent.cs" />
+    <Compile Include="DBProcedure\Report_Finance_Settlement_By_IssueNumber.cs" />
     <Compile Include="DBProcedure\ScaleRationedShares.cs" />
     <Compile Include="DBProcedure\Select_Account.cs" />
     <Compile Include="DBProcedure\Select_Account_By_UserName.cs" />
@@ -140,7 +146,7 @@
     <Compile Include="DBTable\ShareOwnership.cs" />
     <Compile Include="DBTable\SharesIssueConfig.cs" />
     <Compile Include="DBTable\SysLogs.cs" />
-    <Compile Include="Shareholder.cs" />
+    <Compile Include="ShareholderDAO.cs" />
     <Compile Include="ShareIssueConfigDA.cs" />
     <Compile Include="ShareOwnership.cs" />
     <Compile Include="ShareOwnershipDA.cs" />

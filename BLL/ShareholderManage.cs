@@ -21,6 +21,14 @@ namespace ShareOS.BLL
         }
 
         /// <summary>
+        /// 提交以使数据库更改生效。
+        /// </summary>
+        public void Submit()
+        {
+            da.Submit();
+        }
+
+        /// <summary>
         /// 在数据库中新增股东对象。
         /// </summary>
         /// <param name="shareholder">股东对象。</param>
@@ -114,6 +122,15 @@ namespace ShareOS.BLL
         public void Update(IQueryable<Tiyi.ShareOS.SQLServerDAL.Shareholder> shareHolders)
         {
             da.Update(shareHolders);
+        }
+
+        /// <summary>
+        /// 更新股东银行账户信息
+        /// </summary>
+        /// <param name="shareholder"></param>
+        public void Update(Tiyi.ShareOS.SQLServerDAL.Shareholder shareholder)
+        {
+            da.Update(shareholder);
         }
 
         /// <summary>

@@ -13,3 +13,8 @@ D:\BaiduYun\dotnet4.0开发\ShareOS\Model\bin\Release\ShareOS.Model.pdb
 D:\BaiduYun\dotnet4.0开发\ShareOS\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
 D:\BaiduYun\dotnet4.0开发\ShareOS\Model\obj\Release\ShareOS.Model.dll
 D:\BaiduYun\dotnet4.0开发\ShareOS\Model\obj\Release\ShareOS.Model.pdb
+D:\GithubRepoBank\ShareOS\Model\bin\Release\ShareOS.Model.dll
+D:\GithubRepoBank\ShareOS\Model\bin\Release\ShareOS.Model.pdb
+D:\GithubRepoBank\ShareOS\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+D:\GithubRepoBank\ShareOS\Model\obj\Release\ShareOS.Model.dll
+D:\GithubRepoBank\ShareOS\Model\obj\Release\ShareOS.Model.pdb

@@ -62,19 +62,23 @@ public partial class Admin_ImportBankAccount : System.Web.UI.Page
             int.TryParse(arrayLine[0], out shareholderNumber);
 
             string accountHolder = string.Empty;
-            accountHolder = arrayLine[2];
-
-            string bankName = arrayLine[3];
-
-            string accountNumber = arrayLine[4];
+            accountHolder = arrayLine[2];   // 读取账户名称
+            string bankName = arrayLine[3];  // 读取开户银行名称
+            string accountNumber = arrayLine[4];  // 读取账户号码
 
 
-            FillAccountInfo(shareholderNumber, accountHolder, bankName, accountNumber, listshder);
+            var sh = (from c in listshder where c.ShareholderNumber == shareholderNumber select c).FirstOrDefault();
+            if (sh != null && sh.ShareholderName==arrayLine[1])
+            {
+                sh.AccountHolder = accountHolder;
+                sh.BankName = bankName;
+                sh.AccountNumber = accountNumber;
+            }
 
             sb.AppendLine(line);
         }
 
-        bll_shm.Update(listshder);
+        bll_shm.Submit();
 
         if (lineNumber >= 2)
         {

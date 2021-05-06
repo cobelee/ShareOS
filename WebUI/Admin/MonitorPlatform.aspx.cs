@@ -41,7 +41,7 @@ public partial class Admin_MonitorPlatform : System.Web.UI.Page
         lbPersonNumberOfClearShare.Text = bll_monitor.GetPersonNumberOfClearShare(issueNumber).ToString();
         //新股东人数(人)
         lbNumberOfNewShareholder.Text = bll_monitor.GetNumberOfBeNewShareholder(issueNumber).ToString();
-        lbSharesAmountToClear.Text = bll_monitor.GetSharesAmountToClear(issueNumber).ToString("N0");
+        lbSharesAmountToClear.Text = bll_monitor.GetSharesAmountToClear(issueNumber).ToString("N2");
 
         //当期派发红股总数(股)
         lbBonusShareAmount.Text = bll_monitor.GetBonusShareAmountToAllocate(issueNumber).ToString("N0");
@@ -50,6 +50,6 @@ public partial class Admin_MonitorPlatform : System.Web.UI.Page
         lbAmountOfShareholderBuyShare.Text = bll_monitor.GetAmountOfShareholderBuyShare(issueNumber).ToString("N0");
 
         //当期红股转让总数(股)
-        lbAmountOfBonusShareToSell.Text = bll_monitor.GetAmountOfBonusShareToSell(issueNumber).ToString("N0");
+        lbAmountOfBonusShareToSell.Text = bll_monitor.GetAmountOfBonusShareToSell(issueNumber).ToString("N2");
     }
 }

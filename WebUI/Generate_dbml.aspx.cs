@@ -35,7 +35,7 @@ public partial class Generate_dbml : System.Web.UI.Page
                 if (milliseconds == 0)
                 {
                     p.StandardInput.WriteLine(@"cd C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\");
-                    p.StandardInput.WriteLine(@"sqlmetal.exe /conn:""Data Source=localhost\SQLExpress;Initial Catalog=ShareOS;User ID=sa;password=x4v8m2e@p2dk)s7b"" /language:C# /namespace:Tiyi.ShareOS.SQLServerDAL /context:ShareDataContext /views /dbml:""D:\GithubRepoBank\ShareOS\SQLServerDAL\ShareDB.dbml""");
+                    p.StandardInput.WriteLine(@"sqlmetal.exe /conn:""Data Source=106.14.177.162;Initial Catalog=ShareOS;Connect Timeout=30;User ID=sa;password=x4v8m2e@p2dk)s7b"" /language:C# /namespace:Tiyi.ShareOS.SQLServerDAL /context:ShareDataContext /views /dbml:""D:\GithubRepoBank\ShareOS\SQLServerDAL\ShareDB.dbml""");
                     p.StandardInput.WriteLine("exit");
                     //p.WaitForExit();     //这里无限等待进程结束
                 }

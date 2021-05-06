@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>27cm</Height>
+              <Height>28cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -24,7 +24,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="　　" + Parameters!PARM_CompanyName.Value + "于" + DateTime.Now.Year.ToString() + "年4月以股票股利分配方式进行了分红，职工股东 " + Fields!ShareholderName.Value + " 通过分红得到股票股利 " + Fields!PeifaBonusShares.Value.ToString() + "股, 其中以 " + Fields!SharePrice.Value.ToString() + " 元/股的价格，转让 " + Fields!ZhuanrangBonusShares.Value.ToString() + " 股，受让股权 " + Fields!GerenGuomaiShares.Value.ToString() + " 股，共缴纳职工股权受让款 " + FormatCurrency((Fields!GerenGuomaiShares.Value * Fields!SharePrice.Value),2, true,true) + " 元。截止" + DateTime.Now.Year.ToString() + "年" + DateTime.Now.Month.ToString() + "月" + DateTime.Now.Day.ToString() +"日，共持有公司股权 " + Fields!ShareTotals.Value.ToString() + " 股。"</Value>
+                                  <Value>="　　" + Parameters!PARM_CompanyName.Value + "于"+ Parameters!PARM_IssueYear.Value +"年4月以股票股利分配方式进行了分红，职工股东 " + Fields!ShareholderName.Value + " (身份证号：" + Fields!IdentityCard.Value + ")通过分红得到股票股利 " + ROUND(Fields!PeifaBonusShares.Value,2).ToString() + "股, 其中以 " + Fields!SharePrice.Value.ToString() + " 元/股的价格，转让 " + ROUND(Fields!ZhuanrangBonusShares.Value,2).ToString() + " 股，受让股权 " + ROUND(Fields!GerenGuomaiShares.Value,2).ToString() + " 股，共缴纳职工股权受让款 " + FormatCurrency((Fields!GerenGuomaiShares.Value * Fields!SharePrice.Value),2, true,true) + " 元。至"+ Parameters!PARM_IssueYear.Value +"年4月第" + Parameters!PARM_IssueNumber.Value + "期交易期结束，共持有公司股权 " + Int(Fields!ShareTotals.Value).ToString() + " 股。"</Value>
                                   <Style>
                                     <FontFamily>宋体</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -34,8 +34,8 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <Top>19.75cm</Top>
-                          <Left>1.25cm</Left>
+                          <Top>22.22888cm</Top>
+                          <Left>2.25cm</Left>
                           <Height>2.75cm</Height>
                           <Width>16.75cm</Width>
                           <Style>
@@ -65,8 +65,8 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <Top>24.25cm</Top>
-                          <Left>9.25cm</Left>
+                          <Top>26.09396cm</Top>
+                          <Left>10.25cm</Left>
                           <Height>0.63492cm</Height>
                           <Width>8.5cm</Width>
                           <ZIndex>1</ZIndex>
@@ -96,8 +96,8 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <Top>25.25cm</Top>
-                          <Left>9.25cm</Left>
+                          <Top>27.09396cm</Top>
+                          <Left>10.25cm</Left>
                           <Height>0.63492cm</Height>
                           <Width>8.5cm</Width>
                           <ZIndex>2</ZIndex>
@@ -128,8 +128,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox13</rd:DefaultName>
-                          <Top>12cm</Top>
-                          <Left>9.5cm</Left>
+                          <Top>13.25cm</Top>
+                          <Left>10.55229cm</Left>
                           <Height>0.63492cm</Height>
                           <Width>8.5cm</Width>
                           <ZIndex>3</ZIndex>
@@ -157,68 +157,11 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <Top>9cm</Top>
-                          <Left>3.5cm</Left>
+                          <Top>10.25cm</Top>
+                          <Left>4.55229cm</Left>
                           <Height>0.63492cm</Height>
                           <Width>5.5cm</Width>
                           <ZIndex>4</ZIndex>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="textbox9">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>="股东编号：" + Fields!ShareholderNumber.Value.ToString()</Value>
-                                  <Style>
-                                    <FontFamily>宋体</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <Top>15cm</Top>
-                          <Left>1.25cm</Left>
-                          <Height>0.63492cm</Height>
-                          <Width>4.75cm</Width>
-                          <ZIndex>5</ZIndex>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="textbox1">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>="股东编号：" + Fields!ShareholderNumber.Value.ToString()</Value>
-                                  <Style>
-                                    <FontFamily>宋体</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox1</rd:DefaultName>
-                          <Top>0.5cm</Top>
-                          <Left>1.25cm</Left>
-                          <Height>0.63492cm</Height>
-                          <Width>4.75cm</Width>
-                          <ZIndex>6</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -245,11 +188,11 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <Top>17.25cm</Top>
-                          <Left>7.25cm</Left>
+                          <Top>19.72888cm</Top>
+                          <Left>8.25cm</Left>
                           <Height>1cm</Height>
                           <Width>6cm</Width>
-                          <ZIndex>7</ZIndex>
+                          <ZIndex>5</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -276,11 +219,11 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <Top>16.25cm</Top>
-                          <Left>4cm</Left>
+                          <Top>18.72888cm</Top>
+                          <Left>5cm</Left>
                           <Height>0.75cm</Height>
                           <Width>12.5cm</Width>
-                          <ZIndex>8</ZIndex>
+                          <ZIndex>6</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -305,11 +248,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox3</rd:DefaultName>
-                          <Top>14cm</Top>
-                          <Left>1.25cm</Left>
+                          <Top>16.13492cm</Top>
+                          <Left>2.25cm</Left>
                           <Height>0.63492cm</Height>
                           <Width>8cm</Width>
-                          <ZIndex>9</ZIndex>
+                          <ZIndex>7</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -337,11 +280,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox4</rd:DefaultName>
-                          <Top>1.5cm</Top>
-                          <Left>4cm</Left>
+                          <Top>3.0675cm</Top>
+                          <Left>5.05229cm</Left>
                           <Height>0.75cm</Height>
                           <Width>12.5cm</Width>
-                          <ZIndex>10</ZIndex>
+                          <ZIndex>8</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -369,11 +312,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox5</rd:DefaultName>
-                          <Top>2.5cm</Top>
-                          <Left>6.48271cm</Left>
+                          <Top>4.0675cm</Top>
+                          <Left>7.535cm</Left>
                           <Height>1cm</Height>
                           <Width>7.53458cm</Width>
-                          <ZIndex>11</ZIndex>
+                          <ZIndex>9</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -388,7 +331,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="　　" + Parameters!PARM_CompanyName.Value + "于"+ DateTime.Now.Year.ToString() +"年4月以股票股利分配方式进行了分红，职工股东 " + Fields!ShareholderName.Value + " 通过分红得到股票股利 " + Fields!PeifaBonusShares.Value.ToString() + "股, 其中以 " + Fields!SharePrice.Value.ToString() + " 元/股的价格，转让 " + Fields!ZhuanrangBonusShares.Value.ToString() + " 股，受让股权 " + Fields!GerenGuomaiShares.Value.ToString() + " 股，共缴纳职工股权受让款 " + FormatCurrency((Fields!GerenGuomaiShares.Value * Fields!SharePrice.Value),2, true,true) + " 元。截止"+ DateTime.Now.Year.ToString() +"年" + DateTime.Now.Month.ToString() + "月" + DateTime.Now.Day.ToString() +"日，共持有公司股权 " + Fields!ShareTotals.Value.ToString() + " 股。"</Value>
+                                  <Value>="　　" + Parameters!PARM_CompanyName.Value + "于"+ Parameters!PARM_IssueYear.Value +"年4月以股票股利分配方式进行了分红，职工股东 " + Fields!ShareholderName.Value + " (身份证号：" + Fields!IdentityCard.Value + ")通过分红得到股票股利 " + ROUND(Fields!PeifaBonusShares.Value,2).ToString() + "股, 其中以 " + Fields!SharePrice.Value.ToString() + " 元/股的价格，转让 " + ROUND(Fields!ZhuanrangBonusShares.Value,2).ToString() + " 股，受让股权 " + ROUND(Fields!GerenGuomaiShares.Value,2).ToString() + " 股，共缴纳职工股权受让款 " + FormatCurrency((Fields!GerenGuomaiShares.Value * Fields!SharePrice.Value),2, true,true) + " 元。至"+ Parameters!PARM_IssueYear.Value +"年4月第" + Parameters!PARM_IssueNumber.Value + "期交易期结束，共持有公司股权 " + Int(Fields!ShareTotals.Value).ToString() + " 股。"</Value>
                                   <Style>
                                     <FontFamily>宋体</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -401,11 +344,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox8</rd:DefaultName>
-                          <Top>5cm</Top>
-                          <Left>1.25cm</Left>
+                          <Top>6.25cm</Top>
+                          <Left>2.30229cm</Left>
                           <Height>2.75cm</Height>
                           <Width>16.75cm</Width>
-                          <ZIndex>12</ZIndex>
+                          <ZIndex>10</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -431,11 +374,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox10</rd:DefaultName>
-                          <Top>8cm</Top>
-                          <Left>2.5cm</Left>
+                          <Top>9.25cm</Top>
+                          <Left>3.55229cm</Left>
                           <Height>0.63492cm</Height>
                           <Width>5.5cm</Width>
-                          <ZIndex>13</ZIndex>
+                          <ZIndex>11</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -463,11 +406,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox12</rd:DefaultName>
-                          <Top>11cm</Top>
-                          <Left>9.5cm</Left>
+                          <Top>12.25cm</Top>
+                          <Left>10.55229cm</Left>
                           <Height>0.63492cm</Height>
                           <Width>8.5cm</Width>
-                          <ZIndex>14</ZIndex>
+                          <ZIndex>12</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -476,11 +419,11 @@
                           </Style>
                         </Textbox>
                         <Line Name="line1">
-                          <Top>13.5cm</Top>
+                          <Top>15.7225cm</Top>
                           <Left>0.5cm</Left>
                           <Height>0cm</Height>
                           <Width>19.49735cm</Width>
-                          <ZIndex>15</ZIndex>
+                          <ZIndex>13</ZIndex>
                           <Style>
                             <Border>
                               <Style>Dotted</Style>
@@ -507,11 +450,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox16</rd:DefaultName>
-                          <Top>18.25cm</Top>
-                          <Left>8.625cm</Left>
+                          <Top>20.72888cm</Top>
+                          <Left>9.625cm</Left>
                           <Height>0.63492cm</Height>
                           <Width>3.25cm</Width>
-                          <ZIndex>16</ZIndex>
+                          <ZIndex>14</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -537,11 +480,11 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <Top>3.5cm</Top>
-                          <Left>8.625cm</Left>
+                          <Top>5.0675cm</Top>
+                          <Left>9.67729cm</Left>
                           <Height>0.63492cm</Height>
                           <Width>3.25cm</Width>
-                          <ZIndex>17</ZIndex>
+                          <ZIndex>15</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -556,7 +499,37 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="代持股东：" + Fields!EntrustedAgentName.Value()</Value>
+                                  <Value>="代持股东：" + Fields!EntrustedAgentName.Value</Value>
+                                  <Style>
+                                    <FontFamily>宋体</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>2.0675cm</Top>
+                          <Left>2.25cm</Left>
+                          <Height>0.63492cm</Height>
+                          <Width>4.75cm</Width>
+                          <ZIndex>16</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox19">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="股东：" + Fields!DepName.Value + " ※ " + Fields!ShareholderName.Value + " ※ " + Fields!ShareholderNumber.Value.ToString()</Value>
                                   <Style>
                                     <FontFamily>宋体</FontFamily>
                                   </Style>
@@ -567,11 +540,71 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <Top>0.5cm</Top>
-                          <Left>13.25cm</Left>
+                          <Top>2.0675cm</Top>
+                          <Left>11.15521cm</Left>
+                          <Height>0.63492cm</Height>
+                          <Width>8.6923cm</Width>
+                          <ZIndex>17</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox20">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="代持股东：" + Fields!EntrustedAgentName.Value</Value>
+                                  <Style>
+                                    <FontFamily>宋体</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>17.47888cm</Top>
+                          <Left>2.25cm</Left>
                           <Height>0.63492cm</Height>
                           <Width>4.75cm</Width>
                           <ZIndex>18</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox21">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="股东：" + Fields!DepName.Value + " ※ " + Fields!ShareholderName.Value + " ※ " + Fields!ShareholderNumber.Value.ToString()</Value>
+                                  <Style>
+                                    <FontFamily>宋体</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>17.47888cm</Top>
+                          <Left>11.15521cm</Left>
+                          <Height>0.63492cm</Height>
+                          <Width>8.84214cm</Width>
+                          <ZIndex>19</ZIndex>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -607,9 +640,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ShareOSDataSet_ShareOwnership_Change_Report</DataSetName>
-        <Top>1cm</Top>
         <Left>0.25cm</Left>
-        <Height>27cm</Height>
+        <Height>28cm</Height>
         <Width>20.50001cm</Width>
         <Style>
           <FontFamily>宋体</FontFamily>
@@ -635,7 +667,7 @@
     <DataSource Name="DummyDataSource">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=192.168.85.128;Initial Catalog=ShareOS;User ID=sa;password=x4v8m2e@p2dk)s7b</ConnectString>
+        <ConnectString>Data Source=106.14.177.162;Initial Catalog=ShareOS;User ID=sa;password=x4v8m2e@p2dk)s7b</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>fce40def-c7ca-4491-9301-2e7a9ffa39b5</rd:DataSourceID>
     </DataSource>
@@ -684,10 +716,22 @@
           <DataField>EntrustedAgentName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="DepName">
+          <DataField>DepName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TuiShares">
+          <DataField>TuiShares</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IdentityCard">
+          <DataField>IdentityCard</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ShareOSDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\BaiduYun\dotnet4.0开发\ShareOS\WinUI\ShareOSDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\GithubRepoBank\ShareOS\WinUI\ShareOSDataSet.xsd</rd:SchemaPath>
         <rd:TableName>ShareOwnership_Change_Report</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -708,7 +752,11 @@
     </ReportParameter>
     <ReportParameter Name="PARM_SharePrice">
       <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
+      <Prompt>股价</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PARM_IssueYear">
+      <DataType>String</DataType>
+      <Prompt>交易期年份</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>zh-CN</Language>

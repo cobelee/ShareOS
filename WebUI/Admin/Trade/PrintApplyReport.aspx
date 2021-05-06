@@ -3,12 +3,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1>打印股权受让申请表</h1>
-    <h4>1、将股东的部门信息，从人事数据库同步到股权管理软件。<br />
+    <div style="padding: 20px; border: 1px solid #696969; margin: 10px 0;">
+        <div style="font-size: 1.3em; font-weight: bold;">
+            操作说明
+        </div>
+        本系统中的股东信息并非与人事系统实时同步，为保证数据的准确性，请按以下步骤操作：<br />
+        1、点击下方“<asp:HyperLink ID="hlnkSyncDepName" runat="server" NavigateUrl="~/Admin/SyncDepName.aspx">同步部门信息</asp:HyperLink>”按钮，将股东的部门信息，从HCM人事云中间库同步到本股权管理系统。<br />
         2、可以以部门为单位进行打印，也可以随意选择人员进行打印。
-    </h4>
-    <div>
-        <asp:Button ID="btnUpdateDepName" runat="server" Text="同步部门信息" OnClick="btnUpdateDepName_Click" />
-        <asp:Literal ID="ltlUpdateResult" runat="server"></asp:Literal>
     </div>
     <div>
         选择部门：<asp:DropDownList ID="ddlDep" runat="server"></asp:DropDownList>

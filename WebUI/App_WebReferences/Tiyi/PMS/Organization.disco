@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="http://www.tiyigroup.com/PMS.WebUI/WebServices/Organization.asmx?wsdl" docRef="http://www.tiyigroup.com/PMS.WebUI/WebServices/Organization.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="http://www.tiyigroup.com/PMS.WebUI/WebServices/Organization.asmx" xmlns:q1="http://10.137.70.2/PMS.WebUI" binding="q1:OrganizationSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="http://www.tiyigroup.com/PMS.WebUI/WebServices/Organization.asmx" xmlns:q2="http://10.137.70.2/PMS.WebUI" binding="q2:OrganizationSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-</discovery>
